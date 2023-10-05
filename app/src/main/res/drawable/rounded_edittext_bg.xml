@@ -4,5 +4,5 @@
     <solid android:color="#ffffff" /> <!-- Background color for the EditText -->
     <corners android:radius="8dp" /> <!-- Radius for rounded corners -->
     <stroke
-        android:color="#8098ab" /> <!-- Border width -->
+        android:color="@color/primary" /> <!-- Border width -->
 </shape>
