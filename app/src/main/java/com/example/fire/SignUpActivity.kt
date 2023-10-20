@@ -18,7 +18,7 @@ class SignUpActivity {
         // This function sets up the user interface by loading the layout defined in 'activity_sign_up.xml.'
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_sign_up)
+            setContentView(R.layout.activity_signup)
 
             // Initialize Firebase authentication
             firebaseAuth = FirebaseAuth.getInstance()
