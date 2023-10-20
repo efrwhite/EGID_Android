@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryBackground"
-    tools:context=".MainActivity">
+    tools:context="MainActivity">
 
     <!-- Navigation Bar -->
     <RelativeLayout
         android:id="@+id/navBar"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@color/primaryBackground">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="358dp"
+        android:background="@color/primaryBackground"
+        app:layout_constraintBottom_toTopOf="@+id/signInButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <!-- Back Button -->
         <ImageView
@@ -41,13 +47,13 @@
 
     <Button
         android:id="@+id/signInButton"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@id/navBar"
-        android:layout_centerHorizontal="true"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="358dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="27dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
@@ -57,17 +63,21 @@
         android:paddingBottom="5dp"
         android:text="@string/signIn"
         android:textColor="#ffffff"
-        android:textSize="17sp" />
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/signUpButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navBar" />
 
     <Button
         android:id="@+id/signUpButton"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@id/signInButton"
-        android:layout_centerHorizontal="true"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="190dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
@@ -77,6 +87,10 @@
         android:paddingBottom="5dp"
         android:text="@string/signUp"
         android:textColor="#ffffff"
-        android:textSize="17sp" />
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signInButton" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
