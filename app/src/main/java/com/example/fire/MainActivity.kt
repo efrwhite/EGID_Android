@@ -1,26 +1,31 @@
 package com.example.fire
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 
-class MainActivity : AppCompatActivity() {
+class MainActivity{
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_landing)
 
         auth = FirebaseAuth.getInstance()
 
+        val signUp = findViewById<Button>(R.id.signUpButton)
+        val signIn = findViewById<Button>(R.id.signInButton)
+
         // Set click listeners for Sign Up and Log In buttons
-        findViewById<View>(R.id.btnSignUp).setOnClickListener {
+        signUp.setOnClickListener {
             // Navigate to the Sign Up activity
             startActivity(Intent(this, SignUpActivity::class.java))
         }
 
-        findViewById<View>(R.id.btnLogin).setOnClickListener {
+        signIn.setOnClickListener {
             // Navigate to the Log In activity
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, SignInActivity::class.java))
         }
     }
 }

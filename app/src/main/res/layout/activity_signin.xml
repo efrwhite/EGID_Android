@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/SignInLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryBackground"
-    tools:context=".MainActivity">
+    tools:context="SignInActivity">
 
     <!-- Navigation Bar -->
     <RelativeLayout
         android:id="@+id/navBar"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="155dp"
         android:background="@color/primaryBackground"
-        >
+        app:layout_constraintBottom_toTopOf="@+id/username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <!-- Back Button -->
         <ImageView
@@ -30,23 +35,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:fontFamily="sans-serif-medium"
             android:text="@string/signIn"
             android:textColor="@color/primary"
-            android:textSize="20sp"
-            android:fontFamily="sans-serif-medium"/>
+            android:textSize="20sp" />
     </RelativeLayout>
 
     <!-- Text Input Fields -->
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@id/navBar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="155dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="sans-serif"
         android:hint="@string/username"
@@ -56,35 +61,47 @@
         android:paddingEnd="16dp"
         android:paddingBottom="5dp"
         android:textColor="@color/secondary"
-        android:textSize="17sp" />
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navBar" />
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@id/username"
-        android:layout_margin="16dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/rounded_edittext_bg"
+        android:fontFamily="sans-serif"
         android:hint="@string/password"
+        android:inputType="textPassword"
         android:paddingStart="16dp"
-        android:paddingEnd="16dp"
         android:paddingTop="5dp"
+        android:paddingEnd="16dp"
         android:paddingBottom="5dp"
         android:textColor="@color/secondary"
         android:textSize="17sp"
-        android:fontFamily="sans-serif"
-        android:inputType="textPassword"
-        android:background="@drawable/rounded_edittext_bg"/>
+        app:layout_constraintBottom_toTopOf="@+id/signInButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <!-- Sign Up Button -->
     <Button
         android:id="@+id/signInButton"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@id/password"
-        android:layout_centerHorizontal="true"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="306dp"
+        android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:paddingStart="16dp"
@@ -94,6 +111,9 @@
         android:text="@string/signIn"
         android:textColor="#ffffff"
         android:textSize="17sp"
-        android:background="@drawable/rounded_edittext_bg"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
