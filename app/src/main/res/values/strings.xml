@@ -1,5 +1,9 @@
 <resources>
+    <!-- Global Strings -->
+    <string name="app_name">EGID Tracker</string>
     <string name="appName">EGID Tracker</string>
+
+    <!-- Strings for Sign In and Sign Up Activity -->
     <string name="signIn">Sign In</string>
     <string name="signUp">Sign Up</string>
     <string name="login">Login</string>
@@ -9,4 +13,16 @@
     <string name="email">Email</string>
     <string name="phoneNumber">Mobile Number</string>
     <string name="backDescription">Back Button</string>
+
+    <!-- Strings for Home Activity -->
+    <string name="home">Home</string>
+    <string name="homeWelcome">Welcome (Name)</string>
+    <string name="homeDiet">Diet: (Diet Type)</string>
+    <string name="yourPlan">Your Plan</string>
+    <string name="foodTracker">Food Tracker</string>
+    <string name="symptomScore">Symptom Score Checker</string>
+    <string name="QoLChecker">Quality of Life Checker</string>
+    <string name="education">EoE Education</string>
+
+    <!-- Strings for X -->
 </resources>
