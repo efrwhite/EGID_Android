@@ -24,5 +24,17 @@
     <string name="QoLChecker">Quality of Life Checker</string>
     <string name="education">EoE Education</string>
 
+    <!-- Strings for EOE Education -->
+    <string name="generalQuestions">General Questions</string>
+    <string name="whatEoE">What is EoE?</string>
+    <string name="causesEoE">What Causes EoE?</string>
+    <string name="affectedEoE">Who is Affected?</string>
+    <string name="symptomsEoE">What are the Symptoms?</string>
+    <string name="diagnosedEoE">How is it Diagnosed?</string>
+    <string name="treatedEoE">How is it Treated?</string>
+    <string name="infoEGID">EGID Information</string>
+    <string name="moreInfo">Where can I Find More Information</string>
+
     <!-- Strings for X -->
+
 </resources>
