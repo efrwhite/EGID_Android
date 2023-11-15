@@ -23,6 +23,7 @@
     <string name="symptomScore">Symptom Score Checker</string>
     <string name="QoLChecker">Quality of Life Checker</string>
     <string name="education">EoE Education</string>
+    <string name="profiles">Profiles</string>
 
     <!-- Strings for EOE Education -->
     <string name="generalQuestions">General Questions</string>
@@ -36,5 +37,10 @@
     <string name="moreInfo">Where can I Find More Information</string>
 
     <!-- Strings for X -->
+
+    <!-- Strings for Profiles -->
+    <string name="child">Child</string>
+    <string name="caregiver">Caregiver</string>
+    <string name="add">Add</string>
 
 </resources>
