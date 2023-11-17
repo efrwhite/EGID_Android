@@ -13,6 +13,7 @@
     <string name="email">Email</string>
     <string name="phoneNumber">Mobile Number</string>
     <string name="backDescription">Back Button</string>
+    <string name="passwordRequirements">Password Requirements:\n- 7 Characters long\n- 1 Capital letter\n- 1 Symbol (!, @, #, $)</string>
 
     <!-- Strings for Home Activity -->
     <string name="home">Home</string>
