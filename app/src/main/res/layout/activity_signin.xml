@@ -2,23 +2,24 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/SignInLayout"
+    android:id="@+id/HomeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryBackground"
-    tools:context="SignInActivity">
+    tools:context="SignUpActivity">
 
     <!-- Navigation Bar -->
+
     <RelativeLayout
         android:id="@+id/navBar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="155dp"
+        android:layout_width="411dp"
+        android:layout_height="50dp"
         android:background="@color/primaryBackground"
-        app:layout_constraintBottom_toTopOf="@+id/username"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
 
         <!-- Back Button -->
         <ImageView
@@ -27,10 +28,9 @@
             android:layout_height="40dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
-            android:contentDescription="@string/backDescription"
             app:tint="#ffffff" />
-
         <!-- Page Title -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,17 +41,15 @@
             android:textSize="20sp" />
     </RelativeLayout>
 
-    <!-- Text Input Fields -->
+    <!-- Text Entry Fields -->
 
     <EditText
-        android:id="@+id/username"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/signInUsername"
+        android:layout_width="379dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:hint="@string/username"
@@ -62,45 +60,39 @@
         android:paddingBottom="5dp"
         android:textColor="@color/secondary"
         android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/navBar" />
 
     <EditText
-        android:id="@+id/password"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="32dp"
+        android:id="@+id/signInPassword"
+        android:layout_width="379dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:hint="@string/password"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:paddingStart="16dp"
         android:paddingTop="5dp"
         android:paddingEnd="16dp"
         android:paddingBottom="5dp"
         android:textColor="@color/secondary"
         android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/signInButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/signInUsername" />
 
-    <!-- Sign Up Button -->
+    <!-- Text View -->
+
+    <!-- Buttons -->
+
     <Button
         android:id="@+id/signInButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="306dp"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:gravity="center"
@@ -111,9 +103,11 @@
         android:text="@string/signIn"
         android:textColor="#ffffff"
         android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/signInPassword" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
