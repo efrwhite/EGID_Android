@@ -36,6 +36,17 @@
     <string name="infoEGID">EGID Information</string>
     <string name="moreInfo">Where can I Find More Information</string>
 
+    <!-- Strings for Your Plan Layout -->
+    <string name="checkPlan">Check Plan For:</string>
+    <string name="planName">Name</string>
+    <string name="diet">Diet</string>
+    <string name="medications">Medications</string>
+    <string name="documents">Documents</string>
+    <string name="endoscopy">Endoscopy</string>
+    <string name="accidentalExposure">Accidental Exposure</string>
+
+    <!-- Strings for X -->
+
     <!-- Strings for X -->
 
 </resources>

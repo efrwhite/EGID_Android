@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryBackground"
-    tools:context="SignUpActivity">
+    tools:context="PlanActivity">
 
     <!-- Navigation Bar -->
 
@@ -16,7 +16,7 @@
         android:layout_height="50dp"
         android:background="@color/primaryBackground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -36,132 +36,18 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:fontFamily="@font/lato_medium"
-            android:text="@string/signUp"
+            android:text="@string/home"
             android:textColor="@color/primary"
             android:textSize="20sp" />
     </RelativeLayout>
 
-    <!-- Text Entry Fields -->
-
-    <EditText
-        android:id="@+id/signUpUsername"
-        android:layout_width="379dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/rounded_edittext_bg"
-        android:fontFamily="@font/lato_medium"
-        android:hint="@string/username"
-        android:inputType="text"
-        android:paddingStart="16dp"
-        android:paddingTop="5dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="5dp"
-        android:textColor="@color/secondary"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navBar" />
-
-    <EditText
-        android:id="@+id/signUpPassword"
-        android:layout_width="379dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/rounded_edittext_bg"
-        android:fontFamily="@font/lato_medium"
-        android:hint="@string/password"
-        android:inputType="text"
-        android:paddingStart="16dp"
-        android:paddingTop="5dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="5dp"
-        android:textColor="@color/secondary"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUpUsername" />
-
-    <EditText
-        android:id="@+id/signUpConfirm"
-        android:layout_width="379dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/rounded_edittext_bg"
-        android:fontFamily="@font/lato_medium"
-        android:hint="@string/confirmPassword"
-        android:inputType="text"
-        android:paddingStart="16dp"
-        android:paddingTop="5dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="5dp"
-        android:textColor="@color/secondary"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUpPassword" />
-
-    <EditText
-        android:id="@+id/signUpEmail"
-        android:layout_width="379dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/rounded_edittext_bg"
-        android:fontFamily="@font/lato_medium"
-        android:hint="@string/email"
-        android:inputType="text"
-        android:paddingStart="16dp"
-        android:paddingTop="5dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="5dp"
-        android:textColor="@color/secondary"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUpConfirm" />
-
-    <EditText
-        android:id="@+id/signUpPhone"
-        android:layout_width="379dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/rounded_edittext_bg"
-        android:fontFamily="@font/lato_medium"
-        android:hint="@string/phoneNumber"
-        android:inputType="text"
-        android:paddingStart="16dp"
-        android:paddingTop="5dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="5dp"
-        android:textColor="@color/secondary"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUpEmail" />
-
-    <!-- Text View -->
-
-    <TextView
-        android:id="@+id/passwordRequirements"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/lato_medium"
-        android:textSize="17sp"
-        android:text="@string/passwordRequirements"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUpButton" />
-
     <!-- Buttons -->
 
     <Button
-        android:id="@+id/signUpButton"
+        android:id="@+id/dietButton"
         android:layout_width="379dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:gravity="center"
@@ -169,12 +55,116 @@
         android:paddingTop="5dp"
         android:paddingEnd="16dp"
         android:paddingBottom="5dp"
-        android:text="@string/signUp"
+        android:text="@string/diet"
         android:textColor="#ffffff"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUpPhone" />
+        app:layout_constraintTop_toBottomOf="@+id/planName" />
 
+    <Button
+        android:id="@+id/medicationsButton"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_edittext_bg"
+        android:fontFamily="@font/lato_medium"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="5dp"
+        android:text="@string/medications"
+        android:textColor="#ffffff"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dietButton" />
+
+    <Button
+        android:id="@+id/documentsButton"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_edittext_bg"
+        android:fontFamily="@font/lato_medium"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="5dp"
+        android:text="@string/documents"
+        android:textColor="#ffffff"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/medicationsButton" />
+
+    <Button
+        android:id="@+id/endoscopyButton"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_edittext_bg"
+        android:fontFamily="@font/lato_medium"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="5dp"
+        android:text="@string/endoscopy"
+        android:textColor="#ffffff"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/documentsButton" />
+
+    <Button
+        android:id="@+id/accidentalButton"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_edittext_bg"
+        android:fontFamily="@font/lato_medium"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="5dp"
+        android:text="@string/accidentalExposure"
+        android:textColor="#ffffff"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endoscopyButton" />
+
+    <!-- Text Views -->
+
+    <TextView
+        android:id="@+id/checkPlan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/lato_medium"
+        android:text="@string/checkPlan"
+        android:textSize="17sp"
+        android:textColor="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navBar" />
+
+    <TextView
+        android:id="@+id/planName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/lato_medium"
+        android:text="@string/planName"
+        android:textColor="@color/primary"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkPlan" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
