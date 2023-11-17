@@ -2,23 +2,26 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/MainLayout"
+    android:id="@+id/HomeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryBackground"
     tools:context="MainActivity">
 
     <!-- Navigation Bar -->
+
+    <!-- Buttons -->
+
     <RelativeLayout
         android:id="@+id/navBar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="358dp"
+        android:layout_width="411dp"
+        android:layout_height="50dp"
         android:background="@color/primaryBackground"
-        app:layout_constraintBottom_toTopOf="@+id/signInButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
 
         <!-- Back Button -->
         <ImageView
@@ -27,10 +30,9 @@
             android:layout_height="40dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
-            android:contentDescription="@string/backDescription"
             app:tint="#ffffff" />
-
         <!-- Page Title -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,22 +40,14 @@
             android:fontFamily="@font/lato_medium"
             android:text="@string/appName"
             android:textColor="@color/primary"
-            android:textSize="33sp" />
+            android:textSize="32sp" />
     </RelativeLayout>
-
-    <!-- Text Input Fields -->
-
-    <!-- Buttons -->
 
     <Button
         android:id="@+id/signInButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="27dp"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:gravity="center"
@@ -64,20 +58,14 @@
         android:text="@string/signIn"
         android:textColor="#ffffff"
         android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/signUpButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navBar" />
+        app:layout_constraintTop_toBottomOf="@+id/placeholder"
+        tools:layout_editor_absoluteX="16dp" />
 
     <Button
         android:id="@+id/signUpButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="190dp"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:gravity="center"
@@ -88,9 +76,19 @@
         android:text="@string/signUp"
         android:textColor="#ffffff"
         android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signInButton" />
+
+    <TextView
+        android:id="@+id/placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:text="(placeholder for picture)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
