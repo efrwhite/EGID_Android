@@ -55,4 +55,16 @@
     <string name="caregiver">Caregiver</string>
     <string name="add">Add</string>
 
+    <!-- Strings for Child and Caregiver Profiles -->
+    <string name="CaregiverTitle">Caregiver Profile</string>
+    <string name="ChildTitle">Child Profile</string>
+    <string name="ChangePicture">Select Image</string>
+    <string name="Username">Username</string>
+    <string name="FirstName">First Name</string>
+    <string name="LastName">Last Name</string>
+    <string name="SaveContinue">Save and Continue</string>
+    <string name="Birthdate">Birthdate</string>
+    <string name="Gender">Gender</string>
+    <string name="Diet">Diet</string>
+
 </resources>
