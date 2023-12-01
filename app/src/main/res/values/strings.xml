@@ -35,7 +35,7 @@
     <string name="diagnosedEoE">How is it Diagnosed?</string>
     <string name="treatedEoE">How is it Treated?</string>
     <string name="infoEGID">EGID Information</string>
-    <string name="moreInfo">Where can I Find More Information</string>
+    <string name="moreInfo">Find More Information</string>
 
     <!-- Strings for Your Plan Layout -->
     <string name="checkPlan">Check Plan For:</string>
