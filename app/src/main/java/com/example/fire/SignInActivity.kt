@@ -20,7 +20,7 @@ class SignInActivity : AppCompatActivity() {
         setContentView(R.layout.activity_signin)
 
         // Get references to the username, password fields, and sign-in button on the sign-in screen
-        usernameEditText = findViewById(R.id.username)
+        usernameEditText = findViewById(R.id.FirstName)
         passwordEditText = findViewById(R.id.password)
         signInButton = findViewById(R.id.signInButton)
 
