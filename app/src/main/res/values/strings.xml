@@ -35,7 +35,7 @@
     <string name="diagnosedEoE">How is it Diagnosed?</string>
     <string name="treatedEoE">How is it Treated?</string>
     <string name="infoEGID">EGID Information</string>
-    <string name="moreInfo">Where can I Find More Information</string>
+    <string name="moreInfo">Find More Information</string>
 
     <!-- Strings for Your Plan Layout -->
     <string name="checkPlan">Check Plan For:</string>
@@ -46,14 +46,32 @@
     <string name="endoscopy">Endoscopy</string>
     <string name="accidentalExposure">Accidental Exposure</string>
 
-    <!-- Strings for X -->
+    <!-- Strings for Medications -->
+    <string name="currentMedications">Current Medications</string>
+    <string name="pastMedications">Past Medications</string>
 
-    <!-- Strings for X -->
+    <!-- Strings for Add Medications -->
+    <string name="addMedication">Add Medication</string>
+    <string name="name">Name</string>
+    <string name="dosage">Dosage</string>
+    <string name="startDate">Start Date</string>
+    <string name="frequency">Frequency</string>
+    <string name="discontinueMed">Discontinue the medication?</string>
+    <string name="note">Notes</string>
+    <string name="medNameField">Medication Name</string>
+    <string name="medAmountField">Amount</string>
+    <string name="frequencyField">How Often?</string>
+    <string name="notesField">Enter special instructions for the medication\nhere</string>
+    <string name="saveButton">Save</string>
+    <string name="datePicker">Enter Date</string>
 
     <!-- Strings for Profiles -->
     <string name="child">Child</string>
     <string name="caregiver">Caregiver</string>
     <string name="add">Add</string>
+
+
+    <!-- Strings for X -->
 
     <!-- Strings for Child and Caregiver Profiles -->
     <string name="CaregiverTitle">Caregiver Profile</string>
@@ -66,5 +84,6 @@
     <string name="Birthdate">Birthdate</string>
     <string name="Gender">Gender</string>
     <string name="Diet">Diet</string>
+
 
 </resources>

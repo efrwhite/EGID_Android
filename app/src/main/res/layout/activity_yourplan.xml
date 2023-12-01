@@ -22,80 +22,91 @@
 
 
         <!-- Back Button -->
-        <ImageView
+
+        <Button
             android:id="@+id/backButton"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
-            app:tint="#ffffff" />
+            android:background="@drawable/left_arrow"
+            app:backgroundTint="@color/primary" />
+
         <!-- Page Title -->
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="38dp"
             android:layout_centerInParent="true"
             android:fontFamily="@font/lato_medium"
-            android:text="@string/home"
+            android:paddingLeft="20dp"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
+            android:text="@string/yourPlan"
             android:textColor="@color/primary"
             android:textSize="20sp" />
+
     </RelativeLayout>
 
     <!-- Buttons -->
 
     <Button
         android:id="@+id/dietButton"
-        android:layout_width="379dp"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="38dp"
         android:layout_marginTop="64dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:gravity="center"
         android:paddingStart="16dp"
-        android:paddingTop="5dp"
+        android:paddingTop="0dp"
         android:paddingEnd="16dp"
-        android:paddingBottom="5dp"
+        android:paddingBottom="0dp"
         android:text="@string/diet"
         android:textColor="#ffffff"
         android:textSize="17sp"
+        app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/planName" />
 
     <Button
         android:id="@+id/medicationsButton"
-        android:layout_width="379dp"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="38dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:gravity="center"
         android:paddingStart="16dp"
-        android:paddingTop="5dp"
+        android:paddingTop="0dp"
         android:paddingEnd="16dp"
-        android:paddingBottom="5dp"
+        android:paddingBottom="0dp"
         android:text="@string/medications"
         android:textColor="#ffffff"
         android:textSize="17sp"
+        app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dietButton" />
 
     <Button
         android:id="@+id/documentsButton"
-        android:layout_width="379dp"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="38dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:gravity="center"
         android:paddingStart="16dp"
-        android:paddingTop="5dp"
+        android:paddingTop="0dp"
         android:paddingEnd="16dp"
-        android:paddingBottom="5dp"
+        android:paddingBottom="0dp"
         android:text="@string/documents"
         android:textColor="#ffffff"
         android:textSize="17sp"
+        app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/medicationsButton" />
@@ -105,7 +116,7 @@
     <TextView
         android:id="@+id/checkPlan"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="38dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/lato_medium"
         android:text="@string/checkPlan"
@@ -119,7 +130,7 @@
     <TextView
         android:id="@+id/planName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="38dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/lato_medium"
         android:text="@string/planName"
