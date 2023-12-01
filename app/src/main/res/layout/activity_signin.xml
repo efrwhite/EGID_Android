@@ -22,18 +22,25 @@
 
 
         <!-- Back Button -->
-        <ImageView
+
+        <Button
             android:id="@+id/backButton"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
-            app:tint="#ffffff" />
+            android:background="@drawable/left_arrow"
+            app:backgroundTint="@color/primary" />
+
         <!-- Page Title -->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="38dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="5dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="5dp"
             android:layout_centerInParent="true"
             android:fontFamily="@font/lato_medium"
             android:text="@string/signIn"
