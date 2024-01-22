@@ -19,13 +19,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <!-- Back Button -->
-        <ImageView
-            android:id="@+id/backButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="10dp"
-            app:tint="#FFFFFF" />
 
         <!-- Page Title -->
         <TextView

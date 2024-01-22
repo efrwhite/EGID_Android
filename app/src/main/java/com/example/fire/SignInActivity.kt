@@ -19,15 +19,14 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signin)
 
-        // Get references to the username, password fields, and sign-in button on the sign-in screen
-        usernameEditText = findViewById(R.id.FirstName)
-        passwordEditText = findViewById(R.id.password)
-        signInButton = findViewById(R.id.signInButton)
-
         // Initialize Firebase Authentication
         firebaseAuth = FirebaseAuth.getInstance()
 
-        // Set up an event listener for the sign-in button
+        // Get references to the username, password fields, and sign-in button on the sign-in screen
+        usernameEditText = findViewById(R.id.signInUsername)
+        passwordEditText = findViewById(R.id.signInPassword)
+        signInButton = findViewById(R.id.signInButton)
+
         signInButton.setOnClickListener {
             // Get the entered username and password
             val username = usernameEditText.text.toString()
@@ -35,22 +34,18 @@ class SignInActivity : AppCompatActivity() {
 
             // Check if both username and password are provided
             if (username.isNotEmpty() && password.isNotEmpty()) {
-                try {
-                    // Try to sign in using the provided username and password
-                    val result = firebaseAuth.signInWithEmailAndPassword(username, password).await()
-
-                    // If sign-in is successful, navigate to the main app screen
-                    if (result.user != null) {
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
-                    } else {
-                        // If sign-in fails, show an error message
-                        Toast.makeText(this, "Sign-in failed", Toast.LENGTH_SHORT).show()
+                // Try to sign in using the provided username and password
+                firebaseAuth.signInWithEmailAndPassword(username, password)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            // If sign-in is successful, navigate to the main app screen
+                            val intent = Intent(this, MainActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            // If sign-in fails, show an error message
+                            Toast.makeText(this, "Sign-in failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                        }
                     }
-                } catch (e: Exception) {
-                    // Handle any errors that may occur during sign-in
-                    Toast.makeText(this, "Sign-in failed: ${e.message}", Toast.LENGTH_SHORT).show()
-                }
             } else {
                 // Show a message if both username and password are not provided
                 Toast.makeText(this, "Username and password are required.", Toast.LENGTH_SHORT).show()
