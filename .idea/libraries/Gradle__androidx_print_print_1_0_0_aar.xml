@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.print:print:1.0.0@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/9db5f707a05d16b0e980ed61ab3007ca/transformed/print-1.0.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/7f0c17ff83f80fb13e68cb9031b6ffea/transformed/print-1.0.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/9db5f707a05d16b0e980ed61ab3007ca/transformed/print-1.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/9db5f707a05d16b0e980ed61ab3007ca/transformed/print-1.0.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/7f0c17ff83f80fb13e68cb9031b6ffea/transformed/print-1.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/7f0c17ff83f80fb13e68cb9031b6ffea/transformed/print-1.0.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

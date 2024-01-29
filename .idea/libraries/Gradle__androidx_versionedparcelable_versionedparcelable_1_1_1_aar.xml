@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.versionedparcelable:versionedparcelable:1.1.1@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/9b1e43d34b397837b578a87ad639b5b7/transformed/versionedparcelable-1.1.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/9b1e43d34b397837b578a87ad639b5b7/transformed/versionedparcelable-1.1.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/2c8d8e4c64f83a3707c4d07241f23d1a/transformed/versionedparcelable-1.1.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/2c8d8e4c64f83a3707c4d07241f23d1a/transformed/versionedparcelable-1.1.1/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

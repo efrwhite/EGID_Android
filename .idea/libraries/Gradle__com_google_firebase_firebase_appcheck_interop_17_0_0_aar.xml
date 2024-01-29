@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.firebase:firebase-appcheck-interop:17.0.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/439ad4dd208891eec53a7171a84c99c6/transformed/firebase-appcheck-interop-17.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/439ad4dd208891eec53a7171a84c99c6/transformed/firebase-appcheck-interop-17.0.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/55e78b246d00991d18efdd57d8048edd/transformed/firebase-appcheck-interop-17.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/55e78b246d00991d18efdd57d8048edd/transformed/firebase-appcheck-interop-17.0.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

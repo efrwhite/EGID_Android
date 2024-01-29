@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/65306f3dae92a5432d4c7803b9af6b4d/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/65306f3dae92a5432d4c7803b9af6b4d/transformed/localbroadcastmanager-1.0.0/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/beae6002e25547ef6183089cdf7eb10c/transformed/localbroadcastmanager-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/beae6002e25547ef6183089cdf7eb10c/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

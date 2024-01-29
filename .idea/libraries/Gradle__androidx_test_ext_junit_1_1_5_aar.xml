@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.test.ext:junit:1.1.5@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/0b01bc790741a47e879e05c764a3710f/transformed/junit-1.1.5/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/0b01bc790741a47e879e05c764a3710f/transformed/junit-1.1.5/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/f23aa018394f4e54ebe1e4c9d1265404/transformed/junit-1.1.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/f23aa018394f4e54ebe1e4c9d1265404/transformed/junit-1.1.5/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/modules-2/files-2.1/androidx.test.ext/junit/1.1.5/ee5294c4eb3c3b3ba1d1b0a347ee5d902b1748ee/junit-1.1.5-javadoc.jar!/" />

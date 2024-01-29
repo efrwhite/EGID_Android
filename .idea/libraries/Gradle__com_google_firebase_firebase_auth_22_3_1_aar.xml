@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.firebase:firebase-auth:22.3.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/a4455cdd08094abd88576d66e361b023/transformed/firebase-auth-22.3.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/a4455cdd08094abd88576d66e361b023/transformed/firebase-auth-22.3.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/b8e12f53b59165d327e1df8ce96bca07/transformed/firebase-auth-22.3.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/b8e12f53b59165d327e1df8ce96bca07/transformed/firebase-auth-22.3.1/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-auth/22.3.1/9701c8ba9860d4772c35403e31ba64dc620feeaf/firebase-auth-22.3.1-javadoc.jar!/" />
