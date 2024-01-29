@@ -45,8 +45,8 @@
     <EditText
         android:id="@+id/editText"
         android:layout_width="110dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/rounded_edittext_bg"
         app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
         app:layout_constraintStart_toStartOf="@+id/middleGuideline"
@@ -112,7 +112,7 @@
     <Button
         android:id="@+id/button"
         android:layout_width="157dp"
-        android:layout_height="32dp"
+        android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
@@ -130,7 +130,7 @@
     <Button
         android:id="@+id/button2"
         android:layout_width="220dp"
-        android:layout_height="31dp"
+        android:layout_height="48dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:paddingTop="2dp"
@@ -175,7 +175,7 @@
     <EditText
         android:id="@+id/editText2"
         android:layout_width="110dp"
-        android:layout_height="42dp"
+        android:layout_height="48dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/rounded_edittext_bg"
         app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
@@ -206,20 +206,21 @@
     <EditText
         android:id="@+id/editTextDate"
         android:layout_width="110dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:inputType="date"
         app:layout_constraintEnd_toStartOf="@id/rightGuideline"
         app:layout_constraintStart_toEndOf="@id/middleGuideline"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        tools:background="@drawable/rounded_edittext_bg" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/GenderInput"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="110dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/rounded_edittext_bg"
         app:layout_constraintEnd_toStartOf="@id/rightGuideline"
         app:layout_constraintStart_toEndOf="@id/middleGuideline"
@@ -228,7 +229,7 @@
         <AutoCompleteTextView
             android:id="@+id/GenderInputFields"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="48dp"
             android:layout_margin="2dp"
             android:inputType="none" />
 
@@ -238,8 +239,8 @@
         android:id="@+id/DietInput"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="110dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="32dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/rounded_edittext_bg"
         app:layout_constraintEnd_toStartOf="@id/rightGuideline"
         app:layout_constraintStart_toEndOf="@id/middleGuideline"
@@ -248,7 +249,7 @@
         <AutoCompleteTextView
             android:id="@+id/DietInputFields"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="48dp"
             android:layout_margin="2dp"
             android:inputType="none" />
 

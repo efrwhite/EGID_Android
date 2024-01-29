@@ -25,15 +25,6 @@
 
         <!-- Back Button -->
 
-        <Button
-            android:id="@+id/backButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/left_arrow"
-            app:backgroundTint="@color/primary" />
-
         <!-- Page Title -->
 
         <TextView
@@ -56,7 +47,7 @@
     <EditText
         android:id="@+id/signUpUsername"
         android:layout_width="250dp"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="16dp"
@@ -78,7 +69,7 @@
     <EditText
         android:id="@+id/signUpPassword"
         android:layout_width="250dp"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
@@ -98,7 +89,7 @@
     <EditText
         android:id="@+id/signUpConfirm"
         android:layout_width="250dp"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
@@ -118,7 +109,7 @@
     <EditText
         android:id="@+id/signUpEmail"
         android:layout_width="250dp"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
@@ -142,7 +133,7 @@
     <EditText
         android:id="@+id/signUpPhone"
         android:layout_width="250dp"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
@@ -175,7 +166,7 @@
     <Button
         android:id="@+id/signUpButton"
         android:layout_width="250dp"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
