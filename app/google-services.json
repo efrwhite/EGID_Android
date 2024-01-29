@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "63605051168",
+    "project_id": "egid-tracker",
+    "storage_bucket": "egid-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63605051168:android:87cd01a5b551ee6a3ad145",
+        "android_client_info": {
+          "package_name": "com.example.fire"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5aWgusHWcpTXT8S9atzrdQJOOlNBPpWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
