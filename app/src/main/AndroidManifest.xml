@@ -28,6 +28,37 @@
 
         <activity android:name=".SignUpActivity"/>
 
+        <activity android:name=".HomeActivity"/>
+
+        <activity android:name=".ProfilesActivity"/>
+
+        <activity android:name=".FoodTrackerActivity"/>
+
+        <activity android:name=".EducationActivity"/>
+
+        <activity android:name=".QoLActivity"/>
+
+        <activity android:name=".PlanActivity"/>
+
+        <activity android:name=".SymptomCheckerActivity"/>
+
+        <activity android:name=".DiagnosedActivity"/>
+
+        <activity android:name="EoECausesActivity"/>
+
+        <activity android:name=".EGIDInfoActivity"/>
+
+        <activity android:name=".MoreInfoActivity"/>
+
+        <activity android:name=".SymptomsActivity"/>
+
+        <activity android:name=".TreatmentActivity"/>
+
+        <activity android:name=".WhatIsEoEActivity"/>
+
+        <activity android:name=".WhoIsAffectedActivity"/>
+
+
     </application>
 
 </manifest>
