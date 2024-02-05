@@ -58,6 +58,10 @@
 
         <activity android:name=".WhoIsAffectedActivity"/>
 
+        <activity android:name=".AddCaregiverActivity"/>
+
+        <activity android:name=".AddChildActivity"/>
+
 
     </application>
 
