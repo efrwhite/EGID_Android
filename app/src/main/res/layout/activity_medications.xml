@@ -22,28 +22,7 @@
 
         <!-- Back Button -->
 
-        <Button
-            android:id="@+id/backButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/left_arrow"
-            app:backgroundTint="@color/primary"
-            tools:ignore="SpeakableTextPresentCheck" />
-
         <!-- Add Button -->
-
-        <Button
-            android:id="@+id/addButton"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="10dp"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/add"
-            app:backgroundTint="@color/primary"
-            tools:ignore="SpeakableTextPresentCheck" />
 
         <!-- Page Title -->
 
@@ -156,6 +135,18 @@
             <!-- Child items here -->
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="11dp"
+        android:background="@drawable/add"
+        app:backgroundTint="@color/primary"
+        app:layout_constraintBottom_toBottomOf="@+id/medSectionHeader"
+        app:layout_constraintTop_toTopOf="@+id/medSectionHeader"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="339dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

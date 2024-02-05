@@ -28,28 +28,32 @@ class SignInActivity : AppCompatActivity() {
         signInButton = findViewById(R.id.signInButton)
 
         signInButton.setOnClickListener {
-            // Get the entered username and password
+// Temporarily bypassing Firebase authentication for testing
+
+            // Firebase authentication code (commented out for now)
+            /*
             val username = usernameEditText.text.toString()
             val password = passwordEditText.text.toString()
 
-            // Check if both username and password are provided
             if (username.isNotEmpty() && password.isNotEmpty()) {
-                // Try to sign in using the provided username and password
                 firebaseAuth.signInWithEmailAndPassword(username, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
-                            // If sign-in is successful, navigate to the main app screen
-                            val intent = Intent(this, MainActivity::class.java)
+                            val intent = Intent(this, HomeActivity::class.java)
                             startActivity(intent)
                         } else {
-                            // If sign-in fails, show an error message
                             Toast.makeText(this, "Sign-in failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                         }
                     }
             } else {
-                // Show a message if both username and password are not provided
                 Toast.makeText(this, "Username and password are required.", Toast.LENGTH_SHORT).show()
             }
+            */
+
+            // Directly navigate to HomeActivity for testing
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }

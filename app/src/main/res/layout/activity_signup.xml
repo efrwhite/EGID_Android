@@ -152,8 +152,8 @@
 
     <TextView
         android:id="@+id/passwordRequirements"
-        android:layout_width="wrap_content"
-        android:layout_height="38dp"
+        android:layout_width="183dp"
+        android:layout_height="123dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/lato_medium"
         android:text="@string/passwordRequirements"
