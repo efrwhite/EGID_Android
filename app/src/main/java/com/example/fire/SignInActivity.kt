@@ -13,6 +13,7 @@ class SignInActivity : AppCompatActivity() {
     private lateinit var usernameEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var signInButton: Button
+    private lateinit var signUpLink: Button
     private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,6 +53,13 @@ class SignInActivity : AppCompatActivity() {
 
             // Directly navigate to HomeActivity for testing
             val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        //navigate to sign up page if dont have an acc
+        signUpLink.setOnClickListener {
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
             finish()
         }

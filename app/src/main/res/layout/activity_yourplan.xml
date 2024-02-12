@@ -21,8 +21,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <!-- Back Button -->
-
         <!-- Page Title -->
 
         <TextView
@@ -122,13 +120,26 @@
         android:id="@+id/planName"
         android:layout_width="wrap_content"
         android:layout_height="38dp"
-        android:layout_marginTop="16dp"
         android:fontFamily="@font/lato_medium"
-        android:text="@string/planName"
+        android:text="@string/child"
         android:textColor="@color/primary"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkPlan" />
+        tools:layout_editor_absoluteY="136dp" />
+
+    <TextView
+        android:id="@+id/dontHaveAcc"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/lato_medium"
+        android:text="@string/checkPlan"
+        android:textSize="17sp"
+        android:textColor="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
