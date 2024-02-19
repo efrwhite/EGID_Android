@@ -58,7 +58,7 @@ class SignInActivity : AppCompatActivity() {
             finish()
         }
 
-        //navigate to sign up page if dont have an acc
+        //navigate to sign up page from sign in page if dont have an acc
         signUpLink.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
