@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryBackground"
-    tools:context="PlanActivity">
+    tools:context="DietPlanActivity">
 
     <!-- Navigation Bar -->
 
     <RelativeLayout
         android:id="@+id/navBar"
-        android:layout_width="411dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:background="@color/primaryBackground"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,17 +26,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="38dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="143dp"
-            android:layout_marginEnd="144dp"
+            android:layout_centerInParent="true"
             android:fontFamily="@font/lato_medium"
             android:paddingLeft="20dp"
             android:paddingTop="5dp"
             android:paddingRight="20dp"
             android:paddingBottom="5dp"
-            android:text="@string/yourPlan"
+            android:text="@string/dietPlan"
             android:textColor="@color/primary"
             android:textSize="20sp" />
 
@@ -45,9 +41,9 @@
     <!-- Buttons -->
 
     <Button
-        android:id="@+id/dietButton"
+        android:id="@+id/diet1Button"
         android:layout_width="250dp"
-        android:layout_height="48dp"
+        android:layout_height="38dp"
         android:layout_marginTop="64dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
@@ -56,18 +52,18 @@
         android:paddingTop="0dp"
         android:paddingEnd="16dp"
         android:paddingBottom="0dp"
-        android:text="@string/diet"
+        android:text="@string/diet1"
         android:textColor="#ffffff"
         android:textSize="17sp"
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/planName" />
+        app:layout_constraintTop_toBottomOf="@+id/navBar" />
 
     <Button
-        android:id="@+id/medicationsButton"
+        android:id="@+id/diet2Button"
         android:layout_width="250dp"
-        android:layout_height="48dp"
+        android:layout_height="38dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
@@ -76,20 +72,18 @@
         android:paddingTop="0dp"
         android:paddingEnd="16dp"
         android:paddingBottom="0dp"
-        android:text="@string/medications"
+        android:text="@string/diet2"
         android:textColor="#ffffff"
         android:textSize="17sp"
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dietButton" />
-
-    <!-- Text Views -->
+        app:layout_constraintTop_toBottomOf="@+id/diet1Button" />
 
     <Button
-        android:id="@+id/documentsButton"
+        android:id="@+id/diet4Button"
         android:layout_width="250dp"
-        android:layout_height="48dp"
+        android:layout_height="38dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
@@ -98,54 +92,54 @@
         android:paddingTop="0dp"
         android:paddingEnd="16dp"
         android:paddingBottom="0dp"
-        android:text="@string/documents"
+        android:text="@string/diet4"
         android:textColor="#ffffff"
         android:textSize="17sp"
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/medicationsButton" />
+        app:layout_constraintTop_toBottomOf="@+id/diet2Button" />
 
-    <TextView
-        android:id="@+id/checkPlan"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/diet6Button"
+        android:layout_width="250dp"
         android:layout_height="38dp"
         android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
-        android:text="@string/checkPlan"
-        android:textColor="@color/primary"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="0dp"
+        android:text="@string/diet6"
+        android:textColor="#ffffff"
         android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navBar" />
-
-    <TextView
-        android:id="@+id/planName"
-        android:layout_width="wrap_content"
-        android:layout_height="38dp"
-        android:fontFamily="@font/lato_medium"
-        android:text="@string/child"
-        android:textColor="@color/primary"
-        android:textSize="17sp"
+        app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="136dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/diet4Button" />
 
-    <TextView
-        android:id="@+id/dontHaveAcc"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/allergiesButton"
+        android:layout_width="250dp"
         android:layout_height="38dp"
         android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
-        android:text="@string/checkPlan"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="0dp"
+        android:text="@string/allergies"
         android:textColor="@color/primary"
         android:textSize="17sp"
+        app:backgroundTint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navBar" />
+        app:layout_constraintTop_toBottomOf="@+id/diet6Button" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

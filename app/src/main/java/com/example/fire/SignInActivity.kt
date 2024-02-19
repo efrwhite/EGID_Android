@@ -27,6 +27,7 @@ class SignInActivity : AppCompatActivity() {
         usernameEditText = findViewById(R.id.signInUsername)
         passwordEditText = findViewById(R.id.signInPassword)
         signInButton = findViewById(R.id.signInButton)
+        signUpLink = findViewById(R.id.signUpLink)
 
         signInButton.setOnClickListener {
 // Temporarily bypassing Firebase authentication for testing

@@ -5,7 +5,7 @@
     android:id="@+id/HomeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primaryBackground"
+    android:background="#FFFFFF"
     app:backgroundTint="@color/primary"
     tools:context="MedicationsActivity">
 

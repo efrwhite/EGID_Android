@@ -66,6 +66,14 @@
     <string name="endoscopy">Endoscopy</string>
     <string name="accidentalExposure">Accidental Exposure</string>
 
+    <!-- Strings for Diet Plan -->
+    <string name="dietPlan">Diet Plan</string>
+    <string name="diet1">Diet 1</string>
+    <string name="diet2">Diet 2</string>
+    <string name="diet4">Diet 4</string>
+    <string name="diet6">Diet 6</string>
+    <string name="allergies">Allergies</string>
+
     <!-- Strings for Medications -->
     <string name="currentMedications">Current Medications</string>
     <string name="pastMedications">Past Medications</string>
@@ -85,6 +93,9 @@
     <string name="saveButton">Save</string>
     <string name="datePicker">Enter Date</string>
     <string name="endDate">End Date</string>
+
+    <!-- Strings for Documents -->
+    <string name="addDocuments">Add Documents</string>
 
     <!-- Strings for Profiles -->
     <string name="child">Child</string>
