@@ -62,6 +62,12 @@
 
         <activity android:name=".AddChildActivity"/>
 
+        <activity android:name=".DietPlanActivity"/>
+
+        <activity android:name=".DocumentsActivity"/>
+
+        <activity android:name=".MedicationsActivity"/>
+
 
     </application>
 
