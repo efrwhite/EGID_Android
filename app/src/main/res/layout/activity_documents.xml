@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/HomeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryBackground"
+    app:backgroundTint="@color/primary"
+    tools:context="DocumentsActivity">
+
+    <!-- Navigation Bar -->
+
+
+    <!-- Current Medication List  -->
+
+    <TextView
+        android:id="@+id/pageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/lato_medium"
+        android:paddingLeft="20dp"
+        android:paddingTop="5dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="5dp"
+        android:text="@string/addDocuments"
+        android:textColor="@color/primary"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/docScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pageTitle">
+
+        <LinearLayout
+            android:id="@+id/docLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="vertical">
+            <!-- Child items here -->
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Guideline for Equal Division -->
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/add"
+        app:backgroundTint="@color/primary"
+        app:layout_constraintBottom_toTopOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pageTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="70dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
