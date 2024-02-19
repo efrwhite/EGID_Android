@@ -140,13 +140,16 @@
         android:id="@+id/addButton"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:layout_marginStart="202dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="11dp"
         android:background="@drawable/add"
         app:backgroundTint="@color/primary"
         app:layout_constraintBottom_toBottomOf="@+id/medSectionHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/currentMedTitle"
         app:layout_constraintTop_toTopOf="@+id/medSectionHeader"
-        tools:ignore="SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="339dp" />
+        tools:ignore="SpeakableTextPresentCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
