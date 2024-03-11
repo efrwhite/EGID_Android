@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     app:backgroundTint="@color/primary"
-    tools:context="MedicationsActivity">
+    tools:context="AllergiesActivity">
 
     <!-- Navigation Bar -->
 
@@ -32,7 +32,7 @@
             android:paddingTop="5dp"
             android:paddingRight="20dp"
             android:paddingBottom="5dp"
-            android:text="@string/medications"
+            android:text="@string/addAllergies"
             android:textColor="@color/primary"
             android:textSize="20sp" />
 
@@ -41,7 +41,7 @@
     <!-- Current Medication List  -->
 
     <View
-        android:id="@+id/medSectionHeader"
+        android:id="@+id/allergenSectionHeader"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
@@ -52,41 +52,29 @@
         app:layout_constraintTop_toBottomOf="@id/navBar" />
 
     <TextView
-        android:id="@+id/currentMedTitle"
+        android:id="@+id/currentAllergenTitle"
         android:layout_width="wrap_content"
         android:layout_height="38dp"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/lato_medium"
-        android:text="@string/currentMedications"
+        android:text="@string/currentAllergens"
         android:textColor="@color/primary"
         android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="@id/medSectionHeader"
-        app:layout_constraintTop_toTopOf="@id/medSectionHeader" />
+        app:layout_constraintStart_toStartOf="@id/allergenSectionHeader"
+        app:layout_constraintTop_toTopOf="@id/allergenSectionHeader" />
 
-    <Button
-        android:id="@+id/addMedButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/add"
-        app:backgroundTint="@color/primary"
-        android:textColor="@color/primary"
-        app:layout_constraintBottom_toBottomOf="@id/medSectionHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toEndOf="@+id/currentMedTitle"
-        app:layout_constraintTop_toTopOf="@id/medSectionHeader" />
 
     <ScrollView
-        android:id="@+id/medScrollView"
+        android:id="@+id/allergenScrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/middleGuideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/medSectionHeader">
+        app:layout_constraintTop_toBottomOf="@id/allergenSectionHeader">
 
         <LinearLayout
-            android:id="@+id/medLinearLayout"
+            android:id="@+id/allergenLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="38dp"
             android:orientation="vertical">
@@ -105,7 +93,7 @@
     <!-- Past Medication List -->
 
     <View
-        android:id="@+id/pastMedSectionHeader"
+        android:id="@+id/pastAllergenSectionHeader"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
@@ -115,30 +103,30 @@
         app:layout_constraintTop_toBottomOf="@id/middleGuideline" />
 
     <TextView
-        android:id="@+id/pastMedTitle"
+        android:id="@+id/pastAllergenTitle"
         android:layout_width="wrap_content"
         android:layout_height="38dp"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/lato_medium"
-        android:text="@string/pastMedications"
+        android:text="@string/discontinuedAllerges"
         android:textColor="@color/primary"
         android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="@id/pastMedSectionHeader"
-        app:layout_constraintTop_toTopOf="@id/pastMedSectionHeader" />
+        app:layout_constraintStart_toStartOf="@id/pastAllergenSectionHeader"
+        app:layout_constraintTop_toTopOf="@id/pastAllergenSectionHeader" />
 
     <ScrollView
-        android:id="@+id/pastMedScrollView"
+        android:id="@+id/pastAllergenScrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pastMedSectionHeader"
+        app:layout_constraintTop_toBottomOf="@+id/pastAllergenSectionHeader"
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
-            android:id="@+id/pastMedLinearLayout"
+            android:id="@+id/pastAllergenLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="38dp"
             android:orientation="vertical">
@@ -151,14 +139,10 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="202dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="11dp"
         android:background="@drawable/add"
         app:backgroundTint="@color/primary"
-        app:layout_constraintBottom_toBottomOf="@+id/medSectionHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/currentMedTitle"
-        app:layout_constraintTop_toTopOf="@+id/medSectionHeader"
+        app:layout_constraintStart_toEndOf="@+id/currentAllergenTitle"
+        app:layout_constraintTop_toTopOf="@+id/allergenSectionHeader"
         tools:ignore="SpeakableTextPresentCheck" />
 
 

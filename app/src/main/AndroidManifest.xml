@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fire"
         tools:targetApi="31">
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -23,52 +24,34 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".SignInActivity"/>
-
-        <activity android:name=".SignUpActivity"/>
-
-        <activity android:name=".HomeActivity"/>
-
-        <activity android:name=".ProfilesActivity"/>
-
-        <activity android:name=".FoodTrackerActivity"/>
-
-        <activity android:name=".EducationActivity"/>
-
-        <activity android:name=".QoLActivity"/>
-
-        <activity android:name=".PlanActivity"/>
-
-        <activity android:name=".SymptomCheckerActivity"/>
-
-        <activity android:name=".DiagnosedActivity"/>
-
-        <activity android:name="EoECausesActivity"/>
-
-        <activity android:name=".EGIDInfoActivity"/>
-
-        <activity android:name=".MoreInfoActivity"/>
-
-        <activity android:name=".SymptomsActivity"/>
-
-        <activity android:name=".TreatmentActivity"/>
-
-        <activity android:name=".WhatIsEoEActivity"/>
-
-        <activity android:name=".WhoIsAffectedActivity"/>
-
-        <activity android:name=".AddCaregiverActivity"/>
-
-        <activity android:name=".AddChildActivity"/>
-
-        <activity android:name=".DietPlanActivity"/>
-
-        <activity android:name=".DocumentsActivity"/>
-
-        <activity android:name=".MedicationsActivity"/>
-
-
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".ProfilesActivity" />
+        <activity android:name=".FoodTrackerActivity" />
+        <activity android:name=".EducationActivity" />
+        <activity android:name=".QoLActivity" />
+        <activity android:name=".PlanActivity" />
+        <activity android:name=".SymptomCheckerActivity" />
+        <activity android:name=".DiagnosedActivity" />
+        <activity android:name=".EoECausesActivity" />
+        <activity android:name=".EGIDInfoActivity" />
+        <activity android:name=".MoreInfoActivity" />
+        <activity android:name=".SymptomsActivity" />
+        <activity android:name=".TreatmentActivity" />
+        <activity android:name=".WhatIsEoEActivity" />
+        <activity android:name=".WhoIsAffectedActivity" />
+        <activity android:name=".AddCaregiverActivity" />
+        <activity android:name=".AddChildActivity" />
+        <activity android:name=".DietPlanActivity" />
+        <activity android:name=".DocumentsActivity" />
+        <activity android:name=".MedicationsActivity" />
+        <activity android:name=".AddMedicationActivity" />
+        <activity android:name=".AllergiesActivity"/>
+        <activity android:name=".Diet1Activity"/>
+        <activity android:name=".Diet2Activity"/>
+        <activity android:name=".Diet4Activity"/>
+        <activity android:name=".Diet6Activity"/>
     </application>
 
 </manifest>

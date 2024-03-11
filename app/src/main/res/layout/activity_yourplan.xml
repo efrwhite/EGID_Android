@@ -16,7 +16,6 @@
         android:layout_height="50dp"
         android:background="@color/primaryBackground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -62,7 +61,7 @@
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/planName" />
+        app:layout_constraintTop_toBottomOf="@id/planName" />
 
     <Button
         android:id="@+id/medicationsButton"
@@ -82,7 +81,7 @@
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dietButton" />
+        app:layout_constraintTop_toBottomOf="@id/dietButton" />
 
     <!-- Text Views -->
 
@@ -105,7 +104,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/medicationsButton" />
+        app:layout_constraintTop_toBottomOf="@id/medicationsButton" />
 
     <TextView
         android:id="@+id/checkPlan"
@@ -119,7 +118,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navBar" />
+        app:layout_constraintTop_toBottomOf="@id/navBar" />
 
     <TextView
         android:id="@+id/planName"
@@ -131,6 +130,7 @@
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkPlan"
         tools:layout_editor_absoluteY="136dp"
         tools:ignore="MissingConstraints" />
 
@@ -138,7 +138,7 @@
         android:id="@+id/dontHaveAcc"
         android:layout_width="wrap_content"
         android:layout_height="38dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="82dp"
         android:fontFamily="@font/lato_medium"
         android:text="@string/checkPlan"
         android:textColor="@color/primary"
@@ -146,6 +146,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navBar" />
+        app:layout_constraintTop_toBottomOf="@id/navBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
