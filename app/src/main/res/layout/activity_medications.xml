@@ -145,7 +145,7 @@
         app:backgroundTint="@color/primary"
         app:layout_constraintBottom_toBottomOf="@+id/medSectionHeader"
         app:layout_constraintTop_toTopOf="@+id/medSectionHeader"
-        tools:ignore="SpeakableTextPresentCheck"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
         tools:layout_editor_absoluteX="339dp" />
 
 

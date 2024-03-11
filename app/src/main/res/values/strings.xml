@@ -31,30 +31,30 @@
     <!-- Strings for EOE Education -->
     <string name="generalQuestions">General Questions</string>
     <string name="whatEoE">What is EoE?</string>
-        <string name="EoEdefinition">Eosinophilic esophagitis (EoE), also known as allergic esophagitis is a chronic immune system disease where a white blood cell called Eosinophil builds up in the lining of the tube (Esophagus) that connects your mouth to your stomach. These eosinophils can release chemicals into the surrounding tissues that cause inflammation.</string>
+    <string name="EoEdefinition">Eosinophilic esophagitis (EoE), also known as allergic esophagitis is a chronic immune system disease where a white blood cell called Eosinophil builds up in the lining of the tube (Esophagus) that connects your mouth to your stomach. These eosinophils can release chemicals into the surrounding tissues that cause inflammation.</string>
     <string name="causesEoE">What Causes EoE?</string>
-        <string name="EoECauses">This condition is usually caused by an immune response to food ingestion. However, the relationship between food allergy and EoE is complex. Unlike many well known food allergens which causes symptoms right after exposure such as hives, lip swelling, vomiting and breathing issues, the EoE allergen induced reactions are often delayed, and can develop over several days making it difficult to pinpoint the specific food allergen. Environmental allergies to substances like pollen, dust, mold and animals also appear to play a role in triggering EoE and exacerbating EoE symptoms.</string>
+    <string name="EoECauses">This condition is usually caused by an immune response to food ingestion. However, the relationship between food allergy and EoE is complex. Unlike many well known food allergens which causes symptoms right after exposure such as hives, lip swelling, vomiting and breathing issues, the EoE allergen induced reactions are often delayed, and can develop over several days making it difficult to pinpoint the specific food allergen. Environmental allergies to substances like pollen, dust, mold and animals also appear to play a role in triggering EoE and exacerbating EoE symptoms.</string>
     <string name="affectedEoE">Who is Affected?</string>
-        <string name="affectedByEoE">This condition appear to be more common in white males but is being increasingly recognized in patients of all age groups, race and socioeconomic backgrounds. The symptoms however may vary with age.</string>
+    <string name="affectedByEoE">This condition appear to be more common in white males but is being increasingly recognized in patients of all age groups, race and socioeconomic backgrounds. The symptoms however may vary with age.</string>
     <string name="symptomsEoE">What are the Symptoms?</string>
-        <string name="EoESymptoms">Patients with EoE can experience several symptoms including difficulty in swallowing, choking, food getting stuck in the esophagus and symptoms of gastroesophageal reflux such as vomiting, heartburn and regurgitation. Infants and young children may present with food refusal and poor weight gain and growth.</string>
+    <string name="EoESymptoms">Patients with EoE can experience several symptoms including difficulty in swallowing, choking, food getting stuck in the esophagus and symptoms of gastroesophageal reflux such as vomiting, heartburn and regurgitation. Infants and young children may present with food refusal and poor weight gain and growth.</string>
     <string name="diagnosedEoE">How is it Diagnosed?</string>
-        <string name="howEoEDiagnosed">EoE is diagnosed by performing an upper endoscopy with biopsies. Upper endoscopy is a medical procedure where a flexible tube with a light and camera at the tip is passed through the mouth into the esophagus. This procedure will help visualize the lining of the esophagus and also let your doctor take small tissue samples from the lining of the esophagus to examine under microscope for the presence of eosinophils. In an unaffected individual, there are no eosinophils in the esophagus but in patients with the tissue samples may show numerous eosinophils and signs of inflammation.</string>
+    <string name="howEoEDiagnosed">EoE is diagnosed by performing an upper endoscopy with biopsies. Upper endoscopy is a medical procedure where a flexible tube with a light and camera at the tip is passed through the mouth into the esophagus. This procedure will help visualize the lining of the esophagus and also let your doctor take small tissue samples from the lining of the esophagus to examine under microscope for the presence of eosinophils. In an unaffected individual, there are no eosinophils in the esophagus but in patients with the tissue samples may show numerous eosinophils and signs of inflammation.</string>
     <string name="treatedEoE">How is it Treated?</string>
-        <string name="howEoETreated">There are three main types of treatments available for EoE (as below). Please consult your doctor for a detailed discussion on these options and see what works best for you and your family</string>
-        <string name="optionA">a. Empiric food elimination</string>
-        <string name="optionB">b. Medical therapy</string>
-        <string name="optionC">c. Elemental diet</string>
+    <string name="howEoETreated">There are three main types of treatments available for EoE (as below). Please consult your doctor for a detailed discussion on these options and see what works best for you and your family</string>
+    <string name="optionA">a. Empiric food elimination</string>
+    <string name="optionB">b. Medical therapy</string>
+    <string name="optionC">c. Elemental diet</string>
     <string name="infoEGID">EGID Information</string>
-        <string name="EGIDinfo">*Waiting on information from Naren.</string>
+    <string name="EGIDinfo">*Waiting on information from Naren.</string>
     <string name="moreInfo">More Information on EoE</string>
-        <string name="NASPGHANbutton">NASPGHAN</string>
-        <string name="NASPGHANtext">North American Society for Pediatric Gastroenterology, Hepatology, &amp; Nutrition</string>
-        <string name="AAAIbutton">AAAI</string>
-        <string name="AAAItext">American Academy for Allergy, Asthma, and Immunology</string>
-        <string name="APFEDbutton">APFED</string>
-        <string name="APFEDtext">American Partnership for Eosinophilic Disorders</string>
-        <string name="CHRICHMONDbutton">Children\'s Hospital of Richmond</string>
+    <string name="NASPGHANbutton">NASPGHAN</string>
+    <string name="NASPGHANtext">North American Society for Pediatric Gastroenterology, Hepatology, &amp; Nutrition</string>
+    <string name="AAAIbutton">AAAI</string>
+    <string name="AAAItext">American Academy for Allergy, Asthma, and Immunology</string>
+    <string name="APFEDbutton">APFED</string>
+    <string name="APFEDtext">American Partnership for Eosinophilic Disorders</string>
+    <string name="CHRICHMONDbutton">Children\'s Hospital of Richmond</string>
 
 
     <!-- Strings for Your Plan Layout -->
@@ -195,5 +195,9 @@
     <string name="feelings1">I worry about eating foods I\'m allergic to or not supposed to eat</string>
     <string name="feelings2">I feel mad (get upset) about not eating foods I am  allergic to or not supposed to eat</string>
     <string name="feelings3">I feel sad about not eating foods I am allergic to or not supposed to eat</string>
+    <string name="title_activity_diet2">Diet2Activity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="Diet2">Diet 2</string>
 
 </resources>
