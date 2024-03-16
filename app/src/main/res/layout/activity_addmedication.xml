@@ -41,10 +41,10 @@
 
     <TextView
         android:id="@+id/addMedName"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/lato_medium"
         android:text="@string/name"
         android:textColor="@color/primary"
@@ -55,8 +55,7 @@
     <EditText
         android:id="@+id/medNameField"
         android:layout_width="225dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="48dp"
+        android:layout_height="48dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/rounded_edittext_bg"
@@ -75,10 +74,10 @@
 
     <TextView
         android:id="@+id/addMedDosage"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/lato_medium"
         android:text="@string/dosage"
         android:textColor="@color/primary"
@@ -88,10 +87,10 @@
 
     <TextView
         android:id="@+id/addMedDate"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/lato_medium"
         android:text="@string/startDate"
         android:textColor="@color/primary"
@@ -100,24 +99,37 @@
         app:layout_constraintTop_toBottomOf="@+id/addMedDosage" />
 
     <TextView
-        android:id="@+id/addMedFreq"
-        android:layout_width="wrap_content"
+        android:id="@+id/endMedDate"
+        android:layout_width="100dp"
         android:layout_height="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/lato_medium"
-        android:text="@string/frequency"
+        android:text="@string/endDate"
         android:textColor="@color/primary"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addMedDate" />
 
     <TextView
+        android:id="@+id/addMedFreq"
+        android:layout_width="100dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/lato_medium"
+        android:text="@string/frequency"
+        android:textColor="@color/primary"
+        android:textSize="17sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endMedDate" />
+
+    <TextView
         android:id="@+id/discontinueMed"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/lato_medium"
         android:text="@string/discontinueMed"
         android:textColor="@color/primary"
@@ -130,7 +142,7 @@
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/lato_medium"
         android:text="@string/note"
         android:textColor="@color/primary"
@@ -161,9 +173,8 @@
     <Button
         android:id="@+id/datePickerButton"
         android:layout_width="225dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
@@ -179,12 +190,31 @@
         app:layout_constraintStart_toEndOf="@+id/addMedDate"
         app:layout_constraintTop_toBottomOf="@+id/medAmountField" />
 
+    <Button
+        android:id="@+id/endDatePickerButton"
+        android:layout_width="225dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/rounded_edittext_bg"
+        android:fontFamily="@font/lato_medium"
+        android:paddingStart="0dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="127dp"
+        android:paddingBottom="2dp"
+        android:text="@string/datePicker"
+        android:textColor="@color/secondary"
+        android:textSize="14sp"
+        app:backgroundTint="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/endMedDate"
+        app:layout_constraintTop_toBottomOf="@+id/datePickerButton" />
+
     <EditText
         android:id="@+id/frequencyField"
         android:layout_width="225dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
@@ -197,15 +227,14 @@
         android:textColor="@color/secondary"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/addMedFreq"
-        app:layout_constraintTop_toBottomOf="@+id/datePickerButton" />
+        app:layout_constraintStart_toEndOf="@+id/addMedDate"
+        app:layout_constraintTop_toBottomOf="@+id/endDatePickerButton" />
 
     <EditText
         android:id="@+id/medAmountField"
         android:layout_width="225dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
@@ -238,7 +267,7 @@
     <Button
         android:id="@+id/medSaveButton"
         android:layout_width="250dp"
-        android:layout_height="32dp"
+        android:layout_height="48dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"

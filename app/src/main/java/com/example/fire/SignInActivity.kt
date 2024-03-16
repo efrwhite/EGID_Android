@@ -27,6 +27,7 @@ class SignInActivity : AppCompatActivity() {
         usernameEditText = findViewById(R.id.signInUsername)
         passwordEditText = findViewById(R.id.signInPassword)
         signInButton = findViewById(R.id.signInButton)
+        signUpLink = findViewById(R.id.signUpLink)
 
         signInButton.setOnClickListener {
 // Temporarily bypassing Firebase authentication for testing
@@ -57,7 +58,7 @@ class SignInActivity : AppCompatActivity() {
             finish()
         }
 
-        //navigate to sign up page if dont have an acc
+        //navigate to sign up page from sign in page if dont have an acc
         signUpLink.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)

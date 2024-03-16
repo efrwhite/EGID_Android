@@ -6,45 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryBackground"
-    tools:context="HomeActivity">
+    tools:context="DietPlanActivity">
 
     <!-- Navigation Bar -->
 
-    <!-- Buttons -->
-
-    <Button
-        android:id="@+id/profileButton"
-        android:layout_width="250dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/rounded_edittext_bg"
-        android:fontFamily="@font/lato_medium"
-        android:gravity="center"
-        android:paddingStart="16dp"
-        android:paddingTop="0dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="0dp"
-        android:text="@string/profiles"
-        android:textColor="#ffffff"
-        android:textSize="17sp"
-        app:backgroundTint="@color/primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeImage" />
-
     <RelativeLayout
         android:id="@+id/navBar"
-        android:layout_width="411dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:background="@color/primaryBackground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
-        <!-- Back Button -->
 
         <!-- Page Title -->
 
@@ -57,27 +32,39 @@
             android:paddingTop="5dp"
             android:paddingRight="20dp"
             android:paddingBottom="5dp"
-            android:text="@string/home"
+            android:text="@string/dietPlan"
             android:textColor="@color/primary"
             android:textSize="20sp" />
 
     </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/homeImage"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="32dp"
+    <!-- Buttons -->
+
+    <Button
+        android:id="@+id/diet1Button"
+        android:layout_width="250dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/rounded_edittext_bg"
+        android:fontFamily="@font/lato_medium"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="0dp"
+        android:text="@string/diet1"
+        android:textColor="#ffffff"
+        android:textSize="17sp"
+        app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/navBar" />
 
     <Button
-        android:id="@+id/planButton"
+        android:id="@+id/diet2Button"
         android:layout_width="250dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:gravity="center"
@@ -85,20 +72,19 @@
         android:paddingTop="0dp"
         android:paddingEnd="16dp"
         android:paddingBottom="0dp"
-        android:text="@string/yourPlan"
+        android:text="@string/diet2"
         android:textColor="#ffffff"
         android:textSize="17sp"
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileButton" />
+        app:layout_constraintTop_toBottomOf="@+id/diet1Button" />
 
     <Button
-        android:id="@+id/foodTrackerButton"
+        android:id="@+id/diet4Button"
         android:layout_width="250dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:gravity="center"
@@ -106,20 +92,19 @@
         android:paddingTop="0dp"
         android:paddingEnd="16dp"
         android:paddingBottom="0dp"
-        android:text="@string/foodTracker"
+        android:text="@string/diet4"
         android:textColor="#ffffff"
         android:textSize="17sp"
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/planButton" />
+        app:layout_constraintTop_toBottomOf="@+id/diet2Button" />
 
     <Button
-        android:id="@+id/symptomCheckerButton"
+        android:id="@+id/diet6Button"
         android:layout_width="250dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:gravity="center"
@@ -127,19 +112,19 @@
         android:paddingTop="0dp"
         android:paddingEnd="16dp"
         android:paddingBottom="0dp"
-        android:text="@string/symptomScore"
+        android:text="@string/diet6"
         android:textColor="#ffffff"
         android:textSize="17sp"
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foodTrackerButton" />
+        app:layout_constraintTop_toBottomOf="@+id/diet4Button" />
 
     <Button
-        android:id="@+id/QoLButton"
+        android:id="@+id/allergiesButton"
         android:layout_width="250dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:gravity="center"
@@ -147,32 +132,14 @@
         android:paddingTop="0dp"
         android:paddingEnd="16dp"
         android:paddingBottom="0dp"
-        android:text="@string/QoLChecker"
-        android:textColor="#ffffff"
+        android:text="@string/allergies"
+        android:textColor="@color/primary"
         android:textSize="17sp"
-        app:backgroundTint="@color/primary"
+        app:backgroundTint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/symptomCheckerButton" />
+        app:layout_constraintTop_toBottomOf="@+id/diet6Button" />
 
-    <Button
-        android:id="@+id/EOEedButton"
-        android:layout_width="250dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/rounded_edittext_bg"
-        android:fontFamily="@font/lato_medium"
-        android:gravity="center"
-        android:paddingStart="16dp"
-        android:paddingTop="5dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="5dp"
-        android:text="@string/education"
-        android:textColor="#ffffff"
-        android:textSize="17sp"
-        app:backgroundTint="@color/primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/QoLButton" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
