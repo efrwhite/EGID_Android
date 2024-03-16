@@ -365,5 +365,9 @@
     <string name="feelings1">I worry about eating foods I\'m allergic to or not supposed to eat</string>
     <string name="feelings2">I feel mad (get upset) about not eating foods I am  allergic to or not supposed to eat</string>
     <string name="feelings3">I feel sad about not eating foods I am allergic to or not supposed to eat</string>
+    <string name="title_activity_diet2">Diet2Activity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="Diet2">Diet 2</string>
 
 </resources>

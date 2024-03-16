@@ -5,7 +5,7 @@
     android:id="@+id/HomeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/primaryBackground"
     app:backgroundTint="@color/primary"
     tools:context="MedicationsActivity">
 
@@ -20,6 +20,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <!-- Back Button -->
+
+        <!-- Add Button -->
 
         <!-- Page Title -->
 
@@ -61,19 +64,6 @@
         android:textColor="@color/primary"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="@id/medSectionHeader"
-        app:layout_constraintTop_toTopOf="@id/medSectionHeader" />
-
-    <Button
-        android:id="@+id/addMedButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:background="@drawable/add"
-        app:backgroundTint="@color/primary"
-        android:textColor="@color/primary"
-        app:layout_constraintBottom_toBottomOf="@id/medSectionHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toEndOf="@+id/currentMedTitle"
         app:layout_constraintTop_toTopOf="@id/medSectionHeader" />
 
     <ScrollView
@@ -150,16 +140,13 @@
         android:id="@+id/addButton"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="202dp"
-        android:layout_marginEnd="24dp"
         android:layout_marginBottom="11dp"
         android:background="@drawable/add"
         app:backgroundTint="@color/primary"
         app:layout_constraintBottom_toBottomOf="@+id/medSectionHeader"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/currentMedTitle"
         app:layout_constraintTop_toTopOf="@+id/medSectionHeader"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="339dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
