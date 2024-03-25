@@ -13,7 +13,7 @@ class MedicationsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_medications)
 
         //Initialize button
-        addMedButton = findViewById(R.id.addMedButton)
+        addMedButton = findViewById(R.id.addButton)
 
         //Set onClickListener for button
         addMedButton.setOnClickListener {

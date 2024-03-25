@@ -1,16 +1,20 @@
 package com.example.fire
+
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class SignUpActivity : AppCompatActivity() {
 
+    private lateinit var usernameEditText: EditText
     private lateinit var emailEditText: EditText
+    private lateinit var phoneEditText: EditText
     private lateinit var passwordEditText: EditText
     private lateinit var confirmPasswordEditText: EditText
     private lateinit var signUpButton: Button
@@ -20,44 +24,66 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
-        // Initialize Firebase authentication
         firebaseAuth = FirebaseAuth.getInstance()
 
-        // Get references to the email, password, confirm password, and sign-up button
+        usernameEditText = findViewById(R.id.signUpUsername)
+        phoneEditText = findViewById(R.id.signUpPhone)
         emailEditText = findViewById(R.id.signUpEmail)
         passwordEditText = findViewById(R.id.signUpPassword)
         confirmPasswordEditText = findViewById(R.id.signUpConfirm)
         signUpButton = findViewById(R.id.signUpButton)
 
         signUpButton.setOnClickListener {
-            // Retrieve the user's input from the email, password, and confirm password fields
-            val email = emailEditText.text.toString()
-            val pass = passwordEditText.text.toString()
-            val confirmPass = confirmPasswordEditText.text.toString()
+            signUpUser()
+        }
+    }
 
-            // Checking if the user has entered valid information before attempting to sign up
-            if (email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty()) {
-                if (pass == confirmPass) {
-                    // Attempt to create a new user account using Firebase authentication
-                    firebaseAuth.createUserWithEmailAndPassword(email, pass)
-                        .addOnCompleteListener(this) { task ->
-                            if (task.isSuccessful) {
-                                // If account creation is successful, navigate to the sign-in page
-                                val intent = Intent(this, SignInActivity::class.java)
-                                startActivity(intent)
-                            } else {
-                                // Show an error message if account creation fails
-                                Toast.makeText(this, "Authentication failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
-                            }
+    private fun signUpUser() {
+        val username = usernameEditText.text.toString().trim()
+        val phone = phoneEditText.text.toString().trim()
+        val email = emailEditText.text.toString().trim()
+        val password = passwordEditText.text.toString().trim()
+        val confirmPassword = confirmPasswordEditText.text.toString().trim()
+
+        if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || username.isEmpty() || phone.isEmpty()) {
+            Toast.makeText(this, "Please fill in all fields.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (password != confirmPassword) {
+            Toast.makeText(this, "Passwords do not match.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        checkUsernameUnique(username) { isUnique ->
+            if (isUnique) {
+                firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        val userId = firebaseAuth.currentUser?.uid ?: ""
+                        val userMap = hashMapOf("email" to email, "username" to username, "phone" to phone)
+                        Firebase.firestore.collection("Users").document(userId).set(userMap).addOnSuccessListener {
+                            Firebase.firestore.collection("Usernames").document(username).set(mapOf("userId" to userId))
+                            startActivity(Intent(this, AddCaregiverActivity::class.java))
+                            finish()
+                        }.addOnFailureListener { e ->
+                            Toast.makeText(this, "Failed to create user profile: ${e.message}", Toast.LENGTH_SHORT).show()
                         }
-                } else {
-                    // Show an error message if the password and confirm password do not match
-                    Toast.makeText(this, "Password is not matching", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this, "Authentication failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                    }
                 }
             } else {
-                // Show an error message if any of the required fields are empty
-                Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Username is already taken. Please choose another.", Toast.LENGTH_LONG).show()
             }
+        }
+    }
+
+    private fun checkUsernameUnique(username: String, onComplete: (Boolean) -> Unit) {
+        Firebase.firestore.collection("Usernames").document(username).get().addOnSuccessListener { document ->
+            onComplete(!document.exists())
+        }.addOnFailureListener { e ->
+            Toast.makeText(this, "Failed to check username uniqueness: ${e.message}", Toast.LENGTH_SHORT).show()
+            onComplete(false)
         }
     }
 }

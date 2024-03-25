@@ -98,6 +98,8 @@
     <string name="addAllergies">Add Allergies</string>
     <string name="currentAllergens">Current Allergens</string>
     <string name="discontinuedAllerges">Discontinued Allergens</string>
+    <string name="allergen">Allergen</string>
+    <string name="discontinuedAllergen">Discontinued Allergen</string>
 
 
     <!-- Strings for Diets -->
