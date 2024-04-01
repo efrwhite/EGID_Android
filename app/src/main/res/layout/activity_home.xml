@@ -16,10 +16,10 @@
         android:id="@+id/profileButton"
         android:layout_width="250dp"
         android:layout_height="48dp"
-        android:layout_marginTop="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:gravity="center"
+        android:layout_marginTop="20dp"
         android:paddingStart="16dp"
         android:paddingTop="0dp"
         android:paddingEnd="16dp"
@@ -29,9 +29,8 @@
         android:textSize="17sp"
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeImage" />
+        app:layout_constraintTop_toBottomOf="@+id/childDiet" />
 
     <RelativeLayout
         android:id="@+id/navBar"
@@ -65,13 +64,12 @@
 
     <ImageView
         android:id="@+id/homeImage"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="140dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navBar" />
+        app:layout_constraintTop_toBottomOf="@+id/childName" />
 
     <Button
         android:id="@+id/planButton"
@@ -174,5 +172,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/QoLButton" />
+
+    <TextView
+        android:id="@+id/childName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navBar" />
+
+    <TextView
+        android:id="@+id/childDiet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeImage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -277,6 +277,21 @@
     <string name="Gender">Gender</string>
     <string name="Diet">Diet</string>
 
+    <!-- String Arrays for Child Diet and Gender -->
+    <string-array name="gender_options">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="diet_options">
+        <item>Diet 1</item>
+        <item>Diet 2</item>
+        <item>Diet 4</item>
+        <item>Diet 6</item>
+    </string-array>
+
+
     <!-- Strings for Symptom Score Checker -->
     <string name="symptomScoreChecker">Symptom Score</string>
     <string name="symptomKey">Key:</string>

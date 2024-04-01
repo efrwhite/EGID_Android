@@ -26,6 +26,7 @@ class SignUpActivity : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
+        // Initialization
         usernameEditText = findViewById(R.id.signUpUsername)
         phoneEditText = findViewById(R.id.signUpPhone)
         emailEditText = findViewById(R.id.signUpEmail)
@@ -59,12 +60,20 @@ class SignUpActivity : AppCompatActivity() {
             if (isUnique) {
                 firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
+                        // Create and save user profile
                         val userId = firebaseAuth.currentUser?.uid ?: ""
                         val userMap = hashMapOf("email" to email, "username" to username, "phone" to phone)
                         Firebase.firestore.collection("Users").document(userId).set(userMap).addOnSuccessListener {
-                            Firebase.firestore.collection("Usernames").document(username).set(mapOf("userId" to userId))
-                            startActivity(Intent(this, AddCaregiverActivity::class.java))
-                            finish()
+                            // Save the username mapping
+                            Firebase.firestore.collection("Usernames").document(username).set(mapOf("userId" to userId)).addOnSuccessListener {
+                                // Transition to AddCaregiverActivity with the username passed as an extra
+                                val intent = Intent(this, AddCaregiverActivity::class.java).apply {
+                                    putExtra("username", username) // Pass the username for use in the next activity
+                                    putExtra("isFirstTimeUser", true)
+                                }
+                                startActivity(intent)
+                                finish() // Finish to prevent returning to signup screen
+                            }
                         }.addOnFailureListener { e ->
                             Toast.makeText(this, "Failed to create user profile: ${e.message}", Toast.LENGTH_SHORT).show()
                         }
