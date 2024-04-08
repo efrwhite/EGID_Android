@@ -17,28 +17,23 @@ class AddCaregiverActivity : AppCompatActivity() {
     private lateinit var lastNameEditText: EditText
     private lateinit var saveButton: Button
     private val firebaseAuth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
-    private var mode: String = "add" // Default mode
-    private var caregiverId: String? = null // Used for edit mode
+    private var mode: String = "add"
+    private var caregiverId: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_caregiver_profile)
 
-        // Initialize views
+        usernameEditText = findViewById(R.id.editText2)
         firstNameEditText = findViewById(R.id.editText)
         lastNameEditText = findViewById(R.id.editText3)
-        usernameEditText = findViewById(R.id.editText2) //
         saveButton = findViewById(R.id.saveButton)
 
-        // Retrieve and display the username, and make it uneditable
-        val username = intent.getStringExtra("username") ?: ""
-        usernameEditText.setText(username)
-        usernameEditText.isEnabled = false // Make the EditText uneditable
-
-        // Determine the mode (add or edit) based on the intent extras
-        intent.extras?.let {
-            mode = it.getString("mode", "add")
-            caregiverId = it.getString("caregiverId") // This will be null if in add mode
+        // Check if we are in "edit" mode and if so, fetch and populate caregiver data
+        caregiverId = intent.getStringExtra("caregiverId")
+        if (caregiverId != null) {
+            mode = "edit"
+            populateCaregiverData(caregiverId!!)
         }
 
         saveButton.setOnClickListener {
@@ -48,6 +43,49 @@ class AddCaregiverActivity : AppCompatActivity() {
                 updateCaregiverInfo()
             }
         }
+    }
+
+    private fun populateCaregiverData(caregiverId: String) {
+        // Fetch the caregiver document to get the parentUserId
+        Firebase.firestore.collection("Caregivers").document(caregiverId).get()
+            .addOnSuccessListener { caregiverSnapshot ->
+                if (caregiverSnapshot.exists()) {
+                    // Extract the parentUserId which links to the user document
+                    val parentUserId = caregiverSnapshot.getString("parentUserId") ?: ""
+
+                    // Use the parentUserId to fetch the username from the Usernames collection
+                    fetchUsername(parentUserId)
+
+                    // Set other caregiver details
+                    firstNameEditText.setText(caregiverSnapshot.getString("firstName") ?: "")
+                    lastNameEditText.setText(caregiverSnapshot.getString("lastName") ?: "")
+
+                } else {
+                    Toast.makeText(this, "Caregiver not found.", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(this, "Error fetching caregiver details: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun fetchUsername(parentUserId: String) {
+        // Assuming the Usernames collection documents' ID is the username and contains a userId field
+        Firebase.firestore.collection("Usernames").whereEqualTo("userId", parentUserId).limit(1).get()
+            .addOnSuccessListener { documents ->
+                if (!documents.isEmpty) {
+                    // The document ID is the username
+                    val document = documents.documents.first()
+                    val username = document.id // Document ID is the username
+                    usernameEditText.setText(username)
+                    usernameEditText.isEnabled = false // Make the EditText uneditable
+                } else {
+                    Toast.makeText(this, "Username not found.", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(this, "Error fetching username: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun saveCaregiverInfo() {
@@ -103,14 +141,19 @@ class AddCaregiverActivity : AppCompatActivity() {
     }
 
     private fun goToNextActivity() {
-        val intent = if (intent.getBooleanExtra("isFirstTimeUser", false) && mode == "add") {
-            Intent(this, AddChildActivity::class.java).apply {
-                putExtra("isFirstTimeUser", true)
+        val nextActivityIntent = when {
+            intent.getBooleanExtra("isFirstTimeUser", false) && mode == "add" -> {
+                Intent(this, AddChildActivity::class.java).apply {
+                    putExtra("isFirstTimeUser", true)
+                }
             }
-        } else {
-            Intent(this, ProfilesActivity::class.java)
+            else -> {
+                Intent(this, ProfilesActivity::class.java).apply {
+                    flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                }
+            }
         }
-        startActivity(intent)
+        startActivity(nextActivityIntent)
         finish()
     }
 }

@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/lato_medium"
         android:text="@string/child"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@id/childSectionHeader"
         app:layout_constraintTop_toTopOf="@id/childSectionHeader" />
 
@@ -60,7 +60,7 @@
         android:fontFamily="@font/lato_medium"
         android:text="@string/add"
         android:textColor="@color/primary"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:clickable="true"
         android:focusable="true"
@@ -77,13 +77,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/childSectionHeader">
 
-        <LinearLayout
-            android:id="@+id/childLinearLayout"
+        <TableLayout
+            android:id="@+id/childTableLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!-- Child items here -->
-        </LinearLayout>
+            android:layout_height="wrap_content">
+            <!-- Rows will be added programmatically -->
+        </TableLayout>
     </ScrollView>
 
     <!-- Guideline for Equal Division -->
@@ -112,7 +111,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/lato_medium"
         android:text="@string/caregiver"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@id/caregiverSectionHeader"
         app:layout_constraintTop_toTopOf="@id/caregiverSectionHeader" />
 
@@ -126,7 +125,7 @@
         android:fontFamily="@font/lato_medium"
         android:text="@string/add"
         android:textColor="@color/primary"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/caregiverListTitle"
         app:layout_constraintEnd_toEndOf="parent"
@@ -141,13 +140,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/caregiverSectionHeader">
 
-        <LinearLayout
-            android:id="@+id/caregiverLinearLayout"
+        <TableLayout
+            android:id="@+id/caregiverTableLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!-- Child items here -->
-        </LinearLayout>
+            android:layout_height="wrap_content">
+            <!-- Rows will be added programmatically -->
+        </TableLayout>
     </ScrollView>
 
 

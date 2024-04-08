@@ -51,6 +51,11 @@ class AddChildActivity : AppCompatActivity() {
         setupDropdownMenus()
 
     }
+    override fun onResume() {
+        super.onResume()
+        // Setup dropdown menus again to ensure they're always ready
+        setupDropdownMenus()
+    }
 
     private fun fetchAndPopulateChildData(childId: String) {
         Firebase.firestore.collection("Children").document(childId).get()
@@ -61,6 +66,8 @@ class AddChildActivity : AppCompatActivity() {
                     birthDateEditText.setText(document.getString("birthDate"))
                     genderInput.setText(document.getString("gender"))
                     dietInput.setText(document.getString("diet"))
+
+                    setupDropdownMenus()
                     // Populate other fields as necessary
                 } else {
                     Toast.makeText(this, "Child not found.", Toast.LENGTH_SHORT).show()
@@ -152,7 +159,9 @@ class AddChildActivity : AppCompatActivity() {
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             }
         } else {
-            Intent(this, ProfilesActivity::class.java)
+            Intent(this, HomeActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
         }
         startActivity(nextActivityIntent)
     }
