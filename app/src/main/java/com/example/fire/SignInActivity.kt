@@ -57,7 +57,9 @@ class SignInActivity : AppCompatActivity() {
                                 .addOnCompleteListener { task ->
                                     if (task.isSuccessful) {
                                         // Navigate to HomeActivity or the next appropriate activity
-                                        startActivity(Intent(this, HomeActivity::class.java))
+                                        startActivity(Intent(this, HomeActivity::class.java).apply {
+                                            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                        })
                                         finish()
                                     } else {
                                         Toast.makeText(this, "Sign-in failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
