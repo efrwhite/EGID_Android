@@ -30,7 +30,7 @@
 
     <!-- Strings for EOE Education -->
     <string name="generalQuestions">General Questions</string>
-    <string name="whatEoE">What is EoE?</string>
+    <string name="whatEoE">What is Eosinophilic Esophagitis (EoE)?</string>
     <string name="EoEdefinition">Eosinophilic esophagitis (EoE), also known as allergic esophagitis is a chronic immune system disease where a white blood cell called Eosinophil builds up in the lining of the tube (Esophagus) that connects your mouth to your stomach. These eosinophils can release chemicals into the surrounding tissues that cause inflammation.</string>
     <string name="causesEoE">What Causes EoE?</string>
     <string name="EoECauses">This condition is usually caused by an immune response to food ingestion. However, the relationship between food allergy and EoE is complex. Unlike many well known food allergens which causes symptoms right after exposure such as hives, lip swelling, vomiting and breathing issues, the EoE allergen induced reactions are often delayed, and can develop over several days making it difficult to pinpoint the specific food allergen. Environmental allergies to substances like pollen, dust, mold and animals also appear to play a role in triggering EoE and exacerbating EoE symptoms.</string>
@@ -47,7 +47,7 @@
     <string name="optionC">c. Elemental diet</string>
     <string name="infoEGID">EGID Information</string>
     <string name="EGIDinfo">*Waiting on information from Naren.</string>
-    <string name="moreInfo">More Information on EoE</string>
+    <string name="moreInfo">Where Can I Find More Info?</string>
     <string name="NASPGHANbutton">NASPGHAN</string>
     <string name="NASPGHANtext">North American Society for Pediatric Gastroenterology, Hepatology, &amp; Nutrition</string>
     <string name="AAAIbutton">AAAI</string>
