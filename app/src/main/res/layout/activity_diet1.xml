@@ -53,13 +53,15 @@
     </LinearLayout>
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="520dp"
         android:layout_margin="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/foodsToAvoid">
+        app:layout_constraintTop_toBottomOf="@id/foodsToAvoid"
+        app:layout_constraintBottom_toTopOf="@+id/allergiesButton">
 
         <TableLayout
             android:id="@+id/questionScroll"
@@ -138,7 +140,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/casein"/>
+                    android:text="@string/casein" />
             </TableRow>
 
             <TableRow
@@ -152,7 +154,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/cheese"/>
+                    android:text="@string/cheese" />
             </TableRow>
 
             <TableRow
@@ -166,7 +168,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/chocolate"/>
+                    android:text="@string/chocolate" />
             </TableRow>
 
             <TableRow
@@ -180,7 +182,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/condensedMilk"/>
+                    android:text="@string/condensedMilk" />
             </TableRow>
 
             <TableRow
@@ -194,7 +196,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/cottageCheese"/>
+                    android:text="@string/cottageCheese" />
             </TableRow>
 
             <TableRow
@@ -208,7 +210,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/cream"/>
+                    android:text="@string/cream" />
             </TableRow>
 
             <TableRow
@@ -222,7 +224,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/creamCheese"/>
+                    android:text="@string/creamCheese" />
             </TableRow>
 
             <TableRow
@@ -236,7 +238,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/curd"/>
+                    android:text="@string/curd" />
             </TableRow>
 
             <TableRow
@@ -250,7 +252,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/custard"/>
+                    android:text="@string/custard" />
             </TableRow>
 
             <TableRow
@@ -264,7 +266,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/evaporatedMilk"/>
+                    android:text="@string/evaporatedMilk" />
             </TableRow>
 
             <TableRow
@@ -278,7 +280,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/ghee"/>
+                    android:text="@string/ghee" />
             </TableRow>
 
             <TableRow
@@ -292,7 +294,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/goatMilk"/>
+                    android:text="@string/goatMilk" />
             </TableRow>
 
             <TableRow
@@ -306,7 +308,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/gravy"/>
+                    android:text="@string/gravy" />
             </TableRow>
 
             <TableRow
@@ -320,7 +322,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/halfAndHalf"/>
+                    android:text="@string/halfAndHalf" />
             </TableRow>
 
             <TableRow
@@ -334,7 +336,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/iceCream"/>
+                    android:text="@string/iceCream" />
             </TableRow>
 
             <TableRow
@@ -348,7 +350,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/lactose"/>
+                    android:text="@string/lactose" />
             </TableRow>
 
             <TableRow
@@ -362,7 +364,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/margarine"/>
+                    android:text="@string/margarine" />
             </TableRow>
 
             <TableRow
@@ -376,7 +378,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/milk"/>
+                    android:text="@string/milk" />
             </TableRow>
 
             <TableRow
@@ -390,7 +392,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/milkPowder"/>
+                    android:text="@string/milkPowder" />
             </TableRow>
 
             <TableRow
@@ -404,7 +406,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/pastries"/>
+                    android:text="@string/pastries" />
             </TableRow>
 
             <TableRow
@@ -418,7 +420,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/pudding"/>
+                    android:text="@string/pudding" />
             </TableRow>
 
             <TableRow
@@ -432,7 +434,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/saladDressing"/>
+                    android:text="@string/saladDressing" />
             </TableRow>
 
             <TableRow
@@ -446,7 +448,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/sheepMilk"/>
+                    android:text="@string/sheepMilk" />
             </TableRow>
 
             <TableRow
@@ -460,7 +462,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/sourCream"/>
+                    android:text="@string/sourCream" />
             </TableRow>
 
             <TableRow
@@ -474,7 +476,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/whey"/>
+                    android:text="@string/whey" />
             </TableRow>
 
             <TableRow
@@ -488,13 +490,32 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
-                    android:text="@string/yogurt"/>
+                    android:text="@string/yogurt" />
             </TableRow>
 
         </TableLayout>
 
     </ScrollView>
 
+    <Button
+        android:id="@+id/allergiesButton"
+        android:layout_width="250dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_edittext_bg"
+        android:fontFamily="@font/lato_medium"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="0dp"
+        android:text="@string/allergies"
+        android:textColor="@color/primary"
+        android:textSize="17sp"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

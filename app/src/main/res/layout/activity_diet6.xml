@@ -53,13 +53,15 @@
     </LinearLayout>
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="520dp"
         android:layout_margin="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/foodsToAvoid">
+        app:layout_constraintTop_toBottomOf="@id/foodsToAvoid"
+        app:layout_constraintBottom_toTopOf="@+id/allergiesButton">
 
         <TableLayout
             android:id="@+id/questionScroll"
@@ -1790,6 +1792,27 @@
         </TableLayout>
 
     </ScrollView>
+
+    <Button
+        android:id="@+id/allergiesButton"
+        android:layout_width="250dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_edittext_bg"
+        android:fontFamily="@font/lato_medium"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingTop="0dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="0dp"
+        android:text="@string/allergies"
+        android:textColor="@color/primary"
+        android:textSize="17sp"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
+
 
 
 
