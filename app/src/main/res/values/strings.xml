@@ -27,6 +27,18 @@
     <string name="QoLChecker">Quality of Life Checker</string>
     <string name="education">EoE Education</string>
     <string name="profiles">Profiles</string>
+    <string-array name="gender_options">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="diet_options">
+        <item>Diet 1</item>
+        <item>Diet 2</item>
+        <item>Diet 4</item>
+        <item>Diet 6</item>
+    </string-array>
 
     <!-- Strings for EOE Education -->
     <string name="generalQuestions">General Questions</string>
