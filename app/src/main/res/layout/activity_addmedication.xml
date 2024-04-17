@@ -210,6 +210,7 @@
         app:layout_constraintStart_toEndOf="@+id/endMedDate"
         app:layout_constraintTop_toBottomOf="@+id/datePickerButton" />
 
+
     <EditText
         android:id="@+id/frequencyField"
         android:layout_width="225dp"

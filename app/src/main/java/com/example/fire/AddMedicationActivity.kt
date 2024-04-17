@@ -1,12 +1,201 @@
 package com.example.fire
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.DatePicker
+import android.widget.EditText
+import android.widget.Switch
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import java.util.Calendar
+import java.util.Locale
+import java.text.SimpleDateFormat
+import java.util.Date
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+
 class AddMedicationActivity : AppCompatActivity() {
+
+    private lateinit var datePickerButton: Button
+    private lateinit var endDatePickerButton: Button
+    private lateinit var calendar: Calendar
+    private lateinit var saveButton: Button
+
+    private lateinit var medName: EditText
+    private lateinit var dosage: EditText
+    private lateinit var startDate: String
+    private lateinit var endDate: String
+    private lateinit var frequency: EditText
+    private lateinit var discontinue: Switch
+    private lateinit var notes: EditText
+    private var medicationId: String? = null
+
+    private val firestore: FirebaseFirestore by lazy { FirebaseFirestore.getInstance()}
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_addmedication)
+
+        datePickerButton = findViewById(R.id.datePickerButton)
+        endDatePickerButton = findViewById(R.id.endDatePickerButton)
+        saveButton = findViewById(R.id.medSaveButton)
+
+        medName = findViewById(R.id.medNameField)
+        dosage = findViewById(R.id.medAmountField)
+        frequency = findViewById(R.id.frequencyField)
+        startDate = datePickerButton.text.toString()
+        endDate = endDatePickerButton.text.toString()
+        discontinue = findViewById(R.id.discontinueSwitch)
+        notes = findViewById(R.id.medNotesField)
+
+        calendar = Calendar.getInstance()
+
+        datePickerButton.setOnClickListener {
+            showDatePickerDialog(datePickerButton)
+        }
+
+        endDatePickerButton.setOnClickListener {
+            showDatePickerDialog(endDatePickerButton)
+        }
+
+        // Check if in edit mode
+        medicationId = intent.getStringExtra("medicationId")
+        if (medicationId != null) {
+            fetchAndPopulateMedicationData(medicationId!!)
+        }
+
+        saveButton.setOnClickListener {
+            if(medicationId == null) {
+                saveMedication()
+            } else {
+                updateMedication()
+            }
+        }
+
+        //check if med needs to be moved to past medications
+        checkEndDate()
     }
+
+    private fun saveMedication() {
+        val medicationMap = hashMapOf(
+            "medName" to medName.text.toString(),
+            "dosage" to dosage.text.toString(),
+            "startDate" to startDate,
+            "endDate" to endDate,
+            "frequency" to frequency.text.toString(),
+            "discontinue" to discontinue.isChecked,
+            "notes" to notes.text.toString()
+        )
+
+        firestore.collection("Medications").add(medicationMap)
+            .addOnSuccessListener {documentReference ->
+                val medicationId = documentReference.id
+                Toast.makeText(this, "Medication added successfully", Toast.LENGTH_SHORT).show()
+                Intent(this, MedicationsActivity::class.java)
+            }
+            .addOnFailureListener{e ->
+                Toast.makeText(this, "Failed to add medication: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun updateMedication() {
+        val medicationMap = hashMapOf(
+            "medName" to medName.text.toString().trim(),
+            "dosage" to dosage.text.toString().trim(),
+            "startDate" to startDate.trim(),
+            "endDate" to endDate.trim(),
+            "frequency" to frequency.text.toString().trim(),
+            "discontinue" to discontinue.isChecked,
+            "notes" to notes.text.toString().trim()
+        )
+
+        medicationId?.let {
+            firestore.collection("Medications").document(it).set(medicationMap)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Medication updates successfully", Toast.LENGTH_SHORT).show()
+                    checkEndDate()
+                }
+                .addOnFailureListener {e ->
+                    Toast.makeText(this, "Failed to update medication: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+        }
+    }
+
+    private fun checkEndDate() {
+        // Fetch all medications and check if their end date has passed
+        firestore.collection("Medications").get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val endDate = document.getString("endDate")
+                    if (endDate != null) {
+                        val endDateMillis = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).parse(endDate)?.time ?: 0
+                        val currentDateMillis = Calendar.getInstance().timeInMillis
+                        if (endDateMillis < currentDateMillis) {
+                            // End date has passed, move medication to past medications
+                            //moveMedicationToPast(document.id)
+                        }
+                    }
+                }
+            }
+            .addOnFailureListener { e ->
+                // Handle failure
+            }
+    }
+
+    private fun fetchAndPopulateMedicationData(medicationId: String) {
+        firestore.collection("Medications").document(medicationId).get()
+            .addOnSuccessListener { document ->
+                if (document.exists()) {
+                    medName.setText(document.getString("medName"))
+                    dosage.setText(document.getString("dosage"))
+                    startDate = document.getString("startDate") ?: ""
+                    endDate = document.getString("endDate") ?: ""
+                    frequency.setText(document.getString("frequency"))
+                    discontinue.isChecked = document.getBoolean("discontinue") ?: false
+                    notes.setText(document.getString("notes"))
+
+                    datePickerButton.text = startDate
+                    endDatePickerButton.text = endDate
+
+                } else {
+                    Toast.makeText(this, "Medication not found.", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(this, "Failed to load medication data: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun showDatePickerDialog(button: Button) {
+        val datePicker = DatePickerDialog(
+            this,
+            { view, year, monthOfYear, dayOfMonth ->
+                val selectedDate = Calendar.getInstance()
+                selectedDate.set(year, monthOfYear, dayOfMonth)
+                val formattedDate = formatDate(selectedDate.time)
+                button.text = formattedDate
+                if (button == datePickerButton) {
+                    startDate = formattedDate // Save startDate
+                } else {
+                    endDate = formattedDate // Save endDate
+                }
+            },
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
+        )
+        datePicker.show()
+    }
+
+    private fun formatDate(date: Date): String {
+        val sdf = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
+        return sdf.format(date)
+    }
+
+
 }

@@ -16,6 +16,8 @@ class PlanActivity : AppCompatActivity() {
     private lateinit var medicationsButton: Button
     private lateinit var documentsButton: Button
     private lateinit var childDiet: String
+    private lateinit var planName: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_yourplan)
@@ -24,29 +26,22 @@ class PlanActivity : AppCompatActivity() {
         dietButton = findViewById(R.id.dietButton)
         medicationsButton = findViewById(R.id.medicationsButton)
         documentsButton = findViewById(R.id.documentsButton)
+        planName = findViewById(R.id.planName)
 
+        val childId = getCurrentChildId()
+        childId?.let {
+            fetchChildDiet(it)
+        }
         //set onClickListeners for Buttons
         dietButton.setOnClickListener {
-            val childId = getCurrentChildId()
-            childId?.let {
-                fetchChildDiet(it)
+            val intent = when (childDiet) {
+                "Diet 1" -> Intent(this, Diet1Activity::class.java)
+                "Diet 2" -> Intent(this, Diet2Activity::class.java)
+                "Diet 4" -> Intent(this, Diet4Activity::class.java)
+                "Diet 6" -> Intent(this, Diet6Activity::class.java)
+                else -> throw IllegalArgumentException("Invalid diet")
             }
-            if(childDiet.equals("Diet 1")){
-                val intent = Intent(this, Diet1Activity :: class.java)
-                startActivity(intent)
-            }
-            else if(childDiet.equals("Diet 2")){
-                val intent = Intent(this, Diet2Activity :: class.java)
-                startActivity(intent)
-            }
-            else if(childDiet.equals("Diet 4")){
-                val intent = Intent(this, Diet4Activity :: class.java)
-                startActivity(intent)
-            }
-            else if(childDiet.equals("Diet 6")){
-                val intent = Intent(this, Diet6Activity :: class.java)
-                startActivity(intent)
-            }
+            startActivity(intent)
         }
 
         medicationsButton.setOnClickListener {
@@ -66,6 +61,10 @@ class PlanActivity : AppCompatActivity() {
             .addOnSuccessListener { document ->
                 if (document.exists()) {
                     childDiet = document.getString("diet") ?: "No Diet Specified"
+                    val childName = document.getString("firstName") ?: "No Name"
+
+                    // Update UI with child data
+                    planName.text = childName
 
                 } else {
                     Toast.makeText(this, "Diet not found.", Toast.LENGTH_SHORT).show()

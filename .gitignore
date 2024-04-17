@@ -3,3 +3,9 @@ local.properties
 /.gradle
 /.gradle
 /.idea
+/caches
+/.tmp
+/wrapper
+/daemon
+/native
+android/FakeDependency.jar

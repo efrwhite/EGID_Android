@@ -75,13 +75,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/medSectionHeader">
 
-        <LinearLayout
-            android:id="@+id/medLinearLayout"
+        <TableLayout
+            android:id="@+id/medTableLayout"
             android:layout_width="match_parent"
-            android:layout_height="38dp"
-            android:orientation="vertical">
-            <!-- Child items here -->
-        </LinearLayout>
+            android:layout_height="wrap_content">
+            <!-- Rows will be added programmatically -->
+        </TableLayout>
     </ScrollView>
 
     <!-- Guideline for Equal Division -->
@@ -127,22 +126,28 @@
         app:layout_constraintTop_toBottomOf="@+id/pastMedSectionHeader"
         app:layout_constraintVertical_bias="0.0">
 
-        <LinearLayout
-            android:id="@+id/pastMedLinearLayout"
+        <TableLayout
+            android:id="@+id/pastMedTableLayout"
             android:layout_width="match_parent"
-            android:layout_height="38dp"
-            android:orientation="vertical">
-            <!-- Child items here -->
-        </LinearLayout>
+            android:layout_height="wrap_content">
+            <!-- Rows will be added programmatically -->
+        </TableLayout>
     </ScrollView>
 
     <Button
         android:id="@+id/addButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:fontFamily="@font/lato_medium"
+        android:text="@string/add"
+        android:textColor="@color/primary"
+        android:textSize="18sp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="11dp"
-        android:background="@drawable/add"
-        app:backgroundTint="@color/primary"
         app:layout_constraintBottom_toBottomOf="@+id/medSectionHeader"
         app:layout_constraintTop_toTopOf="@+id/medSectionHeader"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
