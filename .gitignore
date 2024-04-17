@@ -9,3 +9,10 @@ local.properties
 /daemon
 /native
 android/FakeDependency.jar
+/.idea
+/.gradle/buildOutputCleanup
+/.idea
+.idea/libraries/Gradle__androidx_activity_activity_1_8_0_aar.xml
+.idea/libraries/Gradle__androidx_annotation_annotation_experimental_1_3_0_aar.xml
+.idea/libraries/Gradle__androidx_annotation_annotation_jvm_1_6_0.xml
+.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml

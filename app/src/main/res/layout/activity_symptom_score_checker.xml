@@ -26,23 +26,7 @@
             android:paddingTop="5dp"
             android:paddingRight="20dp"
             android:paddingBottom="5dp"
-            android:text="@string/symptomScoreChecker"
-            android:textColor="@color/primary"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/resultsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="-12dp"
-            app:backgroundTint="@color/primaryBackground"
-            android:fontFamily="@font/lato_medium"
-            android:paddingLeft="20dp"
-            android:paddingTop="5dp"
-            android:paddingRight="20dp"
-            android:paddingBottom="5dp"
-            android:text="Results"
+            android:text="@string/qualityOfLifeChecker"
             android:textColor="@color/primary"
             android:textSize="20sp" />
 
@@ -70,27 +54,27 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/symptomKey0" />
+            android:text="@string/Qkey0" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/symptomKey1" />
+            android:text="@string/Qkey1" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/symptomKey2" />
+            android:text="@string/Qkey2" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/symptomKey3" />
+            android:text="@string/Qkey3" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/symptomKey4" />
+            android:text="@string/Qkey4" />
 
         <!-- Repeat for each key option -->
 
@@ -113,7 +97,7 @@
             android:stretchColumns="0">
 
             <TableRow
-                android:id="@+id/row1"
+                android:id="@+id/dateRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -131,8 +115,25 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:inputType="date"
                     android:padding="10dp"
                     tools:ignore="Autofill" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/row1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/symptoms1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingVertical="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/SymptomsI" />
 
             </TableRow>
 
@@ -142,21 +143,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question2"
+                    android:id="@+id/question1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question2" />
+                    android:text="@string/symptoms1" />
 
                 <EditText
-                    android:id="@+id/answer2"
+                    android:id="@+id/answer1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:hint="@string/NumberHint"
                     android:inputType="number"
+                    android:tag="answer1"
                     android:padding="10dp" />
 
             </TableRow>
@@ -167,21 +169,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question3"
+                    android:id="@+id/question2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question3" />
+                    android:text="@string/symptoms2" />
 
                 <EditText
-                    android:id="@+id/answer3"
+                    android:id="@+id/answer2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:hint="@string/NumberHint"
                     android:inputType="number"
+                    android:tag="answer2"
                     android:padding="10dp" />
 
             </TableRow>
@@ -192,21 +195,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question4"
+                    android:id="@+id/question3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question4" />
+                    android:text="@string/symptoms3" />
 
                 <EditText
-                    android:id="@+id/answer4"
+                    android:id="@+id/answer3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:hint="@string/NumberHint"
                     android:inputType="number"
+                    android:tag="answer3"
                     android:padding="10dp" />
 
             </TableRow>
@@ -217,21 +221,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question5"
+                    android:id="@+id/question4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question5" />
+                    android:text="@string/symptoms4" />
 
                 <EditText
-                    android:id="@+id/answer5"
+                    android:id="@+id/answer4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:hint="@string/NumberHint"
                     android:inputType="number"
+                    android:tag="answer4"
                     android:padding="10dp" />
 
             </TableRow>
@@ -242,21 +247,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question6"
+                    android:id="@+id/question5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question6" />
+                    android:text="@string/symptoms5" />
 
                 <EditText
-                    android:id="@+id/answer6"
+                    android:id="@+id/answer5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:hint="@string/NumberHint"
                     android:inputType="number"
+                    android:tag="answer5"
                     android:padding="10dp" />
 
             </TableRow>
@@ -267,21 +273,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question7"
+                    android:id="@+id/question6"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question7" />
+                    android:text="@string/symptoms6" />
 
                 <EditText
-                    android:id="@+id/answer7"
+                    android:id="@+id/answer6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:hint="@string/NumberHint"
                     android:inputType="number"
+                    android:tag="answer6"
                     android:padding="10dp" />
 
             </TableRow>
@@ -292,22 +299,13 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question8"
+                    android:id="@+id/symptoms2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question8" />
-
-                <EditText
-                    android:id="@+id/answer8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:hint="@string/NumberHint"
-                    android:inputType="number"
-                    android:padding="10dp" />
+                    android:text="@string/SymptomsII" />
 
             </TableRow>
 
@@ -317,21 +315,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question9"
+                    android:id="@+id/question7"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question9" />
+                    android:text="@string/symptoms7" />
 
                 <EditText
-                    android:id="@+id/answer9"
+                    android:id="@+id/answer7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:hint="@string/NumberHint"
                     android:inputType="number"
+                    android:tag="answer7"
                     android:padding="10dp" />
 
             </TableRow>
@@ -342,21 +341,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question10"
+                    android:id="@+id/question8"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question10" />
+                    android:text="@string/symptoms8" />
 
                 <EditText
-                    android:id="@+id/answer10"
+                    android:id="@+id/answer8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:hint="@string/NumberHint"
                     android:inputType="number"
+                    android:tag="answer8"
                     android:padding="10dp" />
 
             </TableRow>
@@ -367,21 +367,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question11"
+                    android:id="@+id/question9"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question11" />
+                    android:text="@string/symptoms9" />
 
                 <EditText
-                    android:id="@+id/answer11"
+                    android:id="@+id/answer9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:hint="@string/NumberHint"
                     android:inputType="number"
+                    android:tag="answer9"
                     android:padding="10dp" />
 
             </TableRow>
@@ -392,21 +393,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question12"
+                    android:id="@+id/question10"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question12" />
+                    android:text="@string/symptoms10" />
 
                 <EditText
-                    android:id="@+id/answer12"
+                    android:id="@+id/answer10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:hint="@string/NumberHint"
                     android:inputType="number"
+                    android:tag="answer10"
                     android:padding="10dp" />
 
             </TableRow>
@@ -417,22 +419,13 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question13"
+                    android:id="@+id/treatment"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question13" />
-
-                <EditText
-                    android:id="@+id/answer13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:hint="@string/NumberHint"
-                    android:inputType="number"
-                    android:padding="10dp" />
+                    android:text="@string/Treatment" />
 
             </TableRow>
 
@@ -442,21 +435,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question14"
+                    android:id="@+id/question11"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question14" />
+                    android:text="@string/treatment1" />
 
                 <EditText
-                    android:id="@+id/answer14"
+                    android:id="@+id/answer11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:hint="@string/NumberHint"
                     android:inputType="number"
+                    android:tag="answer11"
                     android:padding="10dp" />
 
             </TableRow>
@@ -467,21 +461,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question15"
+                    android:id="@+id/question12"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question15" />
+                    android:text="@string/treatment2" />
 
                 <EditText
-                    android:id="@+id/answer15"
+                    android:id="@+id/answer12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:hint="@string/NumberHint"
                     android:inputType="number"
+                    android:tag="answer12"
                     android:padding="10dp" />
 
             </TableRow>
@@ -492,21 +487,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question16"
+                    android:id="@+id/question13"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question16" />
+                    android:text="@string/treatment3" />
 
                 <EditText
-                    android:id="@+id/answer16"
+                    android:id="@+id/answer13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:hint="@string/NumberHint"
                     android:inputType="number"
+                    android:tag="answer13"
                     android:padding="10dp" />
 
             </TableRow>
@@ -517,21 +513,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question17"
+                    android:id="@+id/question14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question17" />
+                    android:text="@string/treatment4" />
 
                 <EditText
-                    android:id="@+id/answer17"
+                    android:id="@+id/answer14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:hint="@string/NumberHint"
                     android:inputType="number"
+                    android:tag="answer14"
                     android:padding="10dp" />
 
             </TableRow>
@@ -542,21 +539,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question18"
+                    android:id="@+id/question15"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question18" />
+                    android:text="@string/treatment5" />
 
                 <EditText
-                    android:id="@+id/answer18"
+                    android:id="@+id/answer15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:hint="@string/NumberHint"
                     android:inputType="number"
+                    android:tag="answer15"
                     android:padding="10dp" />
 
             </TableRow>
@@ -567,22 +565,13 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question19"
+                    android:id="@+id/worry"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question19" />
-
-                <EditText
-                    android:id="@+id/answer19"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:hint="@string/NumberHint"
-                    android:inputType="number"
-                    android:padding="10dp" />
+                    android:text="@string/Worry" />
 
             </TableRow>
 
@@ -592,21 +581,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question20"
+                    android:id="@+id/question16"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question20" />
+                    android:text="@string/worry1" />
 
                 <EditText
-                    android:id="@+id/answer20"
+                    android:id="@+id/answer16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:hint="@string/NumberHint"
                     android:inputType="number"
+                    android:tag="answer16"
                     android:padding="10dp" />
 
             </TableRow>
@@ -617,19 +607,47 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question21"
+                    android:id="@+id/question17"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question21" />
+                    android:text="@string/worry2" />
 
                 <EditText
-                    android:id="@+id/answer21"
+                    android:id="@+id/answer17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:hint="@string/NumberHint"
+                    android:inputType="number"
+                    android:tag="answer17"
+                    android:padding="10dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/row22"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/question18"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingVertical="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/worry3" />
+
+                <EditText
+                    android:id="@+id/answer18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:inputType="number"
+                    android:tag="answer18"
                     android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
@@ -641,21 +659,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question23"
+                    android:id="@+id/question19"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question23" />
+                    android:text="@string/worry4" />
 
                 <EditText
-                    android:id="@+id/answer23"
+                    android:id="@+id/answer19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:hint="@string/YesNoHint"
-                    android:inputType="text"
+                    android:inputType="number"
+                    android:tag="answer19"
+                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
@@ -666,22 +685,13 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question24"
+                    android:id="@+id/communication"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question24" />
-
-                <EditText
-                    android:id="@+id/answer24"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:hint="@string/YesNoHint"
-                    android:inputType="text"
-                    android:padding="10dp" />
+                    android:text="@string/Communication" />
 
             </TableRow>
 
@@ -691,21 +701,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question25"
+                    android:id="@+id/question20"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question25" />
+                    android:text="@string/comm1" />
 
                 <EditText
-                    android:id="@+id/answer25"
+                    android:id="@+id/answer20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:hint="@string/YesNoHint"
-                    android:inputType="text"
+                    android:inputType="number"
+                    android:tag="answer20"
+                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
@@ -716,21 +727,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question26"
+                    android:id="@+id/question21"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question26" />
+                    android:text="@string/comm2" />
 
                 <EditText
-                    android:id="@+id/answer26"
+                    android:id="@+id/answer21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:hint="@string/YesNoHint"
-                    android:inputType="text"
+                    android:inputType="number"
+                    android:tag="answer21"
+                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
@@ -741,21 +753,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question27"
+                    android:id="@+id/question22"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question27" />
+                    android:text="@string/comm3" />
 
                 <EditText
-                    android:id="@+id/answer27"
+                    android:id="@+id/answer22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:hint="@string/YesNoHint"
-                    android:inputType="text"
+                    android:inputType="number"
+                    android:tag="answer22"
+                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
@@ -766,21 +779,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question28"
+                    android:id="@+id/question23"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question28" />
+                    android:text="@string/comm4" />
 
                 <EditText
-                    android:id="@+id/answer28"
+                    android:id="@+id/answer23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:hint="@string/YesNoHint"
-                    android:inputType="text"
+                    android:inputType="number"
+                    android:tag="answer23"
+                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
@@ -791,21 +805,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question29"
+                    android:id="@+id/question24"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question29" />
+                    android:text="@string/comm5" />
 
                 <EditText
-                    android:id="@+id/answer29"
+                    android:id="@+id/answer24"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:hint="@string/YesNoHint"
-                    android:inputType="text"
+                    android:inputType="number"
+                    android:tag="answer24"
+                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
@@ -816,22 +831,13 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question30"
+                    android:id="@+id/foodAndEating"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question30" />
-
-                <EditText
-                    android:id="@+id/answer30"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:hint="@string/YesNoHint"
-                    android:inputType="text"
-                    android:padding="10dp" />
+                    android:text="@string/FoodandEating" />
 
             </TableRow>
 
@@ -841,21 +847,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question31"
+                    android:id="@+id/question25"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question31" />
+                    android:text="@string/FandE1" />
 
                 <EditText
-                    android:id="@+id/answer31"
+                    android:id="@+id/answer25"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:hint="@string/YesNoHint"
-                    android:inputType="text"
+                    android:inputType="number"
+                    android:tag="answer25"
+                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
@@ -866,21 +873,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question32"
+                    android:id="@+id/question26"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question32" />
+                    android:text="@string/FandE2" />
 
                 <EditText
-                    android:id="@+id/answer32"
+                    android:id="@+id/answer26"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:hint="@string/YesNoHint"
-                    android:inputType="text"
+                    android:inputType="number"
+                    android:tag="answer26"
+                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
@@ -891,21 +899,22 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question33"
+                    android:id="@+id/question27"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question33" />
+                    android:text="@string/FandE3" />
 
                 <EditText
-                    android:id="@+id/answer33"
+                    android:id="@+id/answer27"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:hint="@string/YesNoHint"
-                    android:inputType="text"
+                    android:inputType="number"
+                    android:tag="answer27"
+                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
@@ -916,21 +925,115 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/question34"
+                    android:id="@+id/question28"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/question34" />
+                    android:text="@string/FandE4" />
 
                 <EditText
-                    android:id="@+id/answer34"
+                    android:id="@+id/answer28"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:hint="@string/YesNoHint"
-                    android:inputType="text"
+                    android:inputType="number"
+                    android:tag="answer28"
+                    android:hint="@string/NumberHint"
+                    android:padding="10dp" />
+
+            </TableRow>
+            <TableRow
+                android:id="@+id/row35"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/foodFeelings"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingVertical="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/FoodFeelings" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/row36"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/question29"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingVertical="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/feelings1" />
+
+                <EditText
+                    android:id="@+id/answer29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:inputType="number"
+                    android:tag="answer29"
+                    android:hint="@string/NumberHint"
+                    android:padding="10dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/row37"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/question30"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingVertical="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/feelings2" />
+
+                <EditText
+                    android:id="@+id/answer30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:inputType="number"
+                    android:tag="answer30"
+                    android:hint="@string/NumberHint"
+                    android:padding="10dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/row38"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/question31"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingVertical="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/feelings3" />
+
+                <EditText
+                    android:id="@+id/answer31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:inputType="number"
+                    android:tag="answer31"
+                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
@@ -947,9 +1050,11 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
+            android:id="@+id/saveButton"
             android:layout_width="200dp"
             android:layout_height="48dp"
             android:layout_centerInParent="true"
+            android:background="@drawable/rounded_edittext_bg"
             android:fontFamily="@font/lato_medium"
             android:paddingLeft="20dp"
             android:paddingTop="5dp"
@@ -957,9 +1062,8 @@
             android:paddingBottom="5dp"
             android:text="@string/saveButton"
             android:textColor="#FFFFFF"
-            android:background="@drawable/rounded_edittext_bg"
-            app:backgroundTint="@color/primary"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:backgroundTint="@color/primary" />
 
     </RelativeLayout>
 
