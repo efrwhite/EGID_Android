@@ -3,3 +3,8 @@ local.properties
 /.gradle
 /.gradle
 /.idea
+.gradle/8.2/executionHistory/executionHistory.bin
+.gradle/8.2/executionHistory/executionHistory.bin
+.gradle/8.2/executionHistory/executionHistory.lock
+.gradle/file-system.probe
+.idea/.name
