@@ -8,29 +8,43 @@
     android:background="@color/primaryBackground"
     tools:context="SymptomCheckerActivity">
 
-    <RelativeLayout
-        android:id="@+id/navBar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/primaryBackground"
-        app:layout_constraintEnd_toEndOf="parent"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="38dp"
-            android:layout_centerInParent="true"
-            android:fontFamily="@font/lato_medium"
-            android:paddingLeft="20dp"
-            android:paddingTop="5dp"
-            android:paddingRight="20dp"
-            android:paddingBottom="5dp"
-            android:text="@string/qualityOfLifeChecker"
-            android:textColor="@color/primary"
-            android:textSize="20sp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/symptomScoreChecker"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:fontFamily="@font/lato_medium"
+                android:textSize="20sp"
+                android:textColor="@color/primary"
+                android:layout_centerInParent="true" />
+
+            <Button
+                android:id="@+id/resultsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/results"
+                android:background="?attr/selectableItemBackground"
+                android:textAllCaps="false"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/primary"
+                android:layout_marginEnd="16dp" />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:id="@+id/keyOptions"
@@ -44,7 +58,7 @@
         android:paddingBottom="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/navBar">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <TextView
             android:layout_width="wrap_content"
@@ -54,27 +68,27 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Qkey0" />
+            android:text="@string/symptomKey0" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Qkey1" />
+            android:text="@string/symptomKey1" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Qkey2" />
+            android:text="@string/symptomKey2" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Qkey3" />
+            android:text="@string/symptomKey3" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Qkey4" />
+            android:text="@string/symptomKey4" />
 
         <!-- Repeat for each key option -->
 
@@ -97,7 +111,7 @@
             android:stretchColumns="0">
 
             <TableRow
-                android:id="@+id/dateRow"
+                android:id="@+id/row1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -115,25 +129,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:inputType="date"
                     android:padding="10dp"
                     tools:ignore="Autofill" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/row1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/symptoms1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingVertical="10dp"
-                    android:paddingEnd="10dp"
-                    android:text="@string/SymptomsI" />
 
             </TableRow>
 
@@ -149,7 +146,7 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/symptoms1" />
+                    android:text="@string/question2" />
 
                 <EditText
                     android:id="@+id/answer1"
@@ -175,7 +172,7 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/symptoms2" />
+                    android:text="@string/question3" />
 
                 <EditText
                     android:id="@+id/answer2"
@@ -201,7 +198,7 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/symptoms3" />
+                    android:text="@string/question4" />
 
                 <EditText
                     android:id="@+id/answer3"
@@ -227,7 +224,7 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/symptoms4" />
+                    android:text="@string/question5" />
 
                 <EditText
                     android:id="@+id/answer4"
@@ -253,7 +250,7 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/symptoms5" />
+                    android:text="@string/question6" />
 
                 <EditText
                     android:id="@+id/answer5"
@@ -279,7 +276,7 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/symptoms6" />
+                    android:text="@string/question7" />
 
                 <EditText
                     android:id="@+id/answer6"
@@ -299,29 +296,13 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/symptoms2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingVertical="10dp"
-                    android:paddingEnd="10dp"
-                    android:text="@string/SymptomsII" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/row9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
                     android:id="@+id/question7"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/symptoms7" />
+                    android:text="@string/question8" />
 
                 <EditText
                     android:id="@+id/answer7"
@@ -336,8 +317,8 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/row10"
-                android:layout_width="fill_parent"
+                android:id="@+id/row9"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -347,7 +328,7 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/symptoms8" />
+                    android:text="@string/question9" />
 
                 <EditText
                     android:id="@+id/answer8"
@@ -362,8 +343,8 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/row11"
-                android:layout_width="match_parent"
+                android:id="@+id/row10"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -373,7 +354,7 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/symptoms9" />
+                    android:text="@string/question10" />
 
                 <EditText
                     android:id="@+id/answer9"
@@ -388,7 +369,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/row12"
+                android:id="@+id/row11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -399,7 +380,7 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/symptoms10" />
+                    android:text="@string/question11" />
 
                 <EditText
                     android:id="@+id/answer10"
@@ -414,23 +395,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/row13"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/treatment"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingVertical="10dp"
-                    android:paddingEnd="10dp"
-                    android:text="@string/Treatment" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/row14"
+                android:id="@+id/row12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -441,7 +406,7 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/treatment1" />
+                    android:text="@string/question12" />
 
                 <EditText
                     android:id="@+id/answer11"
@@ -456,8 +421,8 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/row15"
-                android:layout_width="match_parent"
+                android:id="@+id/row13"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -467,7 +432,7 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/treatment2" />
+                    android:text="@string/question13" />
 
                 <EditText
                     android:id="@+id/answer12"
@@ -482,8 +447,8 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/row16"
-                android:layout_width="fill_parent"
+                android:id="@+id/row14"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -493,7 +458,7 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/treatment3" />
+                    android:text="@string/question14" />
 
                 <EditText
                     android:id="@+id/answer13"
@@ -508,7 +473,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/row17"
+                android:id="@+id/row15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -519,7 +484,7 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/treatment4" />
+                    android:text="@string/question15" />
 
                 <EditText
                     android:id="@+id/answer14"
@@ -534,8 +499,8 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/row18"
-                android:layout_width="match_parent"
+                android:id="@+id/row16"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -545,7 +510,7 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/treatment5" />
+                    android:text="@string/question16" />
 
                 <EditText
                     android:id="@+id/answer15"
@@ -560,23 +525,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/row19"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/worry"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingVertical="10dp"
-                    android:paddingEnd="10dp"
-                    android:text="@string/Worry" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/row20"
+                android:id="@+id/row17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -587,7 +536,7 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/worry1" />
+                    android:text="@string/question17" />
 
                 <EditText
                     android:id="@+id/answer16"
@@ -602,7 +551,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/row21"
+                android:id="@+id/row18"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -613,7 +562,7 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/worry2" />
+                    android:text="@string/question18" />
 
                 <EditText
                     android:id="@+id/answer17"
@@ -628,7 +577,7 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/row22"
+                android:id="@+id/row19"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
 
@@ -639,22 +588,22 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/worry3" />
+                    android:text="@string/question19" />
 
                 <EditText
                     android:id="@+id/answer18"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:hint="@string/NumberHint"
                     android:inputType="number"
                     android:tag="answer18"
-                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
 
             <TableRow
-                android:id="@+id/row23"
+                android:id="@+id/row20"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -665,39 +614,23 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/worry4" />
+                    android:text="@string/question20" />
 
                 <EditText
                     android:id="@+id/answer19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:hint="@string/NumberHint"
                     android:inputType="number"
                     android:tag="answer19"
-                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
 
             <TableRow
-                android:id="@+id/row24"
+                android:id="@+id/row21"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/communication"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingVertical="10dp"
-                    android:paddingEnd="10dp"
-                    android:text="@string/Communication" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/row25"
-                android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -707,22 +640,36 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/comm1" />
+                    android:text="@string/question21" />
 
                 <EditText
                     android:id="@+id/answer20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:inputType="number"
-                    android:tag="answer20"
                     android:hint="@string/NumberHint"
+                    android:tag="answer20"
                     android:padding="10dp" />
 
             </TableRow>
 
             <TableRow
-                android:id="@+id/row26"
+                android:id="@+id/row22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/YesNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingVertical="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/YesNo" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/row23"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -733,22 +680,22 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/comm2" />
+                    android:text="@string/question23" />
 
                 <EditText
                     android:id="@+id/answer21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:inputType="number"
+                    android:hint="@string/YesNoHint"
+                    android:inputType="text"
                     android:tag="answer21"
-                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
 
             <TableRow
-                android:id="@+id/row27"
+                android:id="@+id/row24"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -759,22 +706,22 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/comm3" />
+                    android:text="@string/question24" />
 
                 <EditText
                     android:id="@+id/answer22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:inputType="number"
+                    android:hint="@string/YesNoHint"
+                    android:inputType="text"
                     android:tag="answer22"
-                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
 
             <TableRow
-                android:id="@+id/row28"
+                android:id="@+id/row25"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
 
@@ -785,22 +732,22 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/comm4" />
+                    android:text="@string/question25" />
 
                 <EditText
                     android:id="@+id/answer23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:inputType="number"
+                    android:hint="@string/YesNoHint"
+                    android:inputType="text"
                     android:tag="answer23"
-                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
 
             <TableRow
-                android:id="@+id/row29"
+                android:id="@+id/row26"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -811,39 +758,23 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/comm5" />
+                    android:text="@string/question26" />
 
                 <EditText
                     android:id="@+id/answer24"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:inputType="number"
+                    android:hint="@string/YesNoHint"
+                    android:inputType="text"
                     android:tag="answer24"
-                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
 
             <TableRow
-                android:id="@+id/row30"
+                android:id="@+id/row27"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/foodAndEating"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingVertical="10dp"
-                    android:paddingEnd="10dp"
-                    android:text="@string/FoodandEating" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/row31"
-                android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -853,23 +784,23 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/FandE1" />
+                    android:text="@string/question27" />
 
                 <EditText
                     android:id="@+id/answer25"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:inputType="number"
+                    android:hint="@string/YesNoHint"
+                    android:inputType="text"
                     android:tag="answer25"
-                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
 
             <TableRow
-                android:id="@+id/row32"
-                android:layout_width="match_parent"
+                android:id="@+id/row28"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -879,22 +810,22 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/FandE2" />
+                    android:text="@string/question28" />
 
                 <EditText
                     android:id="@+id/answer26"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:inputType="number"
+                    android:hint="@string/YesNoHint"
+                    android:inputType="text"
                     android:tag="answer26"
-                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
 
             <TableRow
-                android:id="@+id/row33"
+                android:id="@+id/row29"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -905,23 +836,23 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/FandE3" />
+                    android:text="@string/question29" />
 
                 <EditText
                     android:id="@+id/answer27"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:inputType="number"
+                    android:hint="@string/YesNoHint"
+                    android:inputType="text"
                     android:tag="answer27"
-                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
 
             <TableRow
-                android:id="@+id/row34"
-                android:layout_width="fill_parent"
+                android:id="@+id/row30"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -931,38 +862,23 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/FandE4" />
+                    android:text="@string/question30" />
 
                 <EditText
                     android:id="@+id/answer28"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:inputType="number"
+                    android:hint="@string/YesNoHint"
+                    android:inputType="text"
                     android:tag="answer28"
-                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
+
             <TableRow
-                android:id="@+id/row35"
+                android:id="@+id/row31"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/foodFeelings"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingVertical="10dp"
-                    android:paddingEnd="10dp"
-                    android:text="@string/FoodFeelings" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/row36"
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -972,22 +888,22 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/feelings1" />
+                    android:text="@string/question31" />
 
                 <EditText
                     android:id="@+id/answer29"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:inputType="number"
+                    android:hint="@string/YesNoHint"
+                    android:inputType="text"
                     android:tag="answer29"
-                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
 
             <TableRow
-                android:id="@+id/row37"
+                android:id="@+id/row32"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -998,23 +914,23 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/feelings2" />
+                    android:text="@string/question32" />
 
                 <EditText
                     android:id="@+id/answer30"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:inputType="number"
+                    android:hint="@string/YesNoHint"
+                    android:inputType="text"
                     android:tag="answer30"
-                    android:hint="@string/NumberHint"
                     android:padding="10dp" />
 
             </TableRow>
 
             <TableRow
-                android:id="@+id/row38"
-                android:layout_width="fill_parent"
+                android:id="@+id/row33"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
@@ -1024,16 +940,42 @@
                     android:layout_weight="1"
                     android:paddingVertical="10dp"
                     android:paddingEnd="10dp"
-                    android:text="@string/feelings3" />
+                    android:text="@string/question33" />
 
                 <EditText
                     android:id="@+id/answer31"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:inputType="number"
+                    android:hint="@string/YesNoHint"
+                    android:inputType="text"
                     android:tag="answer31"
-                    android:hint="@string/NumberHint"
+                    android:padding="10dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/row34"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/question32"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingVertical="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="@string/question34" />
+
+                <EditText
+                    android:id="@+id/answer32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:hint="@string/YesNoHint"
+                    android:inputType="text"
+                    android:tag="answer32"
                     android:padding="10dp" />
 
             </TableRow>
@@ -1054,7 +996,6 @@
             android:layout_width="200dp"
             android:layout_height="48dp"
             android:layout_centerInParent="true"
-            android:background="@drawable/rounded_edittext_bg"
             android:fontFamily="@font/lato_medium"
             android:paddingLeft="20dp"
             android:paddingTop="5dp"
@@ -1062,8 +1003,9 @@
             android:paddingBottom="5dp"
             android:text="@string/saveButton"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            app:backgroundTint="@color/primary" />
+            android:background="@drawable/rounded_edittext_bg"
+            app:backgroundTint="@color/primary"
+            android:textSize="20sp" />
 
     </RelativeLayout>
 

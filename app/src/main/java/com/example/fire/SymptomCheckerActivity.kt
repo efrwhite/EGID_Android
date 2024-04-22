@@ -2,6 +2,7 @@ package com.example.fire
 
 import android.content.Context
 import android.os.Bundle
+import android.content.Intent
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -13,6 +14,8 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 
 class SymptomCheckerActivity : AppCompatActivity() {
+
+    private lateinit var resultsButton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_symptom_score_checker)
@@ -21,9 +24,37 @@ class SymptomCheckerActivity : AppCompatActivity() {
         saveButton.setOnClickListener {
             saveScores()
         }
+
+        resultsButton = findViewById(R.id.resultsButton)
+
+        resultsButton.setOnClickListener {
+            val sharedPreferences = getSharedPreferences("AppPreferences", Context.MODE_PRIVATE)
+            val intent = Intent(this, ResultsActivity::class.java).apply {
+                putExtra("sourceActivity", "SymptomChecker")
+            }
+            startActivity(intent)
+        }
+
     }
 
+    private fun areAllFieldsFilled(): Boolean {
+        val numberOfQuestions = 32
+        for (i in 1..numberOfQuestions) {
+            val answerId = resources.getIdentifier("answer$i", "id", packageName)
+            val answer = findViewById<EditText>(answerId)
+            if (answer.text.toString().trim().isEmpty()) {
+                return false // Found an empty field, return false
+            }
+        }
+        return true // All fields are filled
+    }
     private fun saveScores() {
+
+        if (!areAllFieldsFilled()) {
+            Toast.makeText(this, "Please fill out all fields before saving.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         val totalScore = calculateTotalScore()
         val responses = collectResponses()
         val symptomDescriptions = collectSymptomDescriptions()
@@ -35,12 +66,12 @@ class SymptomCheckerActivity : AppCompatActivity() {
 
     private fun calculateTotalScore(): Int {
         var score = 0
-        for (i in 2..20) { // IDs for numerical score questions
+        for (i in 1..20) { // IDs for numerical score questions
             val answerId = resources.getIdentifier("answer$i", "id", packageName)
             val answer = findViewById<EditText>(answerId)
             score += answer.text.toString().toIntOrNull() ?: 0
         }
-        for (i in 22..33) { // IDs for Y/N questions
+        for (i in 21..32) { // IDs for Y/N questions
             val answerId = resources.getIdentifier("answer$i", "id", packageName)
             val answer = findViewById<EditText>(answerId)
             score += if (answer.text.toString().equals("y", ignoreCase = true)) 1 else 0
@@ -50,7 +81,7 @@ class SymptomCheckerActivity : AppCompatActivity() {
 
     private fun collectResponses(): List<String> {
         val responses = mutableListOf<String>()
-        for (i in 2..33) {
+        for (i in 1..32) {
             val answerId = resources.getIdentifier("answer$i", "id", packageName)
             val answer = findViewById<EditText>(answerId)
             responses.add(answer.text.toString())
@@ -60,7 +91,7 @@ class SymptomCheckerActivity : AppCompatActivity() {
 
     private fun collectSymptomDescriptions(): List<String> {
         val descriptions = mutableListOf<String>()
-        for (i in 22..33) { // Assuming IDs 22 to 33 are for Y/N questions
+        for (i in 21..32) { // Assuming IDs 22 to 33 are for Y/N questions
             val answerId = resources.getIdentifier("answer$i", "id", packageName)
             val answer = findViewById<EditText>(answerId)
             if (answer.text.toString().equals("y", ignoreCase = true)) {
@@ -79,7 +110,7 @@ class SymptomCheckerActivity : AppCompatActivity() {
             return
         }
 
-        val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        val dateFormat = SimpleDateFormat("MM/dd/yyyy", Locale.getDefault())
         val dateTimestamp = dateFormat.parse(date)?.time ?: System.currentTimeMillis() // Default to current time if parsing fails
 
         val data = hashMapOf(

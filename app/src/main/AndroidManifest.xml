@@ -43,7 +43,6 @@
         <activity android:name=".WhoIsAffectedActivity" />
         <activity android:name=".AddCaregiverActivity" />
         <activity android:name=".AddChildActivity" />
-        <activity android:name=".DietPlanActivity" />
         <activity android:name=".DocumentsActivity" />
         <activity android:name=".MedicationsActivity" />
         <activity android:name=".AddMedicationActivity" />
@@ -52,6 +51,7 @@
         <activity android:name=".Diet2Activity"/>
         <activity android:name=".Diet4Activity"/>
         <activity android:name=".Diet6Activity"/>
+        <activity android:name=".ResultsActivity"/>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.example.fire
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -12,6 +13,8 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 
 class QoLActivity : AppCompatActivity() {
+
+    private lateinit var resultsButton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_qol_score_checker)
@@ -20,9 +23,36 @@ class QoLActivity : AppCompatActivity() {
         saveButton.setOnClickListener {
             saveScores()
         }
+        resultsButton = findViewById(R.id.resultsButton)
+
+        resultsButton.setOnClickListener {
+            val sharedPreferences = getSharedPreferences("AppPreferences", Context.MODE_PRIVATE)
+            val intent = Intent(this, ResultsActivity::class.java).apply {
+                putExtra("sourceActivity", "QoLActivity")
+
+            }
+            startActivity(intent)
+        }
     }
 
+    private fun areAllFieldsFilled(): Boolean {
+        val numberOfQuestions = 31
+        for (i in 1..numberOfQuestions) {
+            val answerId = resources.getIdentifier("answer$i", "id", packageName)
+            val answer = findViewById<EditText>(answerId)
+            if (answer.text.toString().trim().isEmpty()) {
+                return false // Found an empty field, return false
+            }
+        }
+        return true // All fields are filled
+    }
     private fun saveScores() {
+
+        if (!areAllFieldsFilled()) {
+            Toast.makeText(this, "Please fill out all fields before saving.", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         val totalScore = calculateTotalScore()
         val responses = collectResponses()
         val dateInput: EditText = findViewById(R.id.visitDateInput)
@@ -65,7 +95,7 @@ class QoLActivity : AppCompatActivity() {
             return
         }
 
-        val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        val dateFormat = SimpleDateFormat("MM/dd/yyyy", Locale.getDefault())
         val dateTimestamp = dateFormat.parse(date)?.time ?: run {
             Toast.makeText(this, "Invalid date format.", Toast.LENGTH_SHORT).show()
             return
