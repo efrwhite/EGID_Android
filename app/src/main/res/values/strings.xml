@@ -275,7 +275,7 @@
     <string name="add">Add</string>
 
 
-    <!-- Strings for X -->
+
 
     <!-- Strings for Child and Caregiver Profiles -->
     <string name="CaregiverTitle">Caregiver Profile</string>
@@ -291,6 +291,8 @@
 
     <!-- Strings for Symptom Score Checker -->
     <string name="symptomScoreChecker">Symptom Score</string>
+    <string name="results">Results</string>
+    <string name="genReport">Create Report</string>
     <string name="symptomKey">Key:</string>
     <string name="symptomKey0">0 - None</string>
     <string name="symptomKey1">1 - Mild</string>
@@ -300,6 +302,7 @@
     <string name="visitDate">Visit Date</string>
     <string name="NumberHint">0 – 4</string>
     <string name="YesNoHint">Y / N</string>
+    <string name="YesNo">Please input a Y if the symptom is present or N if not.</string>
     <string name="question2">How often does your child have trouble swallowing?</string>
     <string name="question3">How bad is your child\'s trouble swallowing?</string>
     <string name="question4">How often does your child feel like food gets stuck in their throat or chest?</string>
