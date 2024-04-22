@@ -1,6 +1,7 @@
 package com.example.fire
 
 import android.app.DatePickerDialog
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -32,6 +33,7 @@ class AddMedicationActivity : AppCompatActivity() {
     private lateinit var frequency: EditText
     private lateinit var discontinue: Switch
     private lateinit var notes: EditText
+    private var childId: String? = null
     private var medicationId: String? = null
 
     private val firestore: FirebaseFirestore by lazy { FirebaseFirestore.getInstance()}
@@ -52,6 +54,7 @@ class AddMedicationActivity : AppCompatActivity() {
         endDate = endDatePickerButton.text.toString()
         discontinue = findViewById(R.id.discontinueSwitch)
         notes = findViewById(R.id.medNotesField)
+        childId = getCurrentChildId()
 
         calendar = Calendar.getInstance()
 
@@ -77,30 +80,39 @@ class AddMedicationActivity : AppCompatActivity() {
             }
         }
 
-        //check if med needs to be moved to past medications
-        checkEndDate()
+    }
+
+    private fun getCurrentChildId(): String? {
+        val sharedPreferences = getSharedPreferences("AppPreferences", Context.MODE_PRIVATE)
+        return sharedPreferences.getString("CurrentChildId", null)
     }
 
     private fun saveMedication() {
         val medicationMap = hashMapOf(
-            "medName" to medName.text.toString(),
-            "dosage" to dosage.text.toString(),
-            "startDate" to startDate,
-            "endDate" to endDate,
-            "frequency" to frequency.text.toString(),
+            "medName" to medName.text.toString().trim(),
+            "dosage" to dosage.text.toString().trim(),
+            "startDate" to datePickerButton.text.toString().trim(),
+            "endDate" to endDatePickerButton.text.toString().trim(),
+            "frequency" to frequency.text.toString().trim(),
             "discontinue" to discontinue.isChecked,
-            "notes" to notes.text.toString()
+            "notes" to notes.text.toString().trim(),
+            "childId" to  childId
         )
 
         firestore.collection("Medications").add(medicationMap)
             .addOnSuccessListener {documentReference ->
                 val medicationId = documentReference.id
                 Toast.makeText(this, "Medication added successfully", Toast.LENGTH_SHORT).show()
-                Intent(this, MedicationsActivity::class.java)
             }
             .addOnFailureListener{e ->
                 Toast.makeText(this, "Failed to add medication: ${e.message}", Toast.LENGTH_SHORT).show()
             }
+
+        val intent = Intent(this, HomeActivity::class.java).apply {
+            // Clear the activity stack to prevent backtracking
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+        startActivity(intent)
     }
 
     private fun updateMedication() {
@@ -111,40 +123,26 @@ class AddMedicationActivity : AppCompatActivity() {
             "endDate" to endDate.trim(),
             "frequency" to frequency.text.toString().trim(),
             "discontinue" to discontinue.isChecked,
-            "notes" to notes.text.toString().trim()
+            "notes" to notes.text.toString().trim(),
+            "childId" to  childId
         )
 
         medicationId?.let {
             firestore.collection("Medications").document(it).set(medicationMap)
                 .addOnSuccessListener {
-                    Toast.makeText(this, "Medication updates successfully", Toast.LENGTH_SHORT).show()
-                    checkEndDate()
+                    Toast.makeText(this, "Medication updated successfully", Toast.LENGTH_SHORT).show()
+                    //checkEndDate()
                 }
                 .addOnFailureListener {e ->
                     Toast.makeText(this, "Failed to update medication: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
         }
-    }
 
-    private fun checkEndDate() {
-        // Fetch all medications and check if their end date has passed
-        firestore.collection("Medications").get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    val endDate = document.getString("endDate")
-                    if (endDate != null) {
-                        val endDateMillis = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).parse(endDate)?.time ?: 0
-                        val currentDateMillis = Calendar.getInstance().timeInMillis
-                        if (endDateMillis < currentDateMillis) {
-                            // End date has passed, move medication to past medications
-                            //moveMedicationToPast(document.id)
-                        }
-                    }
-                }
-            }
-            .addOnFailureListener { e ->
-                // Handle failure
-            }
+        val intent = Intent(this, HomeActivity::class.java).apply {
+            // Clear the activity stack to prevent backtracking
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+        startActivity(intent)
     }
 
     private fun fetchAndPopulateMedicationData(medicationId: String) {

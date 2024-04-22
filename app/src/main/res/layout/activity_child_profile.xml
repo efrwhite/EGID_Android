@@ -56,13 +56,14 @@
         android:id="@+id/FirstName"
         android:layout_width="100dp"
         android:layout_height="42dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/lato_bold"
         android:gravity="center"
         android:text="@string/FirstName"
         android:textColor="@color/primary"
         android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/leftGuideline"
+        app:layout_constraintHorizontal_bias="0.29"
         app:layout_constraintStart_toStartOf="@+id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@+id/button"
         tools:visibility="visible" />
@@ -96,7 +97,7 @@
         android:id="@+id/imageView"
         android:layout_width="120dp"
         android:layout_height="108dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/navBar"
@@ -132,8 +133,10 @@
         app:backgroundTint="@color/primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Diet" />
+        app:layout_constraintTop_toBottomOf="@+id/Diet"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/Birthdate"
@@ -169,9 +172,10 @@
         android:id="@+id/editText2"
         android:layout_width="150dp"
         android:layout_height="48dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/rounded_edittext_bg"
         app:layout_constraintEnd_toEndOf="@+id/rightGuideline"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="@+id/middleGuideline"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
@@ -247,5 +251,12 @@
             android:inputType="none" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
