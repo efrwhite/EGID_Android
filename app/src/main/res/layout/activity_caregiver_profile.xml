@@ -128,7 +128,7 @@
         android:id="@+id/saveButton"
         android:layout_width="220dp"
         android:layout_height="31dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:paddingTop="2dp"

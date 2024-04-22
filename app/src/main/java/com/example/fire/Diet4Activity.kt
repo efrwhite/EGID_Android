@@ -10,7 +10,7 @@ class Diet4Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_diet1)
+        setContentView(R.layout.activity_diet4)
 
         //initialize buttons
         allergiesButton = findViewById(R.id.allergiesButton)

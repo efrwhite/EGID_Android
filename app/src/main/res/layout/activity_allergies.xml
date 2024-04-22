@@ -32,7 +32,7 @@
             android:paddingTop="5dp"
             android:paddingRight="20dp"
             android:paddingBottom="5dp"
-            android:text="@string/addAllergies"
+            android:text="Allergens"
             android:textColor="@color/primary"
             android:textSize="20sp" />
 
@@ -73,13 +73,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/allergenSectionHeader">
 
-        <LinearLayout
-            android:id="@+id/allergenLinearLayout"
+        <TableLayout
+            android:id="@+id/allergenTableLayout"
             android:layout_width="match_parent"
-            android:layout_height="38dp"
-            android:orientation="vertical">
-            <!-- Child items here -->
-        </LinearLayout>
+            android:layout_height="wrap_content">
+            <!-- Rows will be added programmatically -->
+        </TableLayout>
     </ScrollView>
 
     <!-- Guideline for Equal Division -->
@@ -125,23 +124,28 @@
         app:layout_constraintTop_toBottomOf="@+id/pastAllergenSectionHeader"
         app:layout_constraintVertical_bias="0.0">
 
-        <LinearLayout
-            android:id="@+id/pastAllergenLinearLayout"
+        <TableLayout
+            android:id="@+id/pastAllergenTableLayout"
             android:layout_width="match_parent"
-            android:layout_height="38dp"
-            android:orientation="vertical">
-            <!-- Child items here -->
-        </LinearLayout>
+            android:layout_height="wrap_content">
+            <!-- Rows will be added programmatically -->
+        </TableLayout>
     </ScrollView>
 
     <Button
-        android:id="@+id/addButton"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="202dp"
-        android:background="@drawable/add"
-        app:backgroundTint="@color/primary"
-        app:layout_constraintStart_toEndOf="@+id/currentAllergenTitle"
+        android:id="@+id/addAllergenButton"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/lato_medium"
+        android:text="@string/add"
+        android:textColor="@color/primary"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/allergenSectionHeader"
+        app:layout_constraintEnd_toEndOf="@+id/allergenSectionHeader"
         app:layout_constraintTop_toTopOf="@+id/allergenSectionHeader"
         tools:ignore="SpeakableTextPresentCheck" />
 

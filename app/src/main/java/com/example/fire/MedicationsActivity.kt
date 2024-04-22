@@ -1,6 +1,7 @@
 package com.example.fire
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -14,6 +15,8 @@ import com.google.firebase.ktx.Firebase
 class MedicationsActivity : AppCompatActivity() {
 
     private lateinit var addMedButton: Button
+
+    private lateinit var childId: String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,11 +38,15 @@ class MedicationsActivity : AppCompatActivity() {
 
     }
 
+    private fun getCurrentChildId(): String? {
+        val sharedPreferences = getSharedPreferences("AppPreferences", Context.MODE_PRIVATE)
+        return sharedPreferences.getString("CurrentChildId", null)
+    }
+
     private fun fetchAndDisplayMedications(medTableLayout: TableLayout, pastMedTableLayout: TableLayout) {
-        val userId = FirebaseAuth.getInstance().currentUser?.uid ?: return
+        val childId = getCurrentChildId()
         Firebase.firestore.collection("Medications")
-            .whereEqualTo("userId", userId)
-            .whereEqualTo("isCurrent", true)
+            .whereEqualTo("childId", childId)
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
@@ -63,6 +70,8 @@ class MedicationsActivity : AppCompatActivity() {
         val row = layoutInflater.inflate(R.layout.table_row_item, null)
         val nameTextView = row.findViewById<TextView>(R.id.nameTextView)
         val editButton = row.findViewById<Button>(R.id.editButton)
+
+        nameTextView.text = name
 
         nameTextView.text = name
         editButton.setOnClickListener {

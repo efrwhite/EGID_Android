@@ -1,5 +1,6 @@
 package com.example.fire
 
+//import DocumentsActivity
 import android.content.Intent
 import android.content.Context
 import android.os.Bundle
@@ -34,14 +35,7 @@ class PlanActivity : AppCompatActivity() {
         }
         //set onClickListeners for Buttons
         dietButton.setOnClickListener {
-            val intent = when (childDiet) {
-                "Diet 1" -> Intent(this, Diet1Activity::class.java)
-                "Diet 2" -> Intent(this, Diet2Activity::class.java)
-                "Diet 4" -> Intent(this, Diet4Activity::class.java)
-                "Diet 6" -> Intent(this, Diet6Activity::class.java)
-                else -> throw IllegalArgumentException("Invalid diet")
-            }
-            startActivity(intent)
+            goToDietActivity()
         }
 
         medicationsButton.setOnClickListener {
@@ -79,6 +73,22 @@ class PlanActivity : AppCompatActivity() {
     private fun getCurrentChildId(): String? {
         val sharedPreferences = getSharedPreferences("AppPreferences", Context.MODE_PRIVATE)
         return sharedPreferences.getString("CurrentChildId", null)
+    }
+
+    private fun goToDietActivity(){
+        val intent: Intent
+        if(childDiet == "Diet 1"){
+            intent = Intent(this, Diet1Activity::class.java)
+        } else if (childDiet == "Diet 2") {
+            intent = Intent(this, Diet2Activity::class.java)
+        } else if (childDiet == "Diet 4"){
+            intent = Intent(this, Diet4Activity::class.java)
+        } else if (childDiet == "Diet 6"){
+            intent = Intent(this, Diet6Activity::class.java)
+        } else {
+            throw IllegalArgumentException("Invalid diet")
+        }
+        startActivity(intent)
     }
 
 }

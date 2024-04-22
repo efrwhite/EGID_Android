@@ -13,7 +13,7 @@
     <RelativeLayout
         android:id="@+id/navBar"
         android:layout_width="411dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:background="@color/primaryBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
             android:paddingTop="5dp"
             android:paddingRight="20dp"
             android:paddingBottom="5dp"
-            android:text="@string/addAllergies"
+            android:text="Add Allergen"
             android:textColor="@color/primary"
             android:textSize="20sp" />
 
@@ -43,7 +43,7 @@
         android:layout_width="100dp"
         android:layout_height="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="72dp"
         android:fontFamily="@font/lato_medium"
         android:text="@string/allergen"
         android:textColor="@color/primary"
@@ -55,7 +55,7 @@
         android:id="@+id/allergiesNameField"
         android:layout_width="225dp"
         android:layout_height="48dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
@@ -114,7 +114,6 @@
         android:id="@+id/allergyNotesField"
         android:layout_width="350dp"
         android:layout_height="150dp"
-        android:layout_marginTop="0dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:inputType="text"
@@ -127,7 +126,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addAllergenNotes" />
+        app:layout_constraintTop_toBottomOf="@+id/addAllergenNotes"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/frequencyField"
@@ -156,12 +156,19 @@
         android:layout_marginStart="52dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="48dp"
         android:scaleX="1.5"
         android:scaleY="1.5"
+        app:layout_constraintBottom_toTopOf="@+id/allergyNotesField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.676"
         app:layout_constraintStart_toEndOf="@+id/discontinueAllergen"
+<<<<<<< HEAD
+        app:layout_constraintTop_toBottomOf="@+id/frequencyField"
+        tools:ignore="MissingConstraints" />
+=======
         app:layout_constraintTop_toBottomOf="@+id/allergenFrequency" />
+>>>>>>> main
 
     <Button
         android:id="@+id/saveButton"
