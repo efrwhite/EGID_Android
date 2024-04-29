@@ -14,9 +14,9 @@
 
     <EditText
         android:id="@+id/editText3"
-        android:layout_width="110dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="46dp"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/rounded_edittext_bg"
         app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
         app:layout_constraintStart_toEndOf="@id/middleGuideline"
@@ -25,7 +25,7 @@
     <TextView
         android:id="@+id/LastName"
         android:layout_width="100dp"
-        android:layout_height="42dp"
+        android:layout_height="48dp"
         android:layout_marginTop="48dp"
         android:background="#00E0A2A2"
         android:fontFamily="@font/lato_bold"
@@ -33,16 +33,17 @@
         android:text="@string/LastName"
         android:textColor="@color/primary"
         android:visibility="visible"
-        app:layout_constraintEnd_toStartOf="@+id/middleGuideline"
+        app:layout_constraintEnd_toStartOf="@+id/leftGuideline"
+        app:layout_constraintHorizontal_bias="0.29"
         app:layout_constraintStart_toStartOf="@+id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@+id/FirstName"
         tools:visibility="visible" />
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="110dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/rounded_edittext_bg"
         app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
         app:layout_constraintStart_toStartOf="@+id/middleGuideline"
@@ -51,7 +52,7 @@
     <TextView
         android:id="@+id/FirstName"
         android:layout_width="100dp"
-        android:layout_height="42dp"
+        android:layout_height="48dp"
         android:layout_marginTop="48dp"
         android:background="#00E0A2A2"
         android:fontFamily="@font/lato_bold"
@@ -59,7 +60,8 @@
         android:text="@string/FirstName"
         android:textColor="@color/primary"
         android:visibility="visible"
-        app:layout_constraintEnd_toStartOf="@+id/middleGuideline"
+        app:layout_constraintEnd_toStartOf="@+id/leftGuideline"
+        app:layout_constraintHorizontal_bias="0.29"
         app:layout_constraintStart_toStartOf="@+id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@+id/Birthdate"
         tools:visibility="visible" />
@@ -127,8 +129,8 @@
     <Button
         android:id="@+id/saveButton"
         android:layout_width="220dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:paddingTop="2dp"
@@ -143,28 +145,31 @@
     <TextView
         android:id="@+id/Birthdate"
         android:layout_width="100dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="48dp"
-        android:background="#00E0A2A2"
+        android:layout_height="48dp"
         android:fontFamily="@font/lato_bold"
         android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/leftGuideline"
+        app:layout_constraintHorizontal_bias="0.29"
+        app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        android:layout_marginTop="48dp"
+        android:background="#00E0A2A2"
         android:text="@string/Username"
         android:textColor="@color/primary"
         android:visibility="visible"
-        app:layout_constraintEnd_toStartOf="@+id/middleGuideline"
-        app:layout_constraintStart_toStartOf="@+id/leftGuideline"
-        app:layout_constraintTop_toBottomOf="@+id/button"
         tools:visibility="visible" />
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="110dp"
-        android:layout_height="42dp"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
         android:layout_marginTop="48dp"
         android:background="@drawable/rounded_edittext_bg"
-        app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+        app:layout_constraintEnd_toEndOf="@+id/rightGuideline"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="@+id/middleGuideline"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/rightGuideline" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/middleGuideline"
