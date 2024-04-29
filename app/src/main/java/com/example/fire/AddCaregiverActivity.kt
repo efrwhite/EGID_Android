@@ -29,7 +29,14 @@ class AddCaregiverActivity : AppCompatActivity() {
         lastNameEditText = findViewById(R.id.editText3)
         saveButton = findViewById(R.id.saveButton)
 
-        // Check if we are in "edit" mode and if so, fetch and populate caregiver data
+        // Retrieve username from intent
+        val username = intent.getStringExtra("username")
+        if (username != null) {
+            usernameEditText.setText(username)
+            usernameEditText.isEnabled = false  // Disable editing if username is preset
+        }
+
+        // Check if we are in "edit" mode
         caregiverId = intent.getStringExtra("caregiverId")
         if (caregiverId != null) {
             mode = "edit"
@@ -44,6 +51,7 @@ class AddCaregiverActivity : AppCompatActivity() {
             }
         }
     }
+
 
     private fun populateCaregiverData(caregiverId: String) {
         // Fetch the caregiver document to get the parentUserId
@@ -70,13 +78,15 @@ class AddCaregiverActivity : AppCompatActivity() {
     }
 
     private fun fetchUsername(parentUserId: String) {
-        // Assuming the Usernames collection documents' ID is the username and contains a userId field
-        Firebase.firestore.collection("Usernames").whereEqualTo("userId", parentUserId).limit(1).get()
+        // Since document IDs are usernames and contain a 'userId' field for matching,
+        // the query should fetch based on 'userId' being equal to parentUserId.
+        Firebase.firestore.collection("Usernames")
+            .whereEqualTo("userId", parentUserId)
+            .get()
             .addOnSuccessListener { documents ->
-                if (!documents.isEmpty) {
-                    // The document ID is the username
-                    val document = documents.documents.first()
-                    val username = document.id // Document ID is the username
+                if (documents.documents.isNotEmpty()) {
+                    // Assuming the document ID (username) is what we need to display
+                    val username = documents.documents.first().id
                     usernameEditText.setText(username)
                     usernameEditText.isEnabled = false // Make the EditText uneditable
                 } else {

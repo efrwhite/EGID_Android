@@ -25,7 +25,6 @@
           <stringArguments>
             <stringArg name="classpath">
               <args>
-                <arg>$MODULE_DIR$/../../../app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar</arg>
                 <arg>$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/26ee284f0d785bc799c033095622bd4f/transformed/viewbinding-8.2.2-api.jar</arg>
                 <arg>$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/2e6aabd2efec891653a5025d2f4191ca/transformed/firebase-firestore-ktx-24.11.0-api.jar</arg>
                 <arg>$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/741112277b4af0f9dd5ca454ad1b5eec/transformed/firebase-auth-22.3.1-api.jar</arg>
@@ -126,6 +125,7 @@
                 <arg>$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar</arg>
                 <arg>$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/3901f4fa07ea3c00c2c1e736209f9f83/transformed/protolite-well-known-types-18.0.0-api.jar</arg>
                 <arg>$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-javalite/3.22.3/7df7200bce0ff77dc66dd063df79ff74c6114bfc/protobuf-javalite-3.22.3.jar</arg>
+                <arg>$USER_HOME$/Documents/GitHub/EGID_Android/.gradle/caches/transforms-3/200e7393c4dff4442effbe24428e72a4/transformed/MPAndroidChart-v3.1.0-api.jar</arg>
                 <arg>$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-34/android.jar</arg>
                 <arg>$USER_HOME$/AppData/Local/Android/Sdk/build-tools/34.0.0/core-lambda-stubs.jar</arg>
               </args>
@@ -149,6 +149,7 @@
     <output url="file://$MODULE_DIR$/../../../app/build/intermediates/javac/debug/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../app/build/generated/ap_generated_sources/debug/out">
+      <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../app/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
     </content>
@@ -233,6 +234,7 @@
     <orderEntry type="library" name="Gradle: com.google.firebase:protolite-well-known-types:18.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-livedata-ktx:2.7.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.PhilJay:MPAndroidChart:v3.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.annotation:annotation-jvm:1.6.0" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.8.22" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22" level="project" />
