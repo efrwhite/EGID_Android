@@ -6,13 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryBackground"
-    tools:context="AddAllergiesActivity">
+    tools:context="AddAllergiesActivity"
+    tools:ignore="ExtraText">
 
     <!-- Navigation Bar -->
 
     <RelativeLayout
         android:id="@+id/navBar"
-        android:layout_width="411dp"
+        android:layout_width="0dp"
         android:layout_height="70dp"
         android:background="@color/primaryBackground"
         app:layout_constraintEnd_toEndOf="parent"
@@ -165,7 +166,7 @@
         app:layout_constraintStart_toEndOf="@+id/discontinueAllergen"
         app:layout_constraintTop_toBottomOf="@+id/frequencyField"
         tools:ignore="MissingConstraints" />
-
+        //app:layout_constraintTop_toBottomOf="@+id/allergenFrequency"
 
     <Button
         android:id="@+id/saveButton"

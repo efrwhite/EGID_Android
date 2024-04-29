@@ -1,6 +1,5 @@
 package com.example.fire
 
-//import DocumentsActivity
 import android.content.Intent
 import android.content.Context
 import android.os.Bundle
