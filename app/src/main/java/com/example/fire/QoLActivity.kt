@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.Timestamp
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -96,7 +97,8 @@ class QoLActivity : AppCompatActivity() {
         }
 
         val dateFormat = SimpleDateFormat("MM/dd/yyyy", Locale.getDefault())
-        val dateTimestamp = dateFormat.parse(date)?.time ?: run {
+        val dateObject = dateFormat.parse(date) // Parse the date string into a Date object
+        val timestamp = dateObject?.let { Timestamp(it) } ?: run {  // Convert to Timestamp
             Toast.makeText(this, "Invalid date format.", Toast.LENGTH_SHORT).show()
             return
         }
@@ -104,7 +106,7 @@ class QoLActivity : AppCompatActivity() {
         val data = hashMapOf(
             "totalScore" to totalScore,
             "responses" to responses,
-            "date" to dateTimestamp
+            "date" to timestamp
         )
 
         Firebase.firestore.collection("Children").document(childId)

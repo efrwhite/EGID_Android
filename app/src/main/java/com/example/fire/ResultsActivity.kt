@@ -2,22 +2,32 @@ package com.example.fire
 
 import android.content.Context
 import android.os.Bundle
+import android.content.Intent
+import android.widget.Button
 import android.widget.TableLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.firestore.DocumentSnapshot
 import java.text.SimpleDateFormat
 import java.util.*
 
 class ResultsActivity : AppCompatActivity() {
 
     private lateinit var tableLayout: TableLayout
+    private lateinit var reportButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_results)
+
+        reportButton = findViewById(R.id.genButton)
+        reportButton.setOnClickListener {
+            val intent = Intent(this, ReportActivity::class.java)
+            startActivity(intent)
+        }
 
         tableLayout = findViewById(R.id.reportTableLayout)
         val sourceActivity = intent.getStringExtra("sourceActivity") ?: "SymptomChecker"
@@ -45,11 +55,10 @@ class ResultsActivity : AppCompatActivity() {
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
-                    val dateTimestamp = document.getLong("date")  // Assuming 'date' is stored as timestamp
+                    val dateTimestamp = document.getTimestamp("date")?.toDate()  // Assuming 'date' is stored as timestamp
                     val score = document.getLong("totalScore")?.toString() ?: "N/A"
                     if (dateTimestamp != null) {
-                        val date = Date(dateTimestamp)
-                        addRowToTable(date, score)
+                        addRowToTable(dateTimestamp, score)
                     }
                 }
             }

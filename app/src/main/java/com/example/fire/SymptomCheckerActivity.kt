@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.Timestamp
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -111,13 +112,14 @@ class SymptomCheckerActivity : AppCompatActivity() {
         }
 
         val dateFormat = SimpleDateFormat("MM/dd/yyyy", Locale.getDefault())
-        val dateTimestamp = dateFormat.parse(date)?.time ?: System.currentTimeMillis() // Default to current time if parsing fails
+        val dateObject = dateFormat.parse(date) // Parse the date string into a Date object
+        val timestamp = dateObject?.let { Timestamp(it) } ?: Timestamp.now() // Convert to Timestamp or use current timestamp if parsing fails
 
         val data = hashMapOf(
             "totalScore" to totalScore,
             "responses" to responses,
             "symptomDescriptions" to symptoms,
-            "date" to dateTimestamp
+            "date" to timestamp
         )
 
         Firebase.firestore.collection("Children").document(childId).collection("Symptom Scores")

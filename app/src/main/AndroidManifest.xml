@@ -53,6 +53,7 @@
         <activity android:name=".Diet4Activity"/>
         <activity android:name=".Diet6Activity"/>
         <activity android:name=".ResultsActivity"/>
+        <activity android:name=".ReportActivity"/>
     </application>
 
 </manifest>
