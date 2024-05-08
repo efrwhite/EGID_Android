@@ -6,9 +6,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.bumptech.glide.Glide
 
 class HomeActivity : AppCompatActivity() {
 
@@ -20,6 +22,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var eOEedButton: Button
     private lateinit var childNameTextView: TextView
     private lateinit var childDietTextView: TextView
+    private lateinit var childImageView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +46,7 @@ class HomeActivity : AppCompatActivity() {
         eOEedButton = findViewById(R.id.EOEedButton)
         childNameTextView = findViewById(R.id.childName)
         childDietTextView = findViewById(R.id.childDiet)
+        childImageView = findViewById(R.id.homeImage)
 
         profileButton.setOnClickListener {
             val intent = Intent(this, ProfilesActivity::class.java)
@@ -81,16 +85,17 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun fetchAndDisplayChildData(childId: String) {
-        val db = Firebase.firestore
-        db.collection("Children").document(childId).get()
+        Firebase.firestore.collection("Children").document(childId).get()
             .addOnSuccessListener { document ->
                 if (document.exists()) {
                     val childName = document.getString("firstName") ?: "No Name"
                     val childDiet = document.getString("diet") ?: "No Diet Specified"
+                    val imageUrl = document.getString("imageUrl") ?: ""
 
                     // Update UI with child data
                     childNameTextView.text = childName
                     childDietTextView.text = childDiet
+                    Glide.with(this).load(imageUrl).into(childImageView)
                 } else {
                     Toast.makeText(this, "Child not found.", Toast.LENGTH_SHORT).show()
                 }
