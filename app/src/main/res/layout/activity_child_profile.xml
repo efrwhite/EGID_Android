@@ -11,7 +11,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/HomeLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/primaryBackground"
     tools:context="AddChildActivity">
 
@@ -139,6 +139,7 @@
         android:paddingTop="2dp"
         android:paddingBottom="2dp"
         android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         android:text="@string/SaveContinue"
         app:backgroundTint="@color/primary"
         app:layout_constraintBottom_toBottomOf="parent"
