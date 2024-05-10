@@ -191,7 +191,7 @@ class AddMedicationActivity : AppCompatActivity() {
     }
 
     private fun formatDate(date: Date): String {
-        val sdf = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
+        val sdf = SimpleDateFormat("MM-dd-yyyy", Locale.getDefault())
         return sdf.format(date)
     }
 

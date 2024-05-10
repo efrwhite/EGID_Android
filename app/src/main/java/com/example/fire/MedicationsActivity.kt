@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Switch
 import android.widget.TableLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -12,11 +13,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlin.properties.Delegates
+
 class MedicationsActivity : AppCompatActivity() {
 
     private lateinit var addMedButton: Button
-
     private lateinit var childId: String
+    private var isDiscontinued: Boolean = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +28,7 @@ class MedicationsActivity : AppCompatActivity() {
 
         val medTableLayout: TableLayout = findViewById(R.id.medTableLayout)
         val pastMedTableLayout: TableLayout = findViewById(R.id.pastMedTableLayout)
+
 
         //Initialize button
         addMedButton = findViewById(R.id.addButton)
@@ -52,8 +56,9 @@ class MedicationsActivity : AppCompatActivity() {
                 for (document in documents) {
                     val medicationName = document.getString("medName") ?: "No Name"
                     val medicationId = document.id
-                    val isDiscontinued = document.getBoolean("discontinue") ?: false
-                    addRowToTable(medTableLayout, pastMedTableLayout, medicationName, medicationId, isDiscontinued)
+                    val startDate = document.getString("startDate") ?: "None"
+                    isDiscontinued = document.getBoolean("discontinue") ?: false
+                    addRowToTable(medTableLayout, pastMedTableLayout, medicationName, medicationId, isDiscontinued, startDate)
                 }
             }
             .addOnFailureListener { e ->
@@ -66,24 +71,33 @@ class MedicationsActivity : AppCompatActivity() {
     }
 
     @SuppressLint("InflateParams")
-    private fun addRowToTable(medTableLayout: TableLayout, pastMedTableLayout: TableLayout, name: String, medicationId: String, isDiscontinued: Boolean) {
-        val row = layoutInflater.inflate(R.layout.table_row_item, null)
-        val nameTextView = row.findViewById<TextView>(R.id.nameTextView)
-        val editButton = row.findViewById<Button>(R.id.editButton)
+    private fun addRowToTable(medTableLayout: TableLayout, pastMedTableLayout: TableLayout, name: String, medicationId: String, isDiscontinued: Boolean, startDate: String) {
 
-        nameTextView.text = name
-
-        nameTextView.text = name
-        editButton.setOnClickListener {
-            navigateToEditActivity(medicationId)
-        }
 
         if (isDiscontinued) {
             // Add to past medications list
+            val row = layoutInflater.inflate(R.layout.past_med_table_row_item, null)
+            val nameTextView = row.findViewById<TextView>(R.id.nameTextView)
+
+            var nameText = "$name\nStart Date: $startDate"
+
+            nameTextView.text = nameText
             pastMedTableLayout.addView(row)
         } else {
             // Add to current medications list
+            val row = layoutInflater.inflate(R.layout.table_row_item, null)
+            val nameTextView = row.findViewById<TextView>(R.id.nameTextView)
+            val editButton = row.findViewById<Button>(R.id.editButton)
+
+            var nameText = "$name\nStart Date: $startDate"
+            nameTextView.text = nameText
+
+            editButton.setOnClickListener {
+                navigateToEditActivity(medicationId)
+            }
+
             medTableLayout.addView(row)
+
         }
     }
     private fun navigateToEditActivity(medicationId: String) {
