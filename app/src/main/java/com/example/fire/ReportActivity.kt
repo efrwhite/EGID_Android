@@ -1,25 +1,37 @@
 package com.example.fire
 
+import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.Canvas
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Environment
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.FileProvider
 import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import java.io.File
+import java.io.FileOutputStream
 import java.text.SimpleDateFormat
-import java.util.Locale
+import java.util.*
 
 class ReportActivity : AppCompatActivity() {
     private lateinit var lineChart: LineChart
     private lateinit var descriptionText: TextView
+    private lateinit var sendReportButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,11 +39,16 @@ class ReportActivity : AppCompatActivity() {
 
         lineChart = findViewById(R.id.lineChart)
         descriptionText = findViewById(R.id.descriptionText)
+        sendReportButton = findViewById(R.id.sendButton)
 
         val sourceActivity = intent.getStringExtra("sourceActivity") ?: "SymptomChecker"
         val childId = getChildId()
 
         loadChartData(sourceActivity, childId)
+
+        sendReportButton.setOnClickListener {
+            sendChartAsImage()
+        }
     }
 
     private fun getChildId(): String {
@@ -53,21 +70,37 @@ class ReportActivity : AppCompatActivity() {
             .get()
             .addOnSuccessListener { querySnapshot ->
                 val documents = querySnapshot.documents
-                val entries = documents.mapIndexed { index, document ->
-                    Entry(index.toFloat(), document.getLong("totalScore")?.toFloat() ?: 0f)
+                val entries = ArrayList<Entry>()
+                val dateLabels = ArrayList<String>()
+
+                documents.forEachIndexed { index, document ->
+                    val score = document.getLong("totalScore")?.toFloat() ?: 0f
+                    val date = document.getDate("date")
+                    entries.add(Entry(index.toFloat(), score))
+                    date?.let {
+                        dateLabels.add(SimpleDateFormat("MM/dd/yyyy", Locale.US).format(it))
+                    }
                 }
 
-                if (sourceActivity == "SymptomChecker") {
-                    updateDescriptions(documents)
+                val dataSet = LineDataSet(entries, "Score Over Time").apply {
+                    color = ColorTemplate.getHoloBlue()
+                    valueTextColor = Color.BLACK
+                    valueTextSize = 12f
                 }
-
-                val dataSet = LineDataSet(entries, "Score Over Time")
-                dataSet.colors = ColorTemplate.MATERIAL_COLORS.toList()
-                dataSet.valueTextColor = Color.BLACK
-                dataSet.valueTextSize = 12f
 
                 lineChart.data = LineData(dataSet)
-                lineChart.invalidate() // refresh graph
+                lineChart.xAxis.apply {
+                    position = XAxis.XAxisPosition.BOTTOM
+                    granularity = 1f
+                    valueFormatter = IndexAxisValueFormatter(dateLabels)
+                    setDrawGridLines(false)
+                }
+                lineChart.axisLeft.setDrawGridLines(false)
+                lineChart.axisRight.isEnabled = false
+                lineChart.description.isEnabled = false
+                lineChart.invalidate() // Refresh the graph
+
+                updateDescriptions(documents)
             }
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Failed to load data: ${e.message}", Toast.LENGTH_SHORT).show()
@@ -80,23 +113,34 @@ class ReportActivity : AppCompatActivity() {
         }
 
         mostRecentWithY?.let { doc ->
-            try {
-                val timestamp = doc.getTimestamp("date")
-                val date = timestamp?.toDate() ?: throw IllegalStateException("Date is not a valid timestamp")
-                val descriptions = doc["symptomDescriptions"] as? List<*>
-                val formattedDate = SimpleDateFormat("MM/dd/yyyy", Locale.US).format(date)
-                descriptionText.text = if (descriptions.isNullOrEmpty()) {
-                    "No descriptions for $formattedDate"
-                } else {
-                    "$formattedDate: ${descriptions.joinToString(", ")}"
-                }
-            } catch (e: Exception) {
-                descriptionText.text = "Failed to parse date from database. ${e.message}"
-            }
-        } ?: run {
-            descriptionText.text = "No recent entries with symptoms marked 'Y'."
+            val descriptions = doc["symptomDescriptions"] as? List<*>
+            descriptionText.text = descriptions?.joinToString(", ") ?: "No descriptions available"
         }
     }
+    private fun captureView(view: View): Bitmap {
+        val bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+        view.draw(canvas)
+        return bitmap
+    }
 
+    private fun sendChartAsImage() {
+        val bitmap = captureView(findViewById(R.id.chartContainer))
+
+        // Save the bitmap to a file
+        val file = File(getExternalFilesDir(Environment.DIRECTORY_PICTURES), "report.png")
+        FileOutputStream(file).use { out ->
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, out)
+        }
+
+        // Share the file using FileProvider
+        val uri = FileProvider.getUriForFile(this, "com.example.fire.fileprovider", file)
+        val shareIntent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_STREAM, uri)
+            type = "image/png"
+        }
+        startActivity(Intent.createChooser(shareIntent, "Send Report"))
+    }
 
 }

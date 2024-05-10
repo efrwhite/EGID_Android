@@ -24,6 +24,8 @@ class DocumentsActivity : AppCompatActivity() {
     private lateinit var docsRecyclerView: RecyclerView
     private lateinit var documentUploadLauncher: ActivityResultLauncher<Intent>
     private var documentsList = mutableListOf<Document>()
+    private lateinit var dbHelper: DBHelper
+    private lateinit var childId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,21 +33,21 @@ class DocumentsActivity : AppCompatActivity() {
 
         addButton = findViewById(R.id.addButton)
         docsRecyclerView = findViewById(R.id.docsRecyclerView)
+        dbHelper = DBHelper(this)
 
+        childId = getChildId()
+
+        documentsList = dbHelper.getAllDocuments(childId).toMutableList()
         docsRecyclerView.layoutManager = LinearLayoutManager(this)
         docsRecyclerView.adapter = DocumentAdapter(documentsList)
 
         documentUploadLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == RESULT_OK) {
-                val dataIntent = result.data  // Store the intent in a local variable
-                if (dataIntent != null && dataIntent.data != null) {
-                    processDocumentUri(dataIntent.data!!)
-                } else {
-                    Toast.makeText(this, "No file selected or an error occurred.", Toast.LENGTH_SHORT).show()
-                }
+            if (result.resultCode == RESULT_OK && result.data != null && result.data!!.data != null) {
+                processDocumentUri(result.data!!.data!!)
+            } else {
+                Toast.makeText(this, "No file selected or an error occurred.", Toast.LENGTH_SHORT).show()
             }
         }
-
 
         addButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
@@ -56,36 +58,27 @@ class DocumentsActivity : AppCompatActivity() {
         }
     }
 
+    private fun getChildId(): String {
+        val sharedPreferences = getSharedPreferences("AppPreferences", MODE_PRIVATE)
+        return sharedPreferences.getString("CurrentChildId", "") ?: ""
+    }
+
     private fun processDocumentUri(uri: Uri) {
         val cursor = contentResolver.query(uri, null, null, null, null)
         cursor?.use {
             if (it.moveToFirst()) {
-                val nameIndex = it.getColumnIndex(OpenableColumns.DISPLAY_NAME)
-                val sizeIndex = it.getColumnIndex(OpenableColumns.SIZE)
+                val name = it.getString(it.getColumnIndexOrThrow(OpenableColumns.DISPLAY_NAME))
+                val size = it.getLong(it.getColumnIndexOrThrow(OpenableColumns.SIZE))
+                val date = Date()
+                val type = contentResolver.getType(uri) ?: "Unknown"
 
-                if (nameIndex != -1 && sizeIndex != -1) {
-                    val name = it.getString(nameIndex)
-                    val size = it.getLong(sizeIndex)
-                    val date = Date() // Using the current date as a placeholder
-                    val type = contentResolver.getType(uri) ?: "Unknown"
-
-                    val document = Document(
-                        name = name,
-                        url = uri.toString(),
-                        type = type,
-                        size = size,
-                        date = date,
-                        thumbnail = null
-                    )
-                    documentsList.add(document)
-                    docsRecyclerView.adapter?.notifyDataSetChanged()
-                } else {
-                    Toast.makeText(this, "Error: Document name or size not found.", Toast.LENGTH_SHORT).show()
-                }
+                val document = Document(name, uri.toString(), type, size, date, null)
+                documentsList.add(document)
+                dbHelper.insertDocument(childId, name, uri.toString(), type, size, date.time, null)
+                docsRecyclerView.adapter?.notifyDataSetChanged()
             }
         }
     }
-
 
     data class Document(
         val name: String,
@@ -114,12 +107,30 @@ class DocumentsActivity : AppCompatActivity() {
             private val dateTextView: TextView = itemView.findViewById(R.id.documentDate)
             private val sizeTextView: TextView = itemView.findViewById(R.id.documentSize)
 
+            init {
+                itemView.setOnClickListener {
+                    val document = documents[adapterPosition]
+                    openDocument(document)
+                }
+            }
+
             fun bind(document: Document) {
                 nameTextView.text = document.name
                 dateTextView.text = SimpleDateFormat("MM/dd/yyyy", Locale.getDefault()).format(document.date)
                 sizeTextView.text = "${document.size} bytes"
             }
+
+            private fun openDocument(document: Document) {
+                val intent = Intent(Intent.ACTION_VIEW)
+                val fileUri: Uri = Uri.parse(document.url) // Convert URL to Uri
+                intent.setDataAndType(fileUri, document.type)
+                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                try {
+                    itemView.context.startActivity(intent)
+                } catch (e: Exception) {
+                    Toast.makeText(itemView.context, "No application found to open this file type.", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 }
-
