@@ -11,6 +11,7 @@ class MoreInfoActivity : AppCompatActivity() {
     private lateinit var aaaIButton: Button
     private lateinit var apfeDButton: Button
     private lateinit var chRichmondButton: Button
+    private lateinit var cEGIRbutton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_moreinfo)
@@ -19,6 +20,7 @@ class MoreInfoActivity : AppCompatActivity() {
         aaaIButton = findViewById(R.id.AAAIbutton)
         apfeDButton = findViewById(R.id.APFEDbutton)
         chRichmondButton = findViewById(R.id.chrichmondButton)
+        cEGIRbutton = findViewById(R.id.CEGIRbutton)
 
         naspgHanButton.setOnClickListener {
             openUrl("https://www.naspghan.org/")
@@ -34,6 +36,10 @@ class MoreInfoActivity : AppCompatActivity() {
 
         chRichmondButton.setOnClickListener {
             openUrl("https://www.chrichmond.org/")
+        }
+
+        cEGIRbutton.setOnClickListener {
+            openUrl("https://cegir.rarediseasesnetwork.org/")
         }
     }
     private fun openUrl(url: String) {
