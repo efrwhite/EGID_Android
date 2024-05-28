@@ -63,23 +63,21 @@ class AddAllergiesActivity : AppCompatActivity() {
             "frequency" to frequency.text.toString().trim(),
             "discontinue" to discontinue.isChecked,
             "notes" to notes.text.toString().trim(),
-            "childId" to  childId
+            "childId" to childId
         )
 
         firestore.collection("Allergens").add(allergenMap)
-            .addOnSuccessListener {documentReference ->
+            .addOnSuccessListener { documentReference ->
                 val allergenId = documentReference.id
                 Toast.makeText(this, "Allergen added successfully", Toast.LENGTH_SHORT).show()
+                // Start AllergiesActivity and finish this activity
+                val intent = Intent(this, AllergiesActivity::class.java)
+                startActivity(intent)
+                finish()
             }
-            .addOnFailureListener{e ->
+            .addOnFailureListener { e ->
                 Toast.makeText(this, "Failed to add allergen: ${e.message}", Toast.LENGTH_SHORT).show()
             }
-
-        val intent = Intent(this, HomeActivity::class.java).apply {
-            // Clear the activity stack to prevent backtracking
-            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        }
-        startActivity(intent)
     }
 
     private fun updateAllergen() {
@@ -88,25 +86,24 @@ class AddAllergiesActivity : AppCompatActivity() {
             "frequency" to frequency.text.toString().trim(),
             "discontinue" to discontinue.isChecked,
             "notes" to notes.text.toString().trim(),
-            "childId" to  childId
+            "childId" to childId
         )
 
         allergenId?.let {
             firestore.collection("Allergens").document(it).set(allergenMap)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Allergen updated successfully", Toast.LENGTH_SHORT).show()
+                    // Start AllergiesActivity and finish this activity
+                    val intent = Intent(this, AllergiesActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 }
-                .addOnFailureListener {e ->
+                .addOnFailureListener { e ->
                     Toast.makeText(this, "Failed to update allergen: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
         }
-
-        val intent = Intent(this, HomeActivity::class.java).apply {
-            // Clear the activity stack to prevent backtracking
-            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        }
-        startActivity(intent)
     }
+
 
     private fun fetchAndPopulateAllergenData(allergenId: String) {
         firestore.collection("Allergens").document(allergenId).get()

@@ -106,6 +106,7 @@ class MedicationsActivity : AppCompatActivity() {
             putExtra("editMode", true) // Indicate that we are editing an existing medication
         }
         startActivity(intent)
+        finish()
     }
 
 }
