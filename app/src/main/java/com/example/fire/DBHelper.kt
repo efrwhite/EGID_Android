@@ -72,7 +72,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null
                 val date = Date(c.getLong(c.getColumnIndexOrThrow(DocumentEntry.COLUMN_NAME_DATE)))
                 val thumbnail = c.getString(c.getColumnIndexOrThrow(DocumentEntry.COLUMN_NAME_THUMBNAIL))
 
-                documents.add(DocumentsActivity.Document(name, url, type, size, date, thumbnail))
+                documents.add(DocumentsActivity.Document(0, name, url, type, size, date, thumbnail))
             }
         }
         return documents

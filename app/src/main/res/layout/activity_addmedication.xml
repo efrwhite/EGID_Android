@@ -48,15 +48,14 @@
 
     <TextView
         android:id="@+id/addMedName"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="32dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/lato_medium"
         android:text="@string/name"
         android:textColor="@color/primary"
         android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@+id/navBar" />
 
     <EditText
@@ -64,7 +63,6 @@
         android:layout_width="225dp"
         android:layout_height="48dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="0dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:hint="@string/medNameField"
@@ -75,86 +73,79 @@
         android:paddingBottom="0dp"
         android:textColor="@color/secondary"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/addMedName"
+        app:layout_constraintEnd_toStartOf="@id/rightGuideline"
         app:layout_constraintTop_toBottomOf="@+id/navBar" />
 
     <TextView
         android:id="@+id/addMedDosage"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="32dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/lato_medium"
         android:text="@string/dosage"
         android:textColor="@color/primary"
         android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@+id/addMedName" />
 
     <TextView
         android:id="@+id/addMedDate"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="32dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/lato_medium"
         android:text="@string/startDate"
         android:textColor="@color/primary"
         android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@+id/addMedDosage" />
 
     <TextView
         android:id="@+id/endMedDate"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="32dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/lato_medium"
         android:text="@string/endDate"
         android:textColor="@color/primary"
         android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@+id/addMedDate" />
 
     <TextView
         android:id="@+id/addMedFreq"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="32dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/lato_medium"
         android:text="@string/frequency"
         android:textColor="@color/primary"
         android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@+id/endMedDate" />
 
     <TextView
         android:id="@+id/discontinueMed"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/lato_medium"
         android:text="@string/discontinueMed"
         android:textColor="@color/primary"
         android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@+id/addMedFreq" />
 
     <TextView
         android:id="@+id/addMedNotes"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/lato_medium"
         android:text="@string/note"
         android:textColor="@color/primary"
         android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@+id/discontinueMed" />
 
     <EditText
@@ -172,9 +163,9 @@
         android:paddingBottom="90dp"
         android:textColor="@color/secondary"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/rightGuideline"
         app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/leftGuideline"
         app:layout_constraintTop_toBottomOf="@+id/addMedNotes" />
 
     <Button
@@ -193,8 +184,8 @@
         android:textColor="@color/secondary"
         android:textSize="14sp"
         app:backgroundTint="#ffffff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/addMedDate"
+        app:layout_constraintEnd_toStartOf="@id/rightGuideline"
+
         app:layout_constraintTop_toBottomOf="@+id/medAmountField" />
 
     <Button
@@ -213,8 +204,8 @@
         android:textColor="@color/secondary"
         android:textSize="14sp"
         app:backgroundTint="#ffffff"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/endMedDate"
+        app:layout_constraintEnd_toStartOf="@id/rightGuideline"
+
         app:layout_constraintTop_toBottomOf="@+id/datePickerButton" />
 
 
@@ -234,8 +225,7 @@
         android:paddingBottom="0dp"
         android:textColor="@color/secondary"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/addMedDate"
+        app:layout_constraintEnd_toStartOf="@id/rightGuideline"
         app:layout_constraintTop_toBottomOf="@+id/endDatePickerButton" />
 
     <EditText
@@ -243,7 +233,6 @@
         android:layout_width="225dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="0dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:hint="@string/medAmountField"
@@ -254,8 +243,7 @@
         android:paddingBottom="0dp"
         android:textColor="@color/secondary"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/addMedDosage"
+        app:layout_constraintEnd_toStartOf="@id/rightGuideline"
         app:layout_constraintTop_toBottomOf="@+id/medNameField" />
 
     <Switch
@@ -263,12 +251,10 @@
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
         android:scaleX="1.5"
         android:scaleY="1.5"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/rightGuideline"
         app:layout_constraintHorizontal_bias="0.588"
-        app:layout_constraintStart_toEndOf="@+id/discontinueMed"
         app:layout_constraintTop_toBottomOf="@+id/frequencyField" />
 
     <Button
@@ -294,7 +280,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/medNotesField" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/enterFieldsGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
