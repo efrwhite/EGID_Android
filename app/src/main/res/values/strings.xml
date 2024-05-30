@@ -25,7 +25,7 @@
     <string name="foodTracker">Food Tracker</string>
     <string name="symptomScore">Symptom Score Checker</string>
     <string name="QoLChecker">Quality of Life Checker</string>
-    <string name="education">EoE Education</string>
+    <string name="education">EGID Education</string>
     <string name="profiles">Profiles</string>
     <string-array name="gender_options">
         <item>Male</item>
@@ -42,18 +42,32 @@
 
     <!-- Strings for EOE Education -->
     <string name="generalQuestions">General Questions</string>
-    <string name="whatEoE">What is Eosinophilic Esophagitis (EoE)?</string>
+    <string name="whatEoE">What is EGID and EoE?</string>
     <string name="EoEdefinition">Eosinophilic esophagitis (EoE), also known as allergic esophagitis is a chronic immune system disease where a white blood cell called Eosinophil builds up in the lining of the tube (Esophagus) that connects your mouth to your stomach. These eosinophils can release chemicals into the surrounding tissues that cause inflammation.</string>
-    <string name="causesEoE">What Causes EoE?</string>
-    <string name="EoECauses">This condition is usually caused by an immune response to food ingestion. However, the relationship between food allergy and EoE is complex. Unlike many well known food allergens which causes symptoms right after exposure such as hives, lip swelling, vomiting and breathing issues, the EoE allergen induced reactions are often delayed, and can develop over several days making it difficult to pinpoint the specific food allergen. Environmental allergies to substances like pollen, dust, mold and animals also appear to play a role in triggering EoE and exacerbating EoE symptoms.</string>
+    <string name="EoEdefinition2">Eosinophilic gastrointestinal disorders (EGIDs) are a group of chronic inflammatory disorders characterized by the recruitment of eosinophils in the gastrointestinal tract. The eosinophils can release toxins, which lead to inflammation and injury to the GI tract. The EGID can involve any part of the GI tract, and the patient experiences symptoms depending on the site of the GI tract involved.</string>
+    <string name="EoEdefinition3">Depending on the location of involvement, EGIDs are classified into:</string>
+    <string name="EoEdefinition4">Eosinophilic gastritis (Stomach)</string>
+    <string name="EoEdefinition5">Eosinophilic enteritis (small intestine [Duodenum, Jejunum, and Ileum])</string>
+    <string name="EoEdefinition6">Eosinophilic colitis (Colon)</string>
+    <string name="causesEoE">What Causes EGID and EoE?</string>
+    <string name="EoECauses">EoE is usually caused by an immune response to food ingestion. However, the relationship between food allergy and EoE is complex. Unlike many well known food allergens which causes symptoms right after exposure such as hives, lip swelling, vomiting and breathing issues, the EoE allergen induced reactions are often delayed, and can develop over several days making it difficult to pinpoint the specific food allergen. Environmental allergies to substances like pollen, dust, mold and animals also appear to play a role in triggering EoE and exacerbating EoE symptoms.</string>
+    <string name="EoECauses2">The cause of EGIDs is still unknown but appears to be triggered by a few commonly consumed foods, including (but not limited to) dairy, gluten, soy, egg, nuts, and fish. This condition is often seen in patients with other allergic conditions, such as asthma, eczema, and allergic rhinitis. Genetics also play a role as these conditions are being increasingly recognized in patients with a family history of eosinophilic esophagitis or EGIDs.</string>
     <string name="affectedEoE">Who is Affected?</string>
-    <string name="affectedByEoE">This condition appear to be more common in white males but is being increasingly recognized in patients of all age groups, race and socioeconomic backgrounds. The symptoms however may vary with age.</string>
+    <string name="affectedByEoE">EoE appears to be more common in white males but is being increasingly recognized in patients of all age groups, race and socioeconomic backgrounds. The symptoms however may vary with age.</string>
+    <string name="affectedEoE2">EGID can affect both children and adults. The prevalence of non-EoE EGIDs in the USA appears to be 1-20 per 100,000 people in the general population. It is slightly more common in children (19.4/100,000) than adults (17.5/100,000). About 5% of patients with Eosinophilic esophagitis may also experience symptoms of EGIDs.</string>
     <string name="symptomsEoE">What are the Symptoms?</string>
-    <string name="EoESymptoms">Patients with EoE can experience several symptoms including difficulty in swallowing, choking, food getting stuck in the esophagus and symptoms of gastroesophageal reflux such as vomiting, heartburn and regurgitation. Infants and young children may present with food refusal and poor weight gain and growth.</string>
+    <string name="EoESymptoms">The typical EGID symptoms are based on the site involved. Patients can experience nausea, vomiting, abdominal pain, diarrhea, weight loss or failure to thrive, and rectal bleeding.</string>
+    <string name="EoESymptoms2">Patients with EoE can experience several symptoms, including difficulty swallowing, choking, food getting stuck in the esophagus, and symptoms of gastroesophageal reflux, such as vomiting, heartburn, and regurgitation. Infants and young children may present with food refusal and poor weight gain and growth.
+</string>
     <string name="diagnosedEoE">How is it Diagnosed?</string>
     <string name="howEoEDiagnosed">EoE is diagnosed by performing an upper endoscopy with biopsies. Upper endoscopy is a medical procedure where a flexible tube with a light and camera at the tip is passed through the mouth into the esophagus. This procedure will help visualize the lining of the esophagus and also let your doctor take small tissue samples from the lining of the esophagus to examine under microscope for the presence of eosinophils. In an unaffected individual, there are no eosinophils in the esophagus but in patients with the tissue samples may show numerous eosinophils and signs of inflammation.</string>
+    <string name="howEoEDiagnosed2">The symptoms of EGIDs can be vague, and patients often experience symptoms for an extended period before the diagnosis. Currently, the diagnosis relies on an upper endoscopy and colonoscopy with biopsies of the gut lining performed by an experienced gastroenterologist. Patients with EGID do have dense eosinophils in the biopsy specimens.</string>
+    <string name="normalesophagus"><b>Normal Esophagus</b></string>
+    <string name="eoesophagus"><b>Eosinophilic Esophagitis</b></string>
+    <string name="eosinophil"><b>Eosinophil</b></string>
     <string name="treatedEoE">How is it Treated?</string>
-    <string name="howEoETreated">There are three main types of treatments available for EoE (as below). Please consult your doctor for a detailed discussion on these options and see what works best for you and your family</string>
+    <string name="howEoETreated">There are three main types of treatments available for EoE (as below). Please consult your doctor for a detailed discussion on these options and see what works best for you and your family.</string>
+    <string name="howEoETreated2">Identifying and removing the trigger food(s) from the diet can help improve symptoms, but it is often very challenging. The therapy usually combines empiric food elimination and topical steroids (budesonide). In severe cases, strong inflammatory medications such as systemic steroids (prednisone) or other anti-inflammatory medications may be needed for better control of inflammation and symptoms. Your doctor will help you choose the right therapy for you based on symptoms and biopsy findings.</string>
     <string name="optionA">a. Empiric food elimination</string>
     <string name="optionB">b. Medical therapy</string>
     <string name="optionC">c. Elemental diet</string>
@@ -67,7 +81,8 @@
     <string name="APFEDbutton">APFED</string>
     <string name="APFEDtext">American Partnership for Eosinophilic Disorders</string>
     <string name="CHRICHMONDbutton">Children\'s Hospital of Richmond</string>
-
+    <string name="CEGIRbutton">CEGIR</string>
+    <string name="CEGIRtext">Consortium of Eosinophilic Gastrointestinal Disease Researchers</string>
 
     <!-- Strings for Your Plan Layout -->
     <string name="checkPlan">Check Plan For:</string>

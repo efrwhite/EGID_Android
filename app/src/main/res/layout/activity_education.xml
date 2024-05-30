@@ -27,7 +27,7 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="38dp"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:fontFamily="@font/lato_medium"
             android:paddingLeft="20dp"
@@ -44,7 +44,7 @@
     <Button
         android:id="@+id/whatEoEButton"
         android:layout_width="350dp"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
@@ -60,13 +60,14 @@
         android:textSize="17sp"
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/navBar" />
 
     <Button
         android:id="@+id/causesEoEButton"
         android:layout_width="350dp"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
@@ -80,13 +81,14 @@
         android:textSize="17sp"
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/whatEoEButton" />
 
     <Button
         android:id="@+id/affectedEoEButton"
         android:layout_width="350dp"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
@@ -100,13 +102,14 @@
         android:textSize="17sp"
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/causesEoEButton" />
 
     <Button
         android:id="@+id/symptomsEoEButton"
         android:layout_width="350dp"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
@@ -120,13 +123,14 @@
         android:textSize="17sp"
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/affectedEoEButton" />
 
     <Button
         android:id="@+id/diagnosedEoEButton"
         android:layout_width="350dp"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
@@ -140,13 +144,14 @@
         android:textSize="17sp"
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/symptomsEoEButton" />
 
     <Button
         android:id="@+id/treatedEoEButton"
         android:layout_width="350dp"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
@@ -160,33 +165,14 @@
         android:textSize="17sp"
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/diagnosedEoEButton" />
 
     <Button
-        android:id="@+id/infoEGIDButton"
-        android:layout_width="350dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/rounded_edittext_bg"
-        android:fontFamily="@font/lato_medium"
-        android:gravity="center"
-        android:paddingStart="16dp"
-        android:paddingTop="0dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="0dp"
-        android:text="@string/infoEGID"
-        android:textColor="#ffffff"
-        android:textSize="17sp"
-        app:backgroundTint="@color/primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/treatedEoEButton" />
-
-    <Button
         android:id="@+id/moreInfoButton"
         android:layout_width="350dp"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
@@ -200,7 +186,8 @@
         android:textSize="17sp"
         app:backgroundTint="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infoEGIDButton" />
+        app:layout_constraintTop_toBottomOf="@+id/treatedEoEButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
