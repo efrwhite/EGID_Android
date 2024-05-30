@@ -52,7 +52,6 @@
         <activity android:name=".SymptomCheckerActivity" />
         <activity android:name=".DiagnosedActivity" />
         <activity android:name=".EoECausesActivity" />
-        <activity android:name=".EGIDInfoActivity" />
         <activity android:name=".MoreInfoActivity" />
         <activity android:name=".SymptomsActivity" />
         <activity android:name=".TreatmentActivity" />
