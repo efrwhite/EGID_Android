@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SwitchCompat
 import com.google.firebase.firestore.FirebaseFirestore
 
 class AddAllergiesActivity : AppCompatActivity() {
@@ -15,7 +16,7 @@ class AddAllergiesActivity : AppCompatActivity() {
     private lateinit var saveButton: Button
     private lateinit var allergenName: EditText
     private lateinit var frequency: EditText
-    private lateinit var discontinue: Switch
+    private lateinit var discontinue: SwitchCompat
     private lateinit var notes: EditText
     private var childId: String? = null
     private var allergenId: String? = null
@@ -25,14 +26,14 @@ class AddAllergiesActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_allergies)
+        //setContentView(R.layout.activity_add_allergies)
 
-        allergenName = findViewById(R.id.allergiesNameField)
-        saveButton = findViewById(R.id.saveButton)
-        frequency = findViewById(R.id.frequencyField)
-        discontinue = findViewById(R.id.discontinueSwitch)
-        notes = findViewById(R.id.allergyNotesField)
-        childId = getCurrentChildId()
+        //allergenName = findViewById(R.id.allergiesNameField)
+        //saveButton = findViewById(R.id.saveButton)
+        //frequency = findViewById(R.id.frequencyField)
+        //discontinue = findViewById(R.id.discontinueSwitch)
+        //notes = findViewById(R.id.allergyNotesField)
+        //childId = getCurrentChildId()
 
         // Check if in edit mode
         allergenId = intent.getStringExtra("allergenId")
