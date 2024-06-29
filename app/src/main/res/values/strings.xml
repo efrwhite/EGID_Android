@@ -80,7 +80,8 @@
     <string name="AAAItext">American Academy for Allergy, Asthma, and Immunology</string>
     <string name="APFEDbutton">APFED</string>
     <string name="APFEDtext">American Partnership for Eosinophilic Disorders</string>
-    <string name="CHRICHMONDbutton">Children\'s Hospital of Richmond</string>
+    <string name="CHRICHMONDbutton">CHoR</string>
+    <string name="CHRICHMONDtext">Children\\'s Hospital of Richmond</string>
     <string name="CEGIRbutton">CEGIR</string>
     <string name="CEGIRtext">Consortium of Eosinophilic Gastrointestinal Disease Researchers</string>
 
