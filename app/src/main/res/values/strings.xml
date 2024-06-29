@@ -73,7 +73,7 @@
     <string name="optionC">c. Elemental diet</string>
     <string name="infoEGID">EGID Information</string>
     <string name="EGIDinfo">*Waiting on information from Naren.</string>
-    <string name="moreInfo">Where Can I Find More Information?</string>
+    <string name="moreInfo">Where Can I Find More Info?</string>
     <string name="NASPGHANbutton">NASPGHAN</string>
     <string name="NASPGHANtext">North American Society for Pediatric Gastroenterology, Hepatology, &amp; Nutrition</string>
     <string name="AAAIbutton">AAAI</string>
@@ -358,7 +358,7 @@
     <string name="Qkey1">1 - almost never a problem</string>
     <string name="Qkey2">2 - sometimes a problem</string>
     <string name="Qkey3">3 - often a problem</string>
-    <string name="Qkey4">4 k almost always a problem</string>
+    <string name="Qkey4">4 - almost always a problem</string>
     <string name="SymptomsI">Symptoms I </string>
     <string name="symptoms1">I have chest pain, ache, or hurt</string>
     <string name="symptoms2">I have burning in my chest, mouth, or throat  (heartburn)</string>
