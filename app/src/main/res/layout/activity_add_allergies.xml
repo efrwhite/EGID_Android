@@ -46,7 +46,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="72dp"
         android:fontFamily="@font/lato_medium"
-        android:text="@string/allergen"
+        android:text="@string/name"
         android:textColor="@color/primary"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,6 @@
         android:layout_marginEnd="32dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
-        android:hint="@string/name"
         android:inputType="text"
         android:paddingStart="16dp"
         android:paddingTop="0dp"
@@ -73,37 +72,24 @@
         app:layout_constraintTop_toBottomOf="@+id/navBar" />
 
     <TextView
-        android:id="@+id/allergenFrequency"
-        android:layout_width="100dp"
+        android:id="@+id/discontinueAllergen"
+        android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/lato_medium"
-        android:text="@string/frequency"
+        android:text="@string/discontinuedAllergen"
         android:textColor="@color/primary"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addAllergiesName" />
 
     <TextView
-        android:id="@+id/discontinueAllergen"
-        android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
-        android:fontFamily="@font/lato_medium"
-        android:text="@string/discontinuedAllergen"
-        android:textColor="@color/primary"
-        android:textSize="17sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/allergenFrequency" />
-
-    <TextView
         android:id="@+id/addAllergenNotes"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/lato_medium"
         android:text="@string/note"
         android:textColor="@color/primary"
@@ -130,41 +116,19 @@
         app:layout_constraintTop_toBottomOf="@+id/addAllergenNotes"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <EditText
-        android:id="@+id/frequencyField"
-        android:layout_width="225dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/rounded_edittext_bg"
-        android:fontFamily="@font/lato_medium"
-        android:hint="@string/frequencyField"
-        android:inputType="text"
-        android:paddingStart="16dp"
-        android:paddingTop="0dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="0dp"
-        android:textColor="@color/secondary"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/allergenFrequency"
-        app:layout_constraintTop_toBottomOf="@+id/allergiesNameField" />
-
     <Switch
         android:id="@+id/discontinueSwitch"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="48dp"
         android:scaleX="1.5"
         android:scaleY="1.5"
-        app:layout_constraintBottom_toTopOf="@+id/allergyNotesField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.676"
         app:layout_constraintStart_toEndOf="@+id/discontinueAllergen"
-        app:layout_constraintTop_toBottomOf="@+id/frequencyField"
+        app:layout_constraintTop_toBottomOf="@id/addAllergiesName"
         tools:ignore="MissingConstraints" />
         //app:layout_constraintTop_toBottomOf="@+id/allergenFrequency"
 
@@ -172,7 +136,7 @@
         android:id="@+id/saveButton"
         android:layout_width="250dp"
         android:layout_height="48dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/rounded_edittext_bg"
         android:fontFamily="@font/lato_medium"
         android:gravity="center"

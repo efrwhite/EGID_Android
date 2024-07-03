@@ -126,14 +126,16 @@
                     android:paddingEnd="10dp"
                     android:text="@string/visitDate" />
 
-                <EditText
+                <Button
                     android:id="@+id/visitDateInput"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:inputType="date"
                     android:padding="10dp"
-                    tools:ignore="Autofill" />
+                    tools:ignore="Autofill"
+                    android:text="Select Date" />
+
 
             </TableRow>
 
