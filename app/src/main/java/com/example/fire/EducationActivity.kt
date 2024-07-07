@@ -13,7 +13,6 @@ class EducationActivity : AppCompatActivity() {
     private lateinit var symptomsEoEButton: Button
     private lateinit var diagnosedEoEButton: Button
     private lateinit var treatedEoEButton: Button
-    private lateinit var infoEGIDButton: Button
     private lateinit var moreInfoButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +26,6 @@ class EducationActivity : AppCompatActivity() {
         symptomsEoEButton = findViewById(R.id.symptomsEoEButton)
         diagnosedEoEButton = findViewById(R.id.diagnosedEoEButton)
         treatedEoEButton = findViewById(R.id.treatedEoEButton)
-        infoEGIDButton = findViewById(R.id.infoEGIDButton)
         moreInfoButton = findViewById(R.id.moreInfoButton)
 
         //set onClickListeners for buttons
@@ -58,11 +56,6 @@ class EducationActivity : AppCompatActivity() {
 
         treatedEoEButton.setOnClickListener {
             val intent = Intent(this, TreatmentActivity::class.java)
-            startActivity(intent)
-        }
-
-        infoEGIDButton.setOnClickListener {
-            val intent = Intent(this, EGIDInfoActivity::class.java)
             startActivity(intent)
         }
 

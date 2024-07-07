@@ -88,6 +88,15 @@ class AddMedicationActivity : AppCompatActivity() {
     }
 
     private fun saveMedication() {
+        val discontinueChecked = discontinue.isChecked
+        val endDateText = endDatePickerButton.text.toString().trim()
+
+        // Validate end date if discontinue is true
+        if (discontinueChecked && endDateText.equals("Enter Date")) {
+            Toast.makeText(this, "End date is required when discontinuing medication", Toast.LENGTH_SHORT).show()
+            return // Exit the method if validation fails
+        }
+
         val medicationMap = hashMapOf(
             "medName" to medName.text.toString().trim(),
             "dosage" to dosage.text.toString().trim(),
@@ -108,15 +117,28 @@ class AddMedicationActivity : AppCompatActivity() {
                 Toast.makeText(this, "Failed to add medication: ${e.message}", Toast.LENGTH_SHORT).show()
             }
 
+<<<<<<< HEAD
         val intent = Intent(this, MedicationsActivity::class.java).apply {
             // Clear the activity stack to prevent backtracking
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
+=======
+        val intent = Intent(this, MedicationsActivity::class.java)
+>>>>>>> main
         startActivity(intent)
         finish()
     }
 
     private fun updateMedication() {
+        val discontinueChecked = discontinue.isChecked
+        val endDateText = endDatePickerButton.text.toString().trim()
+
+        // Validate end date if discontinue is true
+        if (discontinueChecked && endDateText.equals("Enter Date")) {
+            Toast.makeText(this, "End date is required when discontinuing medication", Toast.LENGTH_SHORT).show()
+            return // Exit the method if validation fails
+        }
+
         val medicationMap = hashMapOf(
             "medName" to medName.text.toString().trim(),
             "dosage" to dosage.text.toString().trim(),
@@ -139,10 +161,14 @@ class AddMedicationActivity : AppCompatActivity() {
                 }
         }
 
+<<<<<<< HEAD
         val intent = Intent(this, MedicationsActivity::class.java).apply {
             // Clear the activity stack to prevent backtracking
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
+=======
+        val intent = Intent(this, MedicationsActivity::class.java)
+>>>>>>> main
         startActivity(intent)
         finish()
     }

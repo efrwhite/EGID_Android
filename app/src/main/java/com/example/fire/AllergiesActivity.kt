@@ -92,6 +92,7 @@ class AllergiesActivity : AppCompatActivity() {
             putExtra("editMode", true) // Indicate that we are editing an existing allergen
         }
         startActivity(intent)
+        finish()
     }
 
 }

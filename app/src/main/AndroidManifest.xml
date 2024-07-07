@@ -19,12 +19,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Fire"
+        android:theme="@style/Theme.EGIDTracker"
         tools:targetApi="31">
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.fire.fileprovider"
+            android:authorities="com.elizabethwhitebaker.egidtracker.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -52,7 +52,6 @@
         <activity android:name=".SymptomCheckerActivity" />
         <activity android:name=".DiagnosedActivity" />
         <activity android:name=".EoECausesActivity" />
-        <activity android:name=".EGIDInfoActivity" />
         <activity android:name=".MoreInfoActivity" />
         <activity android:name=".SymptomsActivity" />
         <activity android:name=".TreatmentActivity" />
