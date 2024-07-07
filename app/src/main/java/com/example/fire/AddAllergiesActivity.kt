@@ -17,7 +17,6 @@ class AddAllergiesActivity : AppCompatActivity() {
 
     private lateinit var saveButton: Button
     private lateinit var allergenName: EditText
-    private lateinit var frequency: EditText
     private lateinit var discontinue: Switch
     private lateinit var notes: EditText
     private var childId: String? = null
@@ -32,7 +31,6 @@ class AddAllergiesActivity : AppCompatActivity() {
 
         allergenName = findViewById(R.id.allergiesNameField)
         saveButton = findViewById(R.id.saveButton)
-        frequency = findViewById(R.id.frequencyField)
         discontinue = findViewById(R.id.discontinueSwitch)
         notes = findViewById(R.id.allergyNotesField)
         childId = getCurrentChildId()
@@ -60,7 +58,6 @@ class AddAllergiesActivity : AppCompatActivity() {
     private fun saveAllergen() {
         val allergenMap = hashMapOf(
             "allergenName" to allergenName.text.toString().trim(),
-            "frequency" to frequency.text.toString().trim(),
             "discontinue" to discontinue.isChecked,
             "notes" to notes.text.toString().trim(),
             "childId" to childId
@@ -78,12 +75,21 @@ class AddAllergiesActivity : AppCompatActivity() {
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Failed to add allergen: ${e.message}", Toast.LENGTH_SHORT).show()
             }
+<<<<<<< HEAD
+
+        val intent = Intent(this, AllergiesActivity::class.java).apply {
+            // Clear the activity stack to prevent backtracking
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+        startActivity(intent)
+        finish()
+=======
+>>>>>>> main
     }
 
     private fun updateAllergen() {
         val allergenMap = hashMapOf(
             "allergenName" to allergenName.text.toString().trim(),
-            "frequency" to frequency.text.toString().trim(),
             "discontinue" to discontinue.isChecked,
             "notes" to notes.text.toString().trim(),
             "childId" to childId
@@ -102,6 +108,16 @@ class AddAllergiesActivity : AppCompatActivity() {
                     Toast.makeText(this, "Failed to update allergen: ${e.message}", Toast.LENGTH_SHORT).show()
                 }
         }
+<<<<<<< HEAD
+
+        val intent = Intent(this, AllergiesActivity::class.java).apply {
+            // Clear the activity stack to prevent backtracking
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+        startActivity(intent)
+        finish()
+=======
+>>>>>>> main
     }
 
 
@@ -110,7 +126,6 @@ class AddAllergiesActivity : AppCompatActivity() {
             .addOnSuccessListener { document ->
                 if (document.exists()) {
                     allergenName.setText(document.getString("allergenName"))
-                    frequency.setText(document.getString("frequency"))
                     discontinue.isChecked = document.getBoolean("discontinue") ?: false
                     notes.setText(document.getString("notes"))
 
