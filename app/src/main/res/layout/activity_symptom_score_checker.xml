@@ -124,15 +124,13 @@
                     android:paddingEnd="10dp"
                     android:text="@string/visitDate" />
 
-                <Button
+                <EditText
                     android:id="@+id/visitDateInput"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:padding="10dp"
-                    tools:ignore="Autofill"
-                    android:text="Select Date" />
-
+                    tools:ignore="Autofill" />
 
             </TableRow>
 
